@@ -1,0 +1,1 @@
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="wsAccountHistory.aspx.vb" Inherits="sycsa.Web.wsAccountHistory" %>

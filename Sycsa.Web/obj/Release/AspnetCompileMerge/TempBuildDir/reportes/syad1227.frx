@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="01/19/2017 22:42:59" ReportInfo.Modified="07/10/2017 21:19:27" ReportInfo.CreatorVersion="2014.1.5.0" PrintSettings.PageRange="PageNumbers" PrintSettings.PageNumbers="1,17">
+  <Dictionary>
+    <TableDataSource Name="dsUtilidad" ReferenceName="Data.dsUtilidad" DataType="System.Int32" Enabled="true">
+      <Column Name="tipo_doc" DataType="System.String"/>
+      <Column Name="serie" DataType="System.String"/>
+      <Column Name="cliente" DataType="System.String"/>
+      <Column Name="folio" DataType="System.String"/>
+      <Column Name="cia" DataType="System.String"/>
+      <Column Name="sub_total" DataType="System.Double"/>
+      <Column Name="tot_iva" DataType="System.Double"/>
+      <Column Name="total_mn" DataType="System.Double"/>
+      <Column Name="FECHA" DataType="System.DateTime"/>
+      <Column Name="clave" DataType="System.Int32"/>
+      <Column Name="telefonos1" DataType="System.String"/>
+      <Column Name="saldo_mn" DataType="System.Double"/>
+      <Column Name="cond_venta" DataType="System.String"/>
+      <Column Name="vencimiento" DataType="System.DateTime"/>
+      <Column Name="dias_pp" DataType="System.Int32"/>
+      <Column Name="dias_vencidos" DataType="System.Int32"/>
+      <Column Name="vencido" DataType="System.Double"/>
+      <Column Name="porvencer" DataType="System.Double"/>
+      <Column Name="venc_15" DataType="System.Decimal"/>
+      <Column Name="venc_30" DataType="System.Double"/>
+      <Column Name="venc_60" DataType="System.Double"/>
+      <Column Name="venc_61" DataType="System.Double"/>
+      <Column Name="estatus" DataType="System.String"/>
+      <Column Name="empresa" DataType="System.String"/>
+      <Column Name="rfc" DataType="System.String"/>
+    </TableDataSource>
+    <Total Name="TotalVenta" Expression="[dsUtilidad.saldo_mn]" Evaluator="Data1" PrintOn="ReportSummary1"/>
+    <Total Name="TotalFolio" Expression="Round([dsUtilidad.saldo_mn],2)" Evaluator="Data1" PrintOn="GroupFooter1"/>
+    <Total Name="porVencerfolio" Expression="[dsUtilidad.porvencer]" Evaluator="Data1" PrintOn="GroupFooter1"/>
+    <Total Name="vencidoFolio" Expression="[dsUtilidad.vencido]" Evaluator="Data1" PrintOn="GroupFooter1"/>
+    <Total Name="15diasFolio" Expression="[dsUtilidad.venc_15]" Evaluator="Data1" PrintOn="GroupFooter1"/>
+    <Total Name="30diasFolio" Expression="[dsUtilidad.venc_30]" Evaluator="Data1" PrintOn="GroupFooter1"/>
+    <Total Name="60diasFolio" Expression="[dsUtilidad.venc_60]" Evaluator="Data1" PrintOn="GroupFooter1"/>
+    <Total Name="mas60Folio" Expression="[dsUtilidad.venc_61]" Evaluator="Data1" PrintOn="GroupFooter1"/>
+    <Total Name="PorVencerCXC" Expression="[dsUtilidad.porvencer]" Evaluator="Data1" PrintOn="ReportSummary1"/>
+    <Total Name="VencidoCXC" Expression="[dsUtilidad.vencido]" Evaluator="Data1" PrintOn="ReportSummary1"/>
+    <Total Name="15diasCXC" Expression="[dsUtilidad.venc_15]" Evaluator="Data1" PrintOn="ReportSummary1"/>
+    <Total Name="30diasCXC" Expression="[dsUtilidad.venc_30]" Evaluator="Data1" PrintOn="ReportSummary1"/>
+    <Total Name="60diasCXC" Expression="[dsUtilidad.venc_60]" Evaluator="Data1" PrintOn="ReportSummary1"/>
+    <Total Name="mas60CXC" Expression="[dsUtilidad.venc_61]" Evaluator="Data1" PrintOn="ReportSummary1"/>
+  </Dictionary>
+  <ReportPage Name="Page1">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="56.7">
+      <TextObject Name="Text24" Left="85.5" Width="500.85" Height="18.9" Text="[dsUtilidad.empresa]" HorzAlign="Center" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text27" Left="567.45" Top="3.45" Width="170.1" Height="12.45" Text="Pagina [Page] de [TotalPages#]" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text28" Left="567.45" Top="15.9" Width="170.1" Height="12.45" Text="[Date]" HorzAlign="Right" Font="Arial, 8pt"/>
+      <TextObject Name="Text25" Left="0.45" Top="28.35" Width="500.85" Height="18.9" Text="Reporte de Cuentas X Cobrar" Font="Arial, 9pt, style=Bold"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="60.7" Width="718.2" Height="43.8" Guides="94.5">
+      <TextObject Name="Text4" Left="237.95" Top="18.9" Width="67.05" Height="20.9" Border.Lines="Bottom" Text="Total" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text5" Left="101.4" Top="18.9" Width="70.5" Height="20.9" Border.Lines="Bottom" Text="Fecha" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text7" Left="428.15" Top="18.9" Width="58.6" Height="20.9" Border.Lines="Bottom" Text="Vencido" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text8" Left="477.85" Top="18.9" Width="58.6" Height="20.9" Border.Lines="Bottom" Text="15 dias" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text23" Left="69.35" Top="18.9" Width="33.5" Height="20.9" Border.Lines="Bottom" Text="Est" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 8pt, style=Bold"/>
+      <TextObject Name="Text33" Top="18.9" Width="70.5" Height="20.9" Border.Lines="Bottom" Text="Folio" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text37" Left="151.2" Top="18.9" Width="89.4" Height="20.9" Border.Lines="Bottom" Text="Ven.ven Desc." HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text38" Left="302.4" Top="18.9" Width="67.05" Height="20.9" Border.Lines="Bottom" Text="Saldo" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text39" Left="368.55" Width="57.6" Height="39.8" Border.Lines="Bottom" Text="Por Vencer" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text40" Left="538.65" Top="18.9" Width="58.6" Height="20.9" Border.Lines="Bottom" Text="30 dias" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text41" Left="652.05" Top="18.9" Width="68.05" Height="20.9" Border.Lines="Bottom" Text="mas de 60" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text49" Left="595.35" Top="18.9" Width="58.6" Height="20.9" Border.Lines="Bottom" Text="60 dias" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+    </PageHeaderBand>
+    <GroupHeaderBand Name="GroupHeader1" Top="108.5" Width="718.2" Height="19.23" Condition="[dsUtilidad.cliente]">
+      <TextObject Name="Text29" Left="66.15" Top="6" Width="411.05" Height="13.23" Text="[dsUtilidad.cia]" VertAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text35" Left="9.45" Top="6" Width="39.6" Height="13.23" Text="[dsUtilidad.cliente]" VertAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text36" Left="481.95" Top="6" Width="240.95" Height="13.23" CanBreak="false" Text="[dsUtilidad.telefonos1]" VertAlign="Center" WordWrap="false" Font="Arial, 8pt"/>
+      <DataBand Name="Data1" Top="131.73" Width="718.2" Height="18.9" Guides="0" DataSource="dsUtilidad">
+        <TextObject Name="Text2" Left="120.3" Top="6.8" Width="70.5" Height="12.1" Text="[dsUtilidad.FECHA]" Format="Date" Format.Format="d" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/>
+        <TextObject Name="Text30" Left="250.6" Top="6.8" Width="58.6" Height="12.1" Text="[dsUtilidad.total_mn]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+        <TextObject Name="Text34" Top="6.8" Width="81.27" Height="12.1" Text="[dsUtilidad.folio]" Format="Date" Format.Format="d" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt"/>
+        <TextObject Name="Text42" Left="302.4" Top="6.8" Width="68.05" Height="12.1" Text="[dsUtilidad.saldo_mn]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+        <TextObject Name="Text1" Left="189" Top="6.8" Width="32.13" Height="12.1" Text="[dsUtilidad.vencimiento]" Format="Date" Format.Format="d" VertAlign="Center" WordWrap="false" Font="Arial, 8pt"/>
+        <TextObject Name="Text43" Left="217.35" Top="6.8" Width="30.25" Height="12.1" Text="[dsUtilidad.dias_vencidos]" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+        <TextObject Name="Text44" Left="368.55" Top="6.8" Width="58.6" Height="12.1" Text="[dsUtilidad.porvencer]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+        <TextObject Name="Text45" Left="425.25" Top="6.8" Width="58.6" Height="12.1" Text="[dsUtilidad.vencido]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+        <TextObject Name="Text46" Left="481.95" Top="6.8" Width="58.6" Height="12.1" Text="[dsUtilidad.venc_15]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+        <TextObject Name="Text47" Left="538.65" Top="6.8" Width="58.6" Height="12.1" Text="[dsUtilidad.venc_30]" HideZeros="true" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+        <TextObject Name="Text48" Left="595.35" Top="6.8" Width="58.6" Height="12.1" Text="[dsUtilidad.venc_60]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+        <TextObject Name="Text50" Left="661.5" Top="6.8" Width="58.6" Height="12.1" Text="[dsUtilidad.venc_61]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+        <TextObject Name="Text57" Left="85.05" Top="6.8" Width="32.7" Height="12.1" Text="[dsUtilidad.estatus]" Format="Date" Format.Format="d" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/>
+        <Sort>
+          <Sort Expression="[dsUtilidad.cliente]"/>
+          <Sort Expression="[dsUtilidad.folio]"/>
+        </Sort>
+      </DataBand>
+      <GroupFooterBand Name="GroupFooter1" Top="154.63" Width="718.2" Height="28.35" Guides="0,0,18.9,0">
+        <TextObject Name="Text6" Left="302.4" Width="66.15" Height="18.9" Border.Lines="Top" Text="[TotalFolio]" Format="Number" Format.UseLocale="true" HorzAlign="Right" VertAlign="Bottom" Font="Arial, 8pt"/>
+        <TextObject Name="Text51" Left="368.55" Width="56.7" Height="18.9" Border.Lines="Top" Text="[porVencerfolio]" HideZeros="true" Format="Number" Format.UseLocale="true" HorzAlign="Right" VertAlign="Bottom" Font="Arial, 8pt"/>
+        <TextObject Name="Text52" Left="415.8" Width="66.15" Height="18.9" Border.Lines="Top" CanBreak="false" Text="[vencidoFolio]" HideZeros="true" Format="Number" Format.UseLocale="true" HorzAlign="Right" VertAlign="Bottom" WordWrap="false" Font="Arial, 8pt"/>
+        <TextObject Name="Text53" Left="481.95" Width="56.7" Height="18.9" Border.Lines="Top" CanBreak="false" Text="[15diasFolio]" HideZeros="true" Format="Number" Format.UseLocale="true" HorzAlign="Right" VertAlign="Bottom" Font="Arial, 8pt"/>
+        <TextObject Name="Text54" Left="538.65" Width="56.7" Height="18.9" Border.Lines="Top" CanBreak="false" Text="[30diasFolio]" HideZeros="true" Format="Number" Format.UseLocale="true" HorzAlign="Right" VertAlign="Bottom" Font="Arial, 8pt"/>
+        <TextObject Name="Text55" Left="595.35" Width="56.7" Height="18.9" Border.Lines="Top" Text="[60diasFolio]" HideZeros="true" Format="Number" Format.UseLocale="true" HorzAlign="Right" VertAlign="Bottom" Font="Arial, 8pt"/>
+        <TextObject Name="Text56" Left="652.05" Width="66.15" Height="18.9" Border.Lines="Top" Text="[mas60Folio]" HideZeros="true" Format="Number" Format.UseLocale="true" HorzAlign="Right" VertAlign="Bottom" Font="Arial, 8pt"/>
+      </GroupFooterBand>
+    </GroupHeaderBand>
+    <ReportSummaryBand Name="ReportSummary1" Top="186.98" Width="718.2" Height="37.8">
+      <TextObject Name="Text21" Left="253.25" Top="5.55" Width="71.05" Height="18.9" Border.Lines="Top" Text="[TotalVenta]" Format="Number" Format.UseLocale="true" HorzAlign="Right" VertAlign="Bottom" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text18" Left="652.05" Top="5.55" Width="71.06" Height="18.9" Border.Lines="Top" Text="[mas60CXC]" Format="Number" Format.UseLocale="true" HorzAlign="Right" VertAlign="Bottom" Font="Times New Roman, 8pt"/>
+      <TextObject Name="Text58" Left="321.3" Top="5.55" Width="71.05" Height="18.9" Border.Lines="Top" Text="[PorVencerCXC]" Format="Number" Format.UseLocale="true" HorzAlign="Right" VertAlign="Bottom" Font="Arial, 8pt"/>
+      <TextObject Name="Text59" Left="387.45" Top="5.55" Width="71.05" Height="18.9" Border.Lines="Top" Text="[VencidoCXC]" Format="Number" Format.UseLocale="true" HorzAlign="Right" VertAlign="Bottom" Font="Arial, 8pt"/>
+      <TextObject Name="Text60" Left="453.6" Top="5.55" Width="71.05" Height="18.9" Border.Lines="Top" Text="[15diasCXC]" Format="Number" Format.UseLocale="true" HorzAlign="Right" VertAlign="Bottom" Font="Arial, 8pt"/>
+      <TextObject Name="Text61" Left="519.75" Top="5.55" Width="71.05" Height="18.9" Border.Lines="Top" Text="[30diasCXC]" Format="Number" Format.UseLocale="true" HorzAlign="Right" VertAlign="Bottom" Font="Arial, 8pt"/>
+      <TextObject Name="Text62" Left="585.9" Top="5.55" Width="71.05" Height="18.9" Border.Lines="Top" Text="[60diasCXC]" Format="Number" Format.UseLocale="true" HorzAlign="Right" VertAlign="Bottom" Font="Arial, 8pt"/>
+    </ReportSummaryBand>
+    <PageFooterBand Name="PageFooter1" Top="228.78" Width="718.2" Height="37.8"/>
+  </ReportPage>
+</Report>

@@ -1,0 +1,317 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="Vb" ReferencedAssemblies="System.dll&#13;&#10;System.Drawing.dll&#13;&#10;System.Windows.Forms.dll&#13;&#10;System.Data.dll&#13;&#10;System.Xml.dll&#13;&#10;FastReport.RPTImportPlugin.dll" TextQuality="ClearType" ReportInfo.Created="12/22/2013 21:51:44" ReportInfo.Modified="03/28/2014 12:53:06" ReportInfo.CreatorVersion="2014.1.5.0" PrintSettings.PrintMode="Split" PrintSettings.PagesOnSheet="Two">
+  <ScriptText>Imports System
+Imports System.Collections
+Imports System.Collections.Generic
+Imports System.ComponentModel
+Imports System.Windows.Forms
+Imports System.Drawing
+Imports Microsoft.VisualBasic
+Imports FastReport
+Imports FastReport.Data
+Imports FastReport.Dialog
+Imports FastReport.Table
+Imports FastReport.Barcode
+Imports FastReport.Utils
+
+Namespace FastReport
+  Public Class ReportScript
+
+  End Class
+End Namespace
+</ScriptText>
+  <Dictionary>
+    <TableDataSource Name="VW_NOMINA" ReferenceName="Data.VW_NOMINA" DataType="System.Int32" Enabled="true">
+      <Column Name="clave" DataType="System.Int32"/>
+      <Column Name="cveemp" DataType="System.Decimal"/>
+      <Column Name="fecha" DataType="System.DateTime"/>
+      <Column Name="folio" DataType="System.Int32"/>
+      <Column Name="trabajador" DataType="System.Decimal"/>
+      <Column Name="estatus" DataType="System.String"/>
+      <Column Name="estatus_sat" DataType="System.String"/>
+      <Column Name="numempleado" DataType="System.Int32"/>
+      <Column Name="clinom" DataType="System.String"/>
+      <Column Name="clirfc" DataType="System.String"/>
+      <Column Name="rfc" DataType="System.String"/>
+      <Column Name="curp" DataType="System.String"/>
+      <Column Name="depto" DataType="System.String"/>
+      <Column Name="clidir" DataType="System.String"/>
+      <Column Name="clicol" DataType="System.String"/>
+      <Column Name="clinum" DataType="System.String"/>
+      <Column Name="clicp" DataType="System.String"/>
+      <Column Name="cliciu" DataType="System.String"/>
+      <Column Name="cliest" DataType="System.String"/>
+      <Column Name="reg_imss" DataType="System.String"/>
+      <Column Name="forma_pago" DataType="System.String"/>
+      <Column Name="banco" DataType="System.String"/>
+      <Column Name="clabe" DataType="System.String"/>
+      <Column Name="puesto" DataType="System.String"/>
+      <Column Name="tipo_contrato" DataType="System.String"/>
+      <Column Name="tipo_regimen" DataType="System.String"/>
+      <Column Name="tipo_jornada" DataType="System.String"/>
+      <Column Name="riesgo_puesto" DataType="System.String"/>
+      <Column Name="salario_diario" DataType="System.Decimal"/>
+      <Column Name="fecha_ini_rela" DataType="System.String"/>
+      <Column Name="periodo" DataType="System.String"/>
+      <Column Name="fecha_ini" DataType="System.DateTime"/>
+      <Column Name="fecha_fin" DataType="System.DateTime"/>
+      <Column Name="perc_exento" DataType="System.Decimal"/>
+      <Column Name="perc_grava" DataType="System.Decimal"/>
+      <Column Name="dedu_exento" DataType="System.Decimal"/>
+      <Column Name="dedu_grava" DataType="System.Decimal"/>
+      <Column Name="total" DataType="System.Decimal"/>
+      <Column Name="uuid" DataType="System.String"/>
+      <Column Name="certificadofecha" DataType="System.String"/>
+      <Column Name="sellodigital" DataType="System.String"/>
+      <Column Name="cadenasat" DataType="System.String"/>
+      <Column Name="sellosat" DataType="System.String"/>
+      <Column Name="certificadosat" DataType="System.String"/>
+      <Column Name="ncertifica" DataType="System.String"/>
+      <Column Name="estatus_sat1" DataType="System.String"/>
+      <Column Name="letras" DataType="System.String"/>
+      <Column Name="tipo_mov" DataType="System.String"/>
+      <Column Name="clave_mov" DataType="System.Decimal"/>
+      <Column Name="descripcion_mov" DataType="System.String"/>
+      <Column Name="cantidad" DataType="System.Decimal"/>
+      <Column Name="importe" DataType="System.Decimal"/>
+      <Column Name="importe_perc" DataType="System.Decimal"/>
+      <Column Name="importe_dedu" DataType="System.Decimal"/>
+      <Column Name="gravado" DataType="System.Decimal"/>
+      <Column Name="exento" DataType="System.Decimal"/>
+      <Column Name="ciarfc" DataType="System.String"/>
+      <Column Name="ciatel" DataType="System.String"/>
+      <Column Name="cianom" DataType="System.String"/>
+      <Column Name="ciadir" DataType="System.String"/>
+      <Column Name="ciacol" DataType="System.String"/>
+      <Column Name="ciacd" DataType="System.String"/>
+      <Column Name="ciacp" DataType="System.Decimal"/>
+      <Column Name="ciapais" DataType="System.String"/>
+      <Column Name="ciaest" DataType="System.String"/>
+      <Column Name="cianum" DataType="System.String"/>
+      <Column Name="ciarutacfd" DataType="System.String"/>
+      <Column Name="clavecfd" DataType="System.String"/>
+      <Column Name="cvecondvta" DataType="System.String"/>
+      <Column Name="ciacerti" DataType="System.String"/>
+      <Column Name="ciarutacer" DataType="System.String"/>
+      <Column Name="rutacfd" DataType="System.String"/>
+      <Column Name="nocertificado" DataType="System.String"/>
+      <Column Name="ciakey" DataType="System.String"/>
+      <Column Name="serie" DataType="System.String"/>
+      <Column Name="regimen" DataType="System.String"/>
+      <Column Name="formato" DataType="System.String"/>
+      <Column Name="formatoem" DataType="System.String"/>
+      <Column Name="moneda" DataType="System.String"/>
+      <Column Name="metodopago" DataType="System.String"/>
+      <Column Name="cvekey" DataType="System.String"/>
+      <Column Name="timbre_usu" DataType="System.String"/>
+      <Column Name="timbre_pass" DataType="System.String"/>
+      <Column Name="filetype" DataType="System.String"/>
+      <Column Name="registro_patronal" DataType="System.String"/>
+      <Column Name="ciaserie" DataType="System.String"/>
+      <Column Name="clavenomina" DataType="System.String"/>
+      <Column Name="cvecondvta1" DataType="System.String"/>
+      <Column Name="tipo_cambio" DataType="System.Decimal"/>
+      <Column Name="numctapago" DataType="System.String"/>
+      <Column Name="precio_uni" DataType="System.Decimal"/>
+      <Column Name="importe1" DataType="System.Decimal"/>
+      <Column Name="total_iva" DataType="System.Decimal"/>
+      <Column Name="retisr" DataType="System.Decimal"/>
+      <Column Name="retiva" DataType="System.Decimal"/>
+      <Column Name="vales" DataType="System.Decimal"/>
+    </TableDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" RawPaperSize="9" LeftMargin="6" TopMargin="6" RightMargin="6" BottomMargin="6" FirstPageSource="15" OtherPagesSource="15">
+    <ReportTitleBand Name="ReportTitle1" Width="748.44" Height="121.3" Fill.Color="White" EvenStylePriority="UseAll" PrintOn="FirstPage" FirstRowStartsNewPage="true">
+      <ShapeObject Name="Shape30" Left="488.85" Top="1" Width="258.95" Height="108.9"/>
+      <ShapeObject Name="Shape23" Left="488.85" Top="16.8" Width="98.95" Height="92.5" Border.Width="0.25" Fill.Color="LightGray"/>
+      <ShapeObject Name="Shape31" Left="489.05" Top="0.9" Width="258.45" Height="16.9" Border.Width="0.25" Fill.Color="LightGray"/>
+      <TextObject Name="Text43" Left="490.35" Top="24.25" Width="95" Height="12" Fill.Color="LightGray" Text="FOLIO FISCAL" HorzAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text44" Left="490.35" Top="44.7" Width="95" Height="14" Fill.Color="LightGray" Text="FECHA EMISION" HorzAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text45" Left="490.35" Top="62.6" Width="95" Height="14" Fill.Color="LightGray" Text="FECHA CER" HorzAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text46" Left="490.35" Top="78.15" Width="95" Height="14" Fill.Color="LightGray" Text="CERTIFICADO" HorzAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text47" Left="490.35" Top="93.5" Width="95" Height="14" Fill.Color="LightGray" Text="CER SAT" HorzAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text58" Left="490.55" Top="3.35" Width="254.85" Height="12" Fill.Color="LightGray" Text="RECIBO DE NOMINA: [VW_NOMINA.serie][VW_NOMINA.folio]" HorzAlign="Center" Font="Arial, 8pt"/>
+      <LineObject Name="Line1" Left="488.85" Top="40.7" Width="256.25" PrintOn="FirstPage"/>
+      <LineObject Name="Line2" Left="488.85" Top="59.05" Width="256.25" PrintOn="FirstPage"/>
+      <LineObject Name="Line3" Left="488.85" Top="75.95" Width="256.25" PrintOn="FirstPage"/>
+      <LineObject Name="Line4" Left="488.85" Top="92.4" Width="256.25" PrintOn="FirstPage"/>
+      <TextObject Name="Text1" Left="587.8" Top="16.8" Width="156.5" Height="22.9" Text="[VW_NOMINA.uuid]" Font="Arial, 8pt"/>
+      <TextObject Name="Text2" Left="588.35" Top="45.25" Width="155.5" Height="11.9" Text="[VW_NOMINA.fecha]" Format="Date" Format.Format="d" Font="Arial, 8pt"/>
+      <TextObject Name="Text3" Left="587.35" Top="62.7" Width="156.5" Height="13.9" Text="[VW_NOMINA.certificadofecha]" Font="Arial, 8pt"/>
+      <TextObject Name="Text4" Left="588.35" Top="78.6" Width="156.5" Height="11.9" Text="[VW_NOMINA.ncertifica]" Font="Arial, 8pt"/>
+      <TextObject Name="Text5" Left="588.35" Top="93.95" Width="155.5" Height="12.9" Text="[VW_NOMINA.certificadosat]" Font="Arial, 8pt"/>
+      <TextObject Name="Text8" Left="167.15" Top="22" Width="261.95" Height="30" Text="[VW_NOMINA.ciadir] #[VW_NOMINA.cianum], [VW_NOMINA.ciacd], &#13;&#10;[VW_NOMINA.ciaest], CP: [VW_NOMINA.ciacp]" HorzAlign="Center" Font="Arial, 9pt">
+        <Formats>
+          <NumberFormat UseLocale="false" DecimalDigits="0" GroupSeparator="" NegativePattern="1"/>
+          <GeneralFormat/>
+          <GeneralFormat/>
+          <GeneralFormat/>
+          <GeneralFormat/>
+        </Formats>
+      </TextObject>
+      <TextObject Name="Text9" Left="163.65" Top="50.1" Width="268.95" Height="43.9" Text="R.F.C.: [VW_NOMINA.ciarfc]    &#13;&#10;Registro Patronal: [VW_NOMINA.registro_patronal]&#13;&#10;TEL: [VW_NOMINA.ciatel]" HorzAlign="Center" Font="Arial, 9pt"/>
+      <TextObject Name="Text7" Left="122.98" Top="2.2" Width="350.3" Height="18.9" Text="[VW_NOMINA.cianom]" HorzAlign="Center" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text10" Left="111.2" Top="108.4" Width="386.85" Height="12.9" Text="[VW_NOMINA.regimen]" HorzAlign="Center" Font="Arial, 9pt"/>
+      <TextObject Name="Text11" Left="136.83" Top="94.5" Width="335.6" Height="14.9" Text="ESTE DOCUMENTO ES UNA REPRESENTACION IMPRESA DE UN CFDI." HorzAlign="Center" Font="Arial, 7pt"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="125.3" Width="748.44" Height="104.6" Fill.Color="White" PrintOn="FirstPage" Guides="85.05,94.5,85.05">
+      <ShapeObject Name="Shape1" Left="-0.4" Top="-0.1" Width="748.05" Height="89.6"/>
+      <TextObject Name="Text63" Left="3.45" Top="72.1" Width="335.5" Height="11.9" Text="Contrato: [VW_NOMINA.tipo_contrato]" Font="Arial, 8pt"/>
+      <TextObject Name="Text62" Left="3.45" Top="59.2" Width="335.5" Height="12.9" Text="Rriesgo de Puesto: [VW_NOMINA.riesgo_puesto]" Font="Arial, 8pt"/>
+      <TextObject Name="Text6" Left="3.45" Top="48.3" Width="335.5" Height="12.9" Text="Regimen: [VW_NOMINA.tipo_regimen]" Font="Arial, 8pt"/>
+      <TextObject Name="Text65" Left="3.45" Top="37.4" Width="335.5" Height="12.9" Text="CURP: [VW_NOMINA.curp]" Font="Arial, 8pt"/>
+      <TextObject Name="Text64" Left="3.45" Top="25.5" Width="335.5" Height="12.9" Text="R.F.C.: [VW_NOMINA.clirfc]" Font="Arial, 8pt"/>
+      <TextObject Name="Text61" Left="3.45" Top="13.6" Width="335.5" Height="12.9" Text="Nombre: [VW_NOMINA.clinom]" Font="Arial, 8pt"/>
+      <TextObject Name="Text68" Left="341.55" Top="71.4" Width="169.5" Height="12.9" Text="Forma de pago: [VW_NOMINA.forma_pago]" Font="Arial, 8pt"/>
+      <TextObject Name="Text69" Left="341.55" Top="14.9" Width="169.5" Height="11.9" Text="Puesto: [VW_NOMINA.puesto]" Font="Arial, 8pt"/>
+      <TextObject Name="Text70" Left="341.55" Top="26.8" Width="169.5" Height="12.9" Text="NSS: [VW_NOMINA.reg_imss]" Font="Arial, 8pt"/>
+      <TextObject Name="Text71" Left="341.55" Top="37.7" Width="169.5" Height="12.9" Text="Jornada: [VW_NOMINA.tipo_jornada]" Font="Arial, 8pt"/>
+      <TextObject Name="Text67" Left="341.55" Top="59.5" Width="169.5" Height="12.9" Text="Banco: [VW_NOMINA.banco]" Font="Arial, 8pt"/>
+      <TextObject Name="Text66" Left="341.55" Top="48.6" Width="169.5" Height="12.9" Text="Salario diario: [VW_NOMINA.salario_diario]" Font="Arial, 8pt"/>
+      <TextObject Name="Text72" Left="514.1" Top="19.9" Width="219.05" Height="11.9" Text="Departamento: [VW_NOMINA.depto]" Font="Arial, 8pt"/>
+      <TextObject Name="Text73" Left="514.1" Top="37.25" Width="219.05" Height="11.9" Text="Fecha inicio Rel. Laboral: [VW_NOMINA.fecha_ini_rela]" Format="Date" Format.Format="d" Font="Arial, 8pt"/>
+      <TextObject Name="Text74" Left="513.75" Top="55.7" Width="219.05" Height="11.9" Text="CLABE: [VW_NOMINA.clabe]" Format="Date" Format.Format="d" Font="Arial, 8pt"/>
+      <TextObject Name="Text75" Left="170.1" Top="2" Width="472.5" Height="11.9" Text="Periodo: [VW_NOMINA.periodo] del [VW_NOMINA.fecha_ini] al [VW_NOMINA.fecha_fin]" Font="Arial, 8pt">
+        <Formats>
+          <GeneralFormat/>
+          <DateFormat/>
+          <DateFormat/>
+        </Formats>
+      </TextObject>
+      <TextObject Name="Text12" Left="1.35" Top="91.5" Width="55.5" Height="12.9" Border.Lines="All" Fill.Color="LightGray" Text="CLAVE" HorzAlign="Center" Font="Arial, 9pt"/>
+      <TextObject Name="Text28" Left="56.7" Top="91.5" Width="344.15" Height="12.9" Border.Lines="All" Fill.Color="LightGray" Text="CONCEPTO" HorzAlign="Center" Font="Arial, 9pt"/>
+      <TextObject Name="Text30" Left="559.45" Top="91.5" Width="93.5" Height="12.9" Border.Lines="All" Fill.Color="LightGray" Text="PERCEPCION" HorzAlign="Center" Font="Arial, 9pt"/>
+      <TextObject Name="Text29" Left="400.7" Top="91.5" Width="78.95" Height="12.9" Border.Lines="All" Fill.Color="LightGray" Text="CANTIDAD" HorzAlign="Center" Font="Arial, 9pt"/>
+      <TextObject Name="Text59" Left="477.4" Top="91.5" Width="81.5" Height="12.9" Border.Lines="All" Fill.Color="LightGray" Text="IMPORTE" HorzAlign="Center" Font="Arial, 9pt"/>
+      <TextObject Name="Text60" Left="653.05" Top="91.5" Width="93.5" Height="12.9" Border.Lines="All" Fill.Color="LightGray" Text="DEDUCCION" HorzAlign="Center" Font="Arial, 9pt"/>
+      <TextObject Name="Text31" Left="0.08" Top="0.9" Width="159.1" Height="12" Border.Lines="All" Fill.Color="LightGray" Text="DATOS DEL EMPLEADO [VW_NOMINA.numempleado]" Font="Arial, 8pt"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="233.9" Width="748.44" Height="14.8" Border.Lines="Bottom" Fill.Color="White" PrintOn="FirstPage" DataSource="VW_NOMINA" RowCount="0">
+      <TextObject Name="Text23" Left="400.7" Top="-0.1" Width="75.95" Height="14.9" Border.Lines="Left, Right, Top" Text="[VW_NOMINA.cantidad]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="0" Format.DecimalSeparator="." Format.GroupSeparator="" Format.NegativePattern="1" HorzAlign="Right" WordWrap="false" Font="Arial, 9pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text24" Left="477.4" Top="-0.1" Width="81.5" Height="14.9" Border.Lines="Left, Right, Top" Text="[VW_NOMINA.importe]" Format="Currency" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Font="Arial, 9pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text32" Left="559.45" Top="-0.1" Width="93.5" Height="14.9" Border.Lines="Left, Right, Top" Text="[VW_NOMINA.importe_perc]" Format="Currency" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Font="Arial, 9pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text35" Left="653.05" Top="-0.1" Width="93.5" Height="14.9" Border.Lines="Left, Right, Top" Text="[VW_NOMINA.importe_dedu]" Format="Currency" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Font="Arial, 9pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text38" Left="56.7" Top="-0.1" Width="344.15" Height="14.9" Border.Lines="Left, Right, Top" Text="[VW_NOMINA.descripcion_mov]" Font="Arial, 9pt"/>
+      <TextObject Name="Text39" Left="1.35" Top="-0.1" Width="55.5" Height="14.9" Border.Lines="Left, Right, Top" Text="[VW_NOMINA.clave_mov]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="0" Format.DecimalSeparator="." Format.GroupSeparator="" Format.NegativePattern="1" HorzAlign="Right" WordWrap="false" Font="Arial, 9pt" Trimming="EllipsisCharacter"/>
+    </DataBand>
+    <ReportSummaryBand Name="ReportSummary1" Top="252.7" Width="748.44" Height="385.45" Border.Lines="Top" Fill.Color="White">
+      <TextObject Name="Text36" Left="488.75" Top="14.45" Width="70.65" Height="15" Border.Lines="All" Fill.Color="LightGray" Text="GRAVADO" HorzAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text37" Left="559.45" Top="29.8" Width="93.5" Height="15" Border.Lines="All" Fill.Color="LightGray" Text="TOTAL" HorzAlign="Center" Font="Arial, 9pt"/>
+      <TextObject Name="Text16" Left="1.35" Top="14.35" Width="425.5" Height="14.9" Border.Lines="All" Text="[VW_NOMINA.letras]" Font="Arial, 9pt"/>
+      <TextObject Name="Text20" Left="559.45" Top="14.9" Width="93.5" Height="15" Border.Lines="All" Text="[VW_NOMINA.perc_grava]" Format="Currency" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text21" Left="653.05" Top="14.9" Width="93.5" Height="15" Border.Lines="All" Text="[VW_NOMINA.dedu_grava]" Format="Currency" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text22" Left="653.05" Top="29.7" Width="93.5" Height="14.9" Border.Lines="All" Text="[VW_NOMINA.total]" Format="Currency" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Font="Arial, 8pt, style=Bold" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text17" Left="-1" Top="32.8" Width="563.4" Height="43.25" Text="RECIBI DE [VW_NOMINA.cianom] LA CANTIDAD DE [VW_NOMINA.letras] MISMAS QUE CUBREN LAS PERCEPCIONES QUE ME CORRESPONDEN EN EL PERIODO INDICADO NO EXISTIENDO NINGUN ADEUDO. POR PARTE DE LA EMPRESA PARA EL SUSCRITO. PUES ESTOY TOTALMENTE PAGADO DE MIS SALARIOS Y PRESTACIONES DEVENGADAS HASTA LA FECHA." Font="Arial, 7pt"/>
+      <TextObject Name="Text25" Left="1" Top="74.35" Width="595.35" Height="13" Border.Lines="All" Fill.Color="LightGray" Text="SELLO SAT" Font="Arial, 8pt"/>
+      <TextObject Name="Text13" Left="1" Top="86.85" Width="595.35" Height="29.9" Border.Lines="All" Text="[VW_NOMINA.sellosat]" Font="Arial, 7pt"/>
+      <TextObject Name="Text26" Left="1" Top="116.05" Width="595.35" Height="13" Border.Lines="All" Fill.Color="LightGray" Text="CADENA SAT" Font="Arial, 8pt"/>
+      <TextObject Name="Text14" Left="1" Top="129.1" Width="595.35" Height="35.9" Border.Lines="All" Text="[VW_NOMINA.cadenasat]" Font="Arial, 6pt"/>
+      <TextObject Name="Text27" Left="1" Top="165.3" Width="595.35" Height="13" Border.Lines="All" Fill.Color="LightGray" Text="SELLO DIGITAL" Font="Arial, 8pt"/>
+      <TextObject Name="Text34" Left="488.75" Top="-0.55" Width="70.65" Height="15" Border.Lines="All" Fill.Color="LightGray" Text="EXENTO" HorzAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text33" Left="1.35" Width="426.15" Height="14" Border.Lines="All" Fill.Color="LightGray" Text="CANTIDAD CON LETRA" Font="Arial, 8pt"/>
+      <TextObject Name="Text19" Left="653.05" Width="93.5" Height="15" Border.Lines="All" Text="[VW_NOMINA.dedu_exento]" Format="Currency" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text18" Left="559.45" Width="93.5" Height="15" Border.Lines="All" Text="[VW_NOMINA.perc_exento]" Format="Currency" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text15" Left="1" Top="178.35" Width="595.35" Height="27.9" Border.Lines="All" Text="[VW_NOMINA.sellodigital]" Font="Arial, 7pt"/>
+      <SubreportObject Name="Subreport1" Top="215.35" Width="748.44" Height="170.1" Dock="Bottom" ReportPage="Page2" PrintOnParent="true"/>
+      <BarcodeObject Name="Barcode1" Left="615.25" Top="90.5" Width="113.4" Height="113.4" AutoSize="false" Expression="&quot;?re=&quot;+[VW_NOMINA.ciarfc]+&quot;&amp;rr=&quot;+[VW_NOMINA.clirfc]+&quot;&amp;tt=&quot;+PadLeft(ToString(FormatNumber([VW_NOMINA.total],6)),17,&quot;0&quot;)+&quot;&amp;id=&quot;+[VW_NOMINA.uuid]" Text="" ShowText="false" Barcode="QR Code" Barcode.ErrorCorrection="L" Barcode.Encoding="UTF8" Barcode.QuietZone="true"/>
+      <LineObject Name="Line5" Left="600.8" Top="75.6" Width="142.3"/>
+      <TextObject Name="Text40" Left="603.2" Top="75.6" Width="137.5" Height="13.9" Text="FIRMA DEL EMPLEADO" HorzAlign="Center" Font="Arial, 8pt"/>
+      <LineObject Name="Line11" Left="-52.35" Top="211.8" Width="835.6"/>
+    </ReportSummaryBand>
+  </ReportPage>
+  <ReportPage Name="Page2" LeftMargin="6" TopMargin="6" RightMargin="6" BottomMargin="6">
+    <DataBand Name="Data2" Top="228.05" Width="748.44" Height="14.9" DataSource="VW_NOMINA">
+      <TextObject Name="Text115" Left="400.7" Width="75.95" Height="14.9" Border.Lines="All" Text="[VW_NOMINA.cantidad]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="0" Format.DecimalSeparator="." Format.GroupSeparator="" Format.NegativePattern="1" HorzAlign="Right" WordWrap="false" Font="Arial, 9pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text116" Left="477.4" Width="81.5" Height="14.9" Border.Lines="All" Text="[VW_NOMINA.importe]" Format="Currency" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Font="Arial, 9pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text117" Left="559.45" Width="93.5" Height="14.9" Border.Lines="All" Text="[VW_NOMINA.importe_perc]" Format="Currency" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Font="Arial, 9pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text118" Left="653.05" Width="93.5" Height="14.9" Border.Lines="All" Text="[VW_NOMINA.importe_dedu]" Format="Currency" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Font="Arial, 9pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text119" Left="56.7" Width="344.15" Height="14.9" Border.Lines="All" Text="[VW_NOMINA.descripcion_mov]" Font="Arial, 9pt"/>
+      <TextObject Name="Text120" Left="1" Width="56.5" Height="14.9" Border.Lines="All" Text="[VW_NOMINA.clave_mov]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="0" Format.DecimalSeparator="." Format.GroupSeparator="" Format.NegativePattern="1" HorzAlign="Right" WordWrap="false" Font="Arial, 9pt" Trimming="EllipsisCharacter"/>
+      <DataHeaderBand Name="DataHeader1" Width="748.44" Height="224.05">
+        <ShapeObject Name="Shape32" Left="488.85" Top="-0.1" Width="258.95" Height="108.9"/>
+        <ShapeObject Name="Shape33" Left="488.85" Top="14.7" Width="98.95" Height="92.5" Border.Width="0.25" Fill.Color="LightGray"/>
+        <ShapeObject Name="Shape34" Left="489.05" Top="-0.2" Width="258.45" Height="16.9" Border.Width="0.25" Fill.Color="LightGray"/>
+        <TextObject Name="Text76" Left="490.35" Top="23.15" Width="95" Height="12" Fill.Color="LightGray" Text="FOLIO FISCAL" HorzAlign="Center" Font="Arial, 8pt"/>
+        <TextObject Name="Text77" Left="490.35" Top="43.6" Width="95" Height="14" Fill.Color="LightGray" Text="FECHA EMISION" HorzAlign="Center" Font="Arial, 8pt"/>
+        <TextObject Name="Text78" Left="490.35" Top="61.5" Width="95" Height="14" Fill.Color="LightGray" Text="FECHA CER" HorzAlign="Center" Font="Arial, 8pt"/>
+        <TextObject Name="Text79" Left="490.35" Top="77.05" Width="95" Height="14" Fill.Color="LightGray" Text="CERTIFICADO" HorzAlign="Center" Font="Arial, 8pt"/>
+        <TextObject Name="Text80" Left="490.35" Top="92.4" Width="95" Height="14" Fill.Color="LightGray" Text="CER SAT" HorzAlign="Center" Font="Arial, 8pt"/>
+        <TextObject Name="Text81" Left="490.55" Top="2.25" Width="254.85" Height="12" Fill.Color="LightGray" Text="RECIBO DE NOMINA: [VW_NOMINA.serie][VW_NOMINA.folio]" HorzAlign="Center" Font="Arial, 8pt"/>
+        <LineObject Name="Line6" Left="488.85" Top="39.6" Width="256.25" PrintOn="FirstPage"/>
+        <LineObject Name="Line7" Left="488.85" Top="57.95" Width="256.25" PrintOn="FirstPage"/>
+        <LineObject Name="Line8" Left="488.85" Top="74.85" Width="256.25" PrintOn="FirstPage"/>
+        <LineObject Name="Line9" Left="488.85" Top="91.3" Width="256.25" PrintOn="FirstPage"/>
+        <TextObject Name="Text82" Left="587.8" Top="15.7" Width="156.5" Height="22.9" Text="[VW_NOMINA.uuid]" Font="Arial, 8pt"/>
+        <TextObject Name="Text83" Left="588.35" Top="44.15" Width="155.5" Height="11.9" Text="[VW_NOMINA.fecha]" Format="Date" Format.Format="d" Font="Arial, 8pt"/>
+        <TextObject Name="Text84" Left="587.35" Top="61.6" Width="156.5" Height="13.9" Text="[VW_NOMINA.certificadofecha]" Font="Arial, 8pt"/>
+        <TextObject Name="Text85" Left="588.35" Top="77.5" Width="156.5" Height="11.9" Text="[VW_NOMINA.ncertifica]" Font="Arial, 8pt"/>
+        <TextObject Name="Text86" Left="588.35" Top="92.85" Width="155.5" Height="12.9" Text="[VW_NOMINA.certificadosat]" Font="Arial, 8pt"/>
+        <TextObject Name="Text87" Left="122.85" Top="18.9" Width="359.2" Height="27.1" Text="[VW_NOMINA.ciadir] #[VW_NOMINA.cianum], [VW_NOMINA.ciacd], &#13;&#10;[VW_NOMINA.ciaest], CP: [VW_NOMINA.ciacp]" HorzAlign="Center" Font="Arial, 9pt">
+          <Formats>
+            <NumberFormat UseLocale="false" DecimalDigits="0" GroupSeparator="" NegativePattern="1"/>
+            <GeneralFormat/>
+            <GeneralFormat/>
+            <GeneralFormat/>
+            <GeneralFormat/>
+          </Formats>
+        </TextObject>
+        <TextObject Name="Text88" Left="122.85" Top="46.1" Width="359.2" Height="44.8" Text="R.F.C.: [VW_NOMINA.ciarfc]    &#13;&#10;Registro Patronal: [VW_NOMINA.registro_patronal]&#13;&#10;TEL: [VW_NOMINA.ciatel]" HorzAlign="Center" Font="Arial, 9pt"/>
+        <TextObject Name="Text89" Left="122.85" Top="3.1" Width="359.2" Height="18.9" Text="[VW_NOMINA.cianom]" HorzAlign="Center" Font="Arial, 10pt, style=Bold"/>
+        <TextObject Name="Text90" Left="109.03" Top="105.85" Width="386.85" Height="14.9" Text="[VW_NOMINA.regimen]" HorzAlign="Center" Font="Arial, 9pt"/>
+        <TextObject Name="Text91" Left="110.03" Top="92.4" Width="384.85" Height="14.9" Text="ESTE DOCUMENTO ES UNA REPRESENTACION IMPRESA DE UN CFDI." HorzAlign="Center" Font="Arial, 7pt"/>
+        <ShapeObject Name="Shape35" Top="121.1" Width="748.05" Height="89.6"/>
+        <TextObject Name="Text92" Left="3.45" Top="193.3" Width="335.5" Height="11.9" Text="Contrato: [VW_NOMINA.tipo_contrato]" Font="Arial, 8pt"/>
+        <TextObject Name="Text93" Left="3.45" Top="180.4" Width="335.5" Height="12.9" Text="Rriesgo de Puesto: [VW_NOMINA.riesgo_puesto]" Font="Arial, 8pt"/>
+        <TextObject Name="Text94" Left="3.45" Top="169.5" Width="335.5" Height="12.9" Text="Regimen: [VW_NOMINA.tipo_regimen]" Font="Arial, 8pt"/>
+        <TextObject Name="Text95" Left="3.45" Top="158.6" Width="335.5" Height="12.9" Text="CURP: [VW_NOMINA.curp]" Font="Arial, 8pt"/>
+        <TextObject Name="Text96" Left="3.45" Top="146.7" Width="335.5" Height="12.9" Text="R.F.C.: [VW_NOMINA.clirfc]" Font="Arial, 8pt"/>
+        <TextObject Name="Text97" Left="3.45" Top="134.8" Width="335.5" Height="12.9" Text="Nombre: [VW_NOMINA.clinom]" Font="Arial, 8pt"/>
+        <TextObject Name="Text98" Left="341.55" Top="192.6" Width="169.5" Height="12.9" Text="Forma de pago: [VW_NOMINA.forma_pago]" Font="Arial, 8pt"/>
+        <TextObject Name="Text99" Left="341.55" Top="136.1" Width="169.5" Height="11.9" Text="Puesto: [VW_NOMINA.puesto]" Font="Arial, 8pt"/>
+        <TextObject Name="Text100" Left="341.55" Top="148" Width="169.5" Height="12.9" Text="NSS: [VW_NOMINA.reg_imss]" Font="Arial, 8pt"/>
+        <TextObject Name="Text101" Left="341.55" Top="158.9" Width="169.5" Height="12.9" Text="Jornada: [VW_NOMINA.tipo_jornada]" Font="Arial, 8pt"/>
+        <TextObject Name="Text102" Left="341.55" Top="180.7" Width="169.5" Height="12.9" Text="Banco: [VW_NOMINA.banco]" Font="Arial, 8pt"/>
+        <TextObject Name="Text103" Left="341.55" Top="169.8" Width="169.5" Height="12.9" Text="Salario diario: [VW_NOMINA.salario_diario]" Font="Arial, 8pt"/>
+        <TextObject Name="Text104" Left="514.1" Top="141.1" Width="219.05" Height="11.9" Text="Departamento: [VW_NOMINA.depto]" Font="Arial, 8pt"/>
+        <TextObject Name="Text105" Left="514.1" Top="158.45" Width="219.05" Height="11.9" Text="Fecha inicio Rel. Laboral: [VW_NOMINA.fecha_ini_rela]" Format="Date" Format.Format="d" Font="Arial, 8pt"/>
+        <TextObject Name="Text106" Left="513.75" Top="176.9" Width="219.05" Height="11.9" Text="CLABE: [VW_NOMINA.clabe]" Format="Date" Format.Format="d" Font="Arial, 8pt"/>
+        <TextObject Name="Text107" Left="170.1" Top="123.2" Width="472.5" Height="11.9" Text="Periodo: [VW_NOMINA.periodo] del [VW_NOMINA.fecha_ini] al [VW_NOMINA.fecha_fin]" Font="Arial, 8pt">
+          <Formats>
+            <GeneralFormat/>
+            <DateFormat/>
+            <DateFormat/>
+          </Formats>
+        </TextObject>
+        <TextObject Name="Text108" Left="56.7" Top="211.15" Width="344.15" Height="12.9" Border.Lines="All" Fill.Color="LightGray" Text="CONCEPTO" HorzAlign="Center" Font="Arial, 9pt"/>
+        <TextObject Name="Text109" Left="559.45" Top="211.15" Width="93.5" Height="12.9" Border.Lines="All" Fill.Color="LightGray" Text="PERCEPCION" HorzAlign="Center" Font="Arial, 9pt"/>
+        <TextObject Name="Text110" Left="400.7" Top="211.15" Width="75.95" Height="12.9" Border.Lines="All" Fill.Color="LightGray" Text="CANTIDAD" HorzAlign="Center" Font="Arial, 9pt"/>
+        <TextObject Name="Text111" Left="477.4" Top="211.15" Width="81.5" Height="12.9" Border.Lines="All" Fill.Color="LightGray" Text="IMPORTE" HorzAlign="Center" Font="Arial, 9pt"/>
+        <TextObject Name="Text112" Left="653.05" Top="211.15" Width="93.5" Height="12.9" Border.Lines="All" Fill.Color="LightGray" Text="DEDUCCION" HorzAlign="Center" Font="Arial, 9pt"/>
+        <TextObject Name="Text113" Top="122.1" Width="159.1" Height="12" Border.Lines="All" Fill.Color="LightGray" Text="DATOS DEL EMPLEADO [VW_NOMINA.numempleado]" Font="Arial, 8pt"/>
+        <TextObject Name="Text114" Left="1" Top="211.15" Width="56.5" Height="12.9" Border.Lines="All" Fill.Color="LightGray" Text="CLAVE" HorzAlign="Center" Font="Arial, 9pt"/>
+      </DataHeaderBand>
+      <DataFooterBand Name="DataFooter1" Top="246.95" Width="748.44" Height="203.95">
+        <TextObject Name="Text121" Left="488.75" Top="13.9" Width="70.65" Height="15" Border.Lines="All" Fill.Color="LightGray" Text="GRAVADO" HorzAlign="Center" Font="Arial, 8pt"/>
+        <TextObject Name="Text122" Left="559.45" Top="29.25" Width="93.5" Height="13.9" Border.Lines="All" Fill.Color="LightGray" Text="TOTAL" HorzAlign="Center" Font="Arial, 9pt"/>
+        <TextObject Name="Text123" Left="1" Top="13.8" Width="425.5" Height="14.9" Border.Lines="All" Text="[VW_NOMINA.letras]" Font="Arial, 9pt"/>
+        <TextObject Name="Text124" Left="559.45" Top="14.35" Width="93.5" Height="15" Border.Lines="All" Text="[VW_NOMINA.perc_grava]" Format="Currency" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+        <TextObject Name="Text125" Left="653.05" Top="14.35" Width="93.5" Height="15" Border.Lines="All" Text="[VW_NOMINA.dedu_grava]" Format="Currency" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+        <TextObject Name="Text126" Left="653.05" Top="29.15" Width="93.5" Height="14.9" Border.Lines="All" Text="[VW_NOMINA.total]" Format="Currency" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Font="Arial, 8pt, style=Bold" Trimming="EllipsisCharacter"/>
+        <TextObject Name="Text127" Top="30.8" Width="563.4" Height="47.25" Text="RECIBI DE [VW_NOMINA.cianom] LA CANTIDAD DE [VW_NOMINA.letras] MISMAS QUE CUBREN LAS PERCEPCIONES QUE ME CORRESPONDEN EN EL PERIODO INDICADO NO EXISTIENDO NINGUN ADEUDO. POR PARTE DE LA EMPRESA PARA EL SUSCRITO. PUES ESTOY TOTALMENTE PAGADO DE MIS SALARIOS Y PRESTACIONES DEVENGADAS HASTA LA FECHA." Font="Arial, 7pt"/>
+        <TextObject Name="Text128" Left="488.75" Width="70.65" Height="15" Border.Lines="All" Fill.Color="LightGray" Text="EXENTO" HorzAlign="Center" Font="Arial, 8pt"/>
+        <TextObject Name="Text129" Left="1" Width="426.15" Height="14" Border.Lines="All" Fill.Color="LightGray" Text="CANTIDAD CON LETRA" Font="Arial, 8pt"/>
+        <TextObject Name="Text130" Left="653.05" Width="93.5" Height="15" Border.Lines="All" Text="[VW_NOMINA.dedu_exento]" Format="Currency" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+        <TextObject Name="Text131" Left="559.45" Width="93.5" Height="15" Border.Lines="All" Text="[VW_NOMINA.perc_exento]" Format="Currency" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+        <TextObject Name="Text132" Top="75.05" Width="595.35" Height="13" Border.Lines="All" Fill.Color="LightGray" Text="SELLO SAT" Font="Arial, 8pt"/>
+        <TextObject Name="Text133" Top="88" Width="595.35" Height="29.9" Border.Lines="All" Text="[VW_NOMINA.sellosat]" Font="Arial, 7pt"/>
+        <TextObject Name="Text134" Top="118.2" Width="595.35" Height="13" Border.Lines="All" Fill.Color="LightGray" Text="CADENA SAT" Font="Arial, 8pt"/>
+        <TextObject Name="Text135" Top="131.25" Width="595.35" Height="31.9" Border.Lines="All" Text="[VW_NOMINA.cadenasat]" Font="Arial, 6pt"/>
+        <TextObject Name="Text136" Top="163.45" Width="595.35" Height="13" Border.Lines="All" Fill.Color="LightGray" Text="SELLO DIGITAL" Font="Arial, 8pt"/>
+        <TextObject Name="Text137" Top="176.05" Width="595.35" Height="27.9" Border.Lines="All" Text="[VW_NOMINA.sellodigital]" Font="Arial, 7pt"/>
+        <BarcodeObject Name="Barcode2" Left="614.25" Top="86.2" Width="113.4" Height="113.4" AutoSize="false" Expression="&quot;?re=&quot;+[VW_NOMINA.ciarfc]+&quot;&amp;rr=&quot;+[VW_NOMINA.clirfc]+&quot;&amp;tt=&quot;+PadLeft(ToString(FormatNumber([VW_NOMINA.total],6)),17,&quot;0&quot;)+&quot;&amp;id=&quot;+[VW_NOMINA.uuid]" Text="" ShowText="false" Barcode="QR Code" Barcode.ErrorCorrection="L" Barcode.Encoding="UTF8" Barcode.QuietZone="true"/>
+        <LineObject Name="Line10" Left="599.8" Top="68.3" Width="142.3"/>
+        <TextObject Name="Text138" Left="602.2" Top="68.3" Width="137.5" Height="18.9" Text="FIRMA DEL EMPLEADO" HorzAlign="Center" Font="Arial, 8pt"/>
+      </DataFooterBand>
+    </DataBand>
+  </ReportPage>
+</Report>

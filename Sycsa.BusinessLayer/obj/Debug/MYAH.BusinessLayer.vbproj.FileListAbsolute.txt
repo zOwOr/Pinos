@@ -1,0 +1,73 @@
+C:\Users\RogerA\Documents\Visual Studio 2013\Projects\Apps2013\Apps2013\MyAH\MYAH\Development\MYAH\MYAH.BusinessLayer\bin\Debug\MYAH.BusinessLayer.dll
+C:\Users\RogerA\Documents\Visual Studio 2013\Projects\Apps2013\Apps2013\MyAH\MYAH\Development\MYAH\MYAH.BusinessLayer\bin\Debug\MYAH.BusinessLayer.pdb
+C:\Users\RogerA\Documents\Visual Studio 2013\Projects\Apps2013\Apps2013\MyAH\MYAH\Development\MYAH\MYAH.BusinessLayer\bin\Debug\MYAH.BusinessLayer.xml
+C:\Users\RogerA\Documents\Visual Studio 2013\Projects\Apps2013\Apps2013\MyAH\MYAH\Development\MYAH\MYAH.BusinessLayer\bin\Debug\MYAH.DataAccessLayer.dll
+C:\Users\RogerA\Documents\Visual Studio 2013\Projects\Apps2013\Apps2013\MyAH\MYAH\Development\MYAH\MYAH.BusinessLayer\bin\Debug\MYAH.Information.dll
+C:\Users\RogerA\Documents\Visual Studio 2013\Projects\Apps2013\Apps2013\MyAH\MYAH\Development\MYAH\MYAH.BusinessLayer\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\RogerA\Documents\Visual Studio 2013\Projects\Apps2013\Apps2013\MyAH\MYAH\Development\MYAH\MYAH.BusinessLayer\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\RogerA\Documents\Visual Studio 2013\Projects\Apps2013\Apps2013\MyAH\MYAH\Development\MYAH\MYAH.BusinessLayer\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+C:\Users\RogerA\Documents\Visual Studio 2013\Projects\Apps2013\Apps2013\MyAH\MYAH\Development\MYAH\MYAH.BusinessLayer\bin\Debug\MYAH.DataAccessLayer.pdb
+C:\Users\RogerA\Documents\Visual Studio 2013\Projects\Apps2013\Apps2013\MyAH\MYAH\Development\MYAH\MYAH.BusinessLayer\bin\Debug\MYAH.DataAccessLayer.xml
+C:\Users\RogerA\Documents\Visual Studio 2013\Projects\Apps2013\Apps2013\MyAH\MYAH\Development\MYAH\MYAH.BusinessLayer\bin\Debug\MYAH.Information.pdb
+C:\Users\RogerA\Documents\Visual Studio 2013\Projects\Apps2013\Apps2013\MyAH\MYAH\Development\MYAH\MYAH.BusinessLayer\bin\Debug\MYAH.Information.xml
+C:\Users\RogerA\Documents\Visual Studio 2013\Projects\Apps2013\Apps2013\MyAH\MYAH\Development\MYAH\MYAH.BusinessLayer\obj\Debug\MYAH.BusinessLayer.vbprojResolveAssemblyReference.cache
+C:\Users\RogerA\Documents\Visual Studio 2013\Projects\Apps2013\Apps2013\MyAH\MYAH\Development\MYAH\MYAH.BusinessLayer\obj\Debug\MYAH.BusinessLayer.Resources.resources
+C:\Users\RogerA\Documents\Visual Studio 2013\Projects\Apps2013\Apps2013\MyAH\MYAH\Development\MYAH\MYAH.BusinessLayer\obj\Debug\MYAH.BusinessLayer.vbproj.GenerateResource.Cache
+C:\Users\RogerA\Documents\Visual Studio 2013\Projects\Apps2013\Apps2013\MyAH\MYAH\Development\MYAH\MYAH.BusinessLayer\obj\Debug\MYAH.BusinessLayer.dll
+C:\Users\RogerA\Documents\Visual Studio 2013\Projects\Apps2013\Apps2013\MyAH\MYAH\Development\MYAH\MYAH.BusinessLayer\obj\Debug\MYAH.BusinessLayer.xml
+C:\Users\RogerA\Documents\Visual Studio 2013\Projects\Apps2013\Apps2013\MyAH\MYAH\Development\MYAH\MYAH.BusinessLayer\obj\Debug\MYAH.BusinessLayer.pdb
+C:\Users\RogerA\Desktop\MYAH\MYAH.BusinessLayer\bin\Debug\MYAH.BusinessLayer.dll
+C:\Users\RogerA\Desktop\MYAH\MYAH.BusinessLayer\bin\Debug\MYAH.BusinessLayer.pdb
+C:\Users\RogerA\Desktop\MYAH\MYAH.BusinessLayer\bin\Debug\MYAH.BusinessLayer.xml
+C:\Users\RogerA\Desktop\MYAH\MYAH.BusinessLayer\bin\Debug\MYAH.DataAccessLayer.dll
+C:\Users\RogerA\Desktop\MYAH\MYAH.BusinessLayer\bin\Debug\MYAH.Information.dll
+C:\Users\RogerA\Desktop\MYAH\MYAH.BusinessLayer\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\RogerA\Desktop\MYAH\MYAH.BusinessLayer\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\RogerA\Desktop\MYAH\MYAH.BusinessLayer\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+C:\Users\RogerA\Desktop\MYAH\MYAH.BusinessLayer\bin\Debug\MYAH.DataAccessLayer.pdb
+C:\Users\RogerA\Desktop\MYAH\MYAH.BusinessLayer\bin\Debug\MYAH.DataAccessLayer.xml
+C:\Users\RogerA\Desktop\MYAH\MYAH.BusinessLayer\bin\Debug\MYAH.Information.pdb
+C:\Users\RogerA\Desktop\MYAH\MYAH.BusinessLayer\bin\Debug\MYAH.Information.xml
+C:\Users\RogerA\Desktop\MYAH\MYAH.BusinessLayer\obj\Debug\MYAH.BusinessLayer.vbprojResolveAssemblyReference.cache
+C:\Users\RogerA\Desktop\MYAH\MYAH.BusinessLayer\obj\Debug\MYAH.BusinessLayer.Resources.resources
+C:\Users\RogerA\Desktop\MYAH\MYAH.BusinessLayer\obj\Debug\MYAH.BusinessLayer.vbproj.GenerateResource.Cache
+C:\Users\RogerA\Desktop\MYAH\MYAH.BusinessLayer\obj\Debug\MYAH.BusinessLayer.dll
+C:\Users\RogerA\Desktop\MYAH\MYAH.BusinessLayer\obj\Debug\MYAH.BusinessLayer.xml
+C:\Users\RogerA\Desktop\MYAH\MYAH.BusinessLayer\obj\Debug\MYAH.BusinessLayer.pdb
+E:\Desarrollo\Codigo\MYAH\MYAH.BusinessLayer\bin\Debug\MYAH.BusinessLayer.dll
+E:\Desarrollo\Codigo\MYAH\MYAH.BusinessLayer\bin\Debug\MYAH.BusinessLayer.pdb
+E:\Desarrollo\Codigo\MYAH\MYAH.BusinessLayer\bin\Debug\MYAH.BusinessLayer.xml
+E:\Desarrollo\Codigo\MYAH\MYAH.BusinessLayer\bin\Debug\MYAH.DataAccessLayer.dll
+E:\Desarrollo\Codigo\MYAH\MYAH.BusinessLayer\bin\Debug\MYAH.Information.dll
+E:\Desarrollo\Codigo\MYAH\MYAH.BusinessLayer\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\Desarrollo\Codigo\MYAH\MYAH.BusinessLayer\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+E:\Desarrollo\Codigo\MYAH\MYAH.BusinessLayer\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+E:\Desarrollo\Codigo\MYAH\MYAH.BusinessLayer\bin\Debug\MYAH.DataAccessLayer.pdb
+E:\Desarrollo\Codigo\MYAH\MYAH.BusinessLayer\bin\Debug\MYAH.DataAccessLayer.xml
+E:\Desarrollo\Codigo\MYAH\MYAH.BusinessLayer\bin\Debug\MYAH.Information.pdb
+E:\Desarrollo\Codigo\MYAH\MYAH.BusinessLayer\bin\Debug\MYAH.Information.xml
+E:\Desarrollo\Codigo\MYAH\MYAH.BusinessLayer\obj\Debug\MYAH.BusinessLayer.vbprojResolveAssemblyReference.cache
+E:\Desarrollo\Codigo\MYAH\MYAH.BusinessLayer\obj\Debug\MYAH.BusinessLayer.Resources.resources
+E:\Desarrollo\Codigo\MYAH\MYAH.BusinessLayer\obj\Debug\MYAH.BusinessLayer.vbproj.GenerateResource.Cache
+E:\Desarrollo\Codigo\MYAH\MYAH.BusinessLayer\obj\Debug\MYAH.BusinessLayer.dll
+E:\Desarrollo\Codigo\MYAH\MYAH.BusinessLayer\obj\Debug\MYAH.BusinessLayer.xml
+E:\Desarrollo\Codigo\MYAH\MYAH.BusinessLayer\obj\Debug\MYAH.BusinessLayer.pdb
+D:\Sycsa\MYAH\MYAH.BusinessLayer\bin\Debug\MYAH.BusinessLayer.dll
+D:\Sycsa\MYAH\MYAH.BusinessLayer\bin\Debug\MYAH.BusinessLayer.pdb
+D:\Sycsa\MYAH\MYAH.BusinessLayer\bin\Debug\MYAH.BusinessLayer.xml
+D:\Sycsa\MYAH\MYAH.BusinessLayer\bin\Debug\MYAH.DataAccessLayer.dll
+D:\Sycsa\MYAH\MYAH.BusinessLayer\bin\Debug\MYAH.Information.dll
+D:\Sycsa\MYAH\MYAH.BusinessLayer\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Sycsa\MYAH\MYAH.BusinessLayer\bin\Debug\CONECTASQL.dll
+D:\Sycsa\MYAH\MYAH.BusinessLayer\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Sycsa\MYAH\MYAH.BusinessLayer\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+D:\Sycsa\MYAH\MYAH.BusinessLayer\bin\Debug\MYAH.DataAccessLayer.pdb
+D:\Sycsa\MYAH\MYAH.BusinessLayer\bin\Debug\MYAH.DataAccessLayer.xml
+D:\Sycsa\MYAH\MYAH.BusinessLayer\bin\Debug\MYAH.Information.pdb
+D:\Sycsa\MYAH\MYAH.BusinessLayer\bin\Debug\MYAH.Information.xml
+D:\Sycsa\MYAH\MYAH.BusinessLayer\obj\Debug\MYAH.BusinessLayer.vbprojResolveAssemblyReference.cache
+D:\Sycsa\MYAH\MYAH.BusinessLayer\obj\Debug\MYAH.BusinessLayer.Resources.resources
+D:\Sycsa\MYAH\MYAH.BusinessLayer\obj\Debug\MYAH.BusinessLayer.vbproj.GenerateResource.Cache
+D:\Sycsa\MYAH\MYAH.BusinessLayer\obj\Debug\MYAH.BusinessLayer.dll
+D:\Sycsa\MYAH\MYAH.BusinessLayer\obj\Debug\MYAH.BusinessLayer.xml
+D:\Sycsa\MYAH\MYAH.BusinessLayer\obj\Debug\MYAH.BusinessLayer.pdb

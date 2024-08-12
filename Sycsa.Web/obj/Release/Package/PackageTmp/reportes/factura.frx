@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="Vb" ReferencedAssemblies="System.dll&#13;&#10;System.Drawing.dll&#13;&#10;System.Windows.Forms.dll&#13;&#10;System.Data.dll&#13;&#10;System.Xml.dll&#13;&#10;FastReport.RPTImportPlugin.dll" ReportInfo.Created="12/22/2013 21:51:44" ReportInfo.Modified="05/04/2024 09:30:24" ReportInfo.CreatorVersion="2014.1.5.0" PrintSettings.Printer="factura" PrintSettings.SavePrinterWithReport="true">
+  <ScriptText>Imports System
+Imports System.Collections
+Imports System.Collections.Generic
+Imports System.ComponentModel
+Imports System.Windows.Forms
+Imports System.Drawing
+Imports Microsoft.VisualBasic
+Imports FastReport
+Imports FastReport.Data
+Imports FastReport.Dialog
+Imports FastReport.Table
+Imports FastReport.Barcode
+Imports FastReport.Utils
+
+Namespace FastReport
+  Public Class ReportScript
+    Private Sub _StartPage(ByVal sender As object, ByVal e As EventArgs)
+      If (CType(Report.GetColumnValue(&quot;DSTABLA.estatussat&quot;), String) = &quot;GEN&quot;) Then
+        Page1.Watermark.Enabled = True
+        Page1.Watermark.Text = &quot;P E N D I E N T E&quot;
+      End If
+      If (CType(Report.GetColumnValue(&quot;DSTABLA.estatussat&quot;), String) = &quot; &quot;) Then
+        Page1.Watermark.Enabled = True
+        Page1.Watermark.Text = &quot;P E N D I E N T E&quot;
+      End If
+      If (Trim(CType(Report.GetColumnValue(&quot;DSTABLA.estatussat&quot;), String)) = &quot;CAN&quot;) Then
+        Page1.Watermark.Enabled = True
+        Page1.Watermark.Text = &quot;C A N C E L A D O&quot;
+      End If
+      If (CType(Report.GetColumnValue(&quot;DSTABLA.estatussat&quot;), String) = &quot;PEN&quot;) Then
+        Page1.Watermark.Enabled = True
+        Page1.Watermark.Text = &quot;P E N D I E N T E&quot;
+      End If
+    End Sub
+  End Class
+End Namespace
+</ScriptText>
+  <Dictionary>
+    <TableDataSource Name="DSTABLA" ReferenceName="Data.DSTABLA" DataType="System.Int32" Enabled="true">
+      <Column Name="ciarfc" DataType="System.String"/>
+      <Column Name="cianom" DataType="System.String"/>
+      <Column Name="ciadir" DataType="System.String"/>
+      <Column Name="ciacol" DataType="System.String"/>
+      <Column Name="ciacd" DataType="System.String"/>
+      <Column Name="ciacp" DataType="System.String"/>
+      <Column Name="ciapais" DataType="System.String"/>
+      <Column Name="ciaest" DataType="System.String"/>
+      <Column Name="cianum" DataType="System.String"/>
+      <Column Name="clavecfd" DataType="System.String"/>
+      <Column Name="ciacerti" DataType="System.Byte[]" BindableControl="Picture"/>
+      <Column Name="ciakey" DataType="System.Byte[]" BindableControl="Picture"/>
+      <Column Name="rutalogo" DataType="System.String"/>
+      <Column Name="ciatel" DataType="System.String"/>
+      <Column Name="ciafax" DataType="System.String"/>
+      <Column Name="ciapaginaweb" DataType="System.String"/>
+      <Column Name="ciaemail" DataType="System.String"/>
+      <Column Name="certificadoarch" DataType="System.Byte[]" BindableControl="Picture"/>
+      <Column Name="llave" DataType="System.Byte[]" BindableControl="Picture"/>
+      <Column Name="nocertificado" DataType="System.String"/>
+      <Column Name="series" DataType="System.String"/>
+      <Column Name="letras" DataType="System.String"/>
+      <Column Name="cvekey" DataType="System.String"/>
+      <Column Name="Formato" DataType="System.String"/>
+      <Column Name="FormatoEM" DataType="System.String"/>
+      <Column Name="IMPRESORA" DataType="System.String"/>
+      <Column Name="COPIAS" DataType="System.String"/>
+      <Column Name="REGIMEN" DataType="System.String"/>
+      <Column Name="leyenda1" DataType="System.String"/>
+      <Column Name="leyenda2" DataType="System.String"/>
+      <Column Name="leyenda3" DataType="System.String"/>
+      <Column Name="cvecondvta" DataType="System.String"/>
+      <Column Name="clinom" DataType="System.String"/>
+      <Column Name="clidir" DataType="System.String"/>
+      <Column Name="clicol" DataType="System.String"/>
+      <Column Name="cliRFC" DataType="System.String"/>
+      <Column Name="clicp" DataType="System.String"/>
+      <Column Name="cliciu" DataType="System.String"/>
+      <Column Name="cliest" DataType="System.String"/>
+      <Column Name="clinum" DataType="System.String"/>
+      <Column Name="clitel" DataType="System.String"/>
+      <Column Name="num_cert" DataType="System.String"/>
+      <Column Name="partida" DataType="System.Int32"/>
+      <Column Name="codigo_pro" DataType="System.Int32"/>
+      <Column Name="unidad" DataType="System.String"/>
+      <Column Name="codigo_pv" DataType="System.String"/>
+      <Column Name="codigo" DataType="System.String"/>
+      <Column Name="descripcion" DataType="System.String"/>
+      <Column Name="cantidad" DataType="System.Double"/>
+      <Column Name="precio_uni" DataType="System.Double"/>
+      <Column Name="importe" DataType="System.Double"/>
+      <Column Name="tasa_iva" DataType="System.Double"/>
+      <Column Name="tipo_cambio" DataType="System.Double"/>
+      <Column Name="moneda" DataType="System.String"/>
+      <Column Name="clave" DataType="System.Int32"/>
+      <Column Name="EMPRESA" DataType="System.Int32"/>
+      <Column Name="tipo_doc" DataType="System.String"/>
+      <Column Name="vendedor" DataType="System.String"/>
+      <Column Name="cveser" DataType="System.String"/>
+      <Column Name="folio" DataType="System.String"/>
+      <Column Name="fecha" DataType="System.DateTime"/>
+      <Column Name="lista" DataType="System.Int32"/>
+      <Column Name="subs_total" DataType="System.Double"/>
+      <Column Name="CARGO_EX" DataType="System.Double"/>
+      <Column Name="sub_total" DataType="System.Double"/>
+      <Column Name="tasa_iva1" DataType="System.Double"/>
+      <Column Name="tot_iva" DataType="System.Double"/>
+      <Column Name="DESC_VOL" DataType="System.Double"/>
+      <Column Name="ret_iva" DataType="System.Double"/>
+      <Column Name="ret_isr" DataType="System.Double"/>
+      <Column Name="total" DataType="System.Double"/>
+      <Column Name="total_mn" DataType="System.Double"/>
+      <Column Name="saldo_mn" DataType="System.Double"/>
+      <Column Name="CAMBIO" DataType="System.Double"/>
+      <Column Name="cadenaoriginal" DataType="System.String"/>
+      <Column Name="sellodigital" DataType="System.String"/>
+      <Column Name="estatus" DataType="System.String"/>
+      <Column Name="estatussat" DataType="System.String"/>
+      <Column Name="valordeclarado" DataType="System.Double"/>
+      <Column Name="metodopago" DataType="System.String"/>
+      <Column Name="numctapago" DataType="System.String"/>
+      <Column Name="cond_venta" DataType="System.String"/>
+      <Column Name="factura" DataType="System.Int32"/>
+      <Column Name="adDenda" DataType="System.String"/>
+      <Column Name="enviada" DataType="System.Decimal"/>
+      <Column Name="pedido" DataType="System.String"/>
+      <Column Name="remision" DataType="System.String"/>
+      <Column Name="fechapedido" DataType="System.DateTime"/>
+      <Column Name="uuid" DataType="System.String"/>
+      <Column Name="certificadosat" DataType="System.String"/>
+      <Column Name="certificadofecha" DataType="System.String"/>
+      <Column Name="sellosat" DataType="System.String"/>
+      <Column Name="cadenasat" DataType="System.String"/>
+      <Column Name="afectado" DataType="System.Int32"/>
+      <Column Name="fecha_alta" DataType="System.DateTime"/>
+      <Column Name="USUARIO_ALTA" DataType="System.String"/>
+      <Column Name="USUARIO_BAJA" DataType="System.String"/>
+      <Column Name="descrip_am" DataType="System.String"/>
+      <Column Name="cvecliori" DataType="System.String"/>
+      <Column Name="cveclides" DataType="System.String"/>
+      <Column Name="camion" DataType="System.Int32"/>
+      <Column Name="chofer" DataType="System.Int32"/>
+      <Column Name="archivoxml" DataType="System.String"/>
+      <Column Name="FORMATO_ARCHIVO" DataType="System.Byte[]" BindableControl="Picture"/>
+      <Column Name="FORMATOem_ARCHIVO" DataType="System.Byte[]" BindableControl="Picture"/>
+      <Column Name="clides_nombre" DataType="System.String"/>
+      <Column Name="clides_calle" DataType="System.String"/>
+      <Column Name="CliDes_numero" DataType="System.String"/>
+      <Column Name="CliDes_cp" DataType="System.String"/>
+      <Column Name="CliDes_entre" DataType="System.String"/>
+      <Column Name="CliDes_tel" DataType="System.String"/>
+      <Column Name="CliDes_contacto" DataType="System.String"/>
+      <Column Name="CliOri_nombre" DataType="System.String"/>
+      <Column Name="CliOri_calle" DataType="System.String"/>
+      <Column Name="CliOri_numero" DataType="System.String"/>
+      <Column Name="CliOri_cp" DataType="System.String"/>
+      <Column Name="CliOri_entre" DataType="System.String"/>
+      <Column Name="CliOri_tel" DataType="System.String"/>
+      <Column Name="contacto" DataType="System.String"/>
+      <Column Name="chof_descrip" DataType="System.String"/>
+      <Column Name="cam_nom_corto" DataType="System.String"/>
+      <Column Name="cam_placas" DataType="System.String"/>
+      <Column Name="cam_numeroserie" DataType="System.String"/>
+      <Column Name="cam_numeroeco" DataType="System.String"/>
+      <Column Name="cam_marca" DataType="System.String"/>
+      <Column Name="cam_modelo" DataType="System.String"/>
+      <Column Name="cam_dueno" DataType="System.String"/>
+      <Column Name="cam_asegurador" DataType="System.String"/>
+      <Column Name="cam_poliza" DataType="System.String"/>
+      <Column Name="cam_fecha_ven" DataType="System.DateTime"/>
+      <Column Name="chof_operador" DataType="System.String"/>
+      <Column Name="chof_calle" DataType="System.String"/>
+      <Column Name="chof_numero" DataType="System.String"/>
+      <Column Name="chof_cp" DataType="System.String"/>
+      <Column Name="chof_tel" DataType="System.String"/>
+      <Column Name="chof_regimss" DataType="System.String"/>
+      <Column Name="chof_numlicencia" DataType="System.String"/>
+      <Column Name="chof_vencimiento" DataType="System.DateTime"/>
+      <Column Name="CliDes_ciudad" DataType="System.String"/>
+      <Column Name="CliDes_estado" DataType="System.String"/>
+      <Column Name="Cliori_ciudad" DataType="System.String"/>
+      <Column Name="Cliori_estado" DataType="System.String"/>
+      <Column Name="entre_calles" DataType="System.String"/>
+      <Column Name="Clides_colonia" DataType="System.String"/>
+      <Column Name="CliDes_rfc" DataType="System.String"/>
+      <Column Name="CliOri_colonia" DataType="System.String"/>
+      <Column Name="Cliori_rfc" DataType="System.String"/>
+      <Column Name="remisiones" DataType="System.String"/>
+      <Column Name="clipais" DataType="System.String"/>
+      <Column Name="T_DESC_VOL" DataType="System.Double"/>
+      <Column Name="tasa_ieps" DataType="System.Double"/>
+      <Column Name="DIAS_RENTA" DataType="System.Int32"/>
+      <Column Name="CANT_PZAS" DataType="System.Int32"/>
+      <Column Name="ORDEN_RENTA" DataType="System.Int32"/>
+      <Column Name="FECHA_INI" DataType="System.DateTime"/>
+      <Column Name="FECHA_FIN" DataType="System.DateTime"/>
+      <Column Name="dv_solicitante" DataType="System.String"/>
+      <Column Name="agente_descrip" DataType="System.String"/>
+      <Column Name="DV_CLIENTE" DataType="System.Int32"/>
+      <Column Name="DV_CLIMOS" DataType="System.String"/>
+      <Column Name="DV_FECHA_BAJA" DataType="System.DateTime"/>
+      <Column Name="tot_ieps" DataType="System.Double"/>
+      <Column Name="DV_OBSERVACIONES" DataType="System.String"/>
+      <Column Name="DV_REFERENCIA" DataType="System.String"/>
+      <Column Name="DV_orden_comp" DataType="System.String"/>
+      <Column Name="DV_EMBARCAR_A" DataType="System.String"/>
+      <Column Name="coa" DataType="System.Double"/>
+      <Column Name="VOL_X_UNI" DataType="System.Double"/>
+      <Column Name="SerieMetodo" DataType="System.String"/>
+      <Column Name="serieRegimen" DataType="System.String"/>
+      <Column Name="DV_FONDOGARANTIA" DataType="System.Double"/>
+      <Column Name="DocvenUsocfdi" DataType="System.String"/>
+      <Column Name="claveprodserv" DataType="System.String"/>
+      <Column Name="claveunidad" DataType="System.String"/>
+      <Column Name="DESC_1" DataType="System.Double"/>
+      <Column Name="DESC_2" DataType="System.Double"/>
+      <Column Name="imp_desc" DataType="System.Double"/>
+      <Column Name="ancho" DataType="System.Double"/>
+      <Column Name="espesor" DataType="System.Double"/>
+      <Column Name="largo" DataType="System.Double"/>
+      <Column Name="cant_pzas1" DataType="System.Int32"/>
+      <Column Name="fecha_Emision" DataType="System.String"/>
+      <Column Name="FORMATOEMB1" DataType="System.String"/>
+      <Column Name="IMPRESORAEMB" DataType="System.String"/>
+      <Column Name="COPIASEMB" DataType="System.String"/>
+      <Column Name="coordenadas" DataType="System.String"/>
+      <Column Name="tipo_cliente" DataType="System.String"/>
+      <Column Name="CLI_ZONA" DataType="System.String"/>
+      <Column Name="CLI_CHOFER" DataType="System.String"/>
+      <Column Name="EMB_1" DataType="System.String"/>
+      <Column Name="EMB_2" DataType="System.String"/>
+      <Column Name="EMB_3" DataType="System.String"/>
+      <Column Name="TELEFONO" DataType="System.String"/>
+      <Column Name="cant_surtida" DataType="System.Double"/>
+      <Column Name="codigo_fac" DataType="System.String"/>
+      <Column Name="ret_local_1" DataType="System.Double"/>
+      <Column Name="ret_local_2" DataType="System.Double"/>
+      <Column Name="ret_local_3" DataType="System.Double"/>
+      <Column Name="ret_local_imp_1" DataType="System.Double"/>
+      <Column Name="ret_local_imp_2" DataType="System.Double"/>
+      <Column Name="ret_local_imp_3" DataType="System.Double"/>
+      <Column Name="ret_total" DataType="System.Double"/>
+      <Column Name="FORMATOemb1_ARCHIVO" DataType="System.Byte[]" BindableControl="Picture"/>
+      <Column Name="cia2" DataType="System.String"/>
+      <Column Name="cli_metodopago" DataType="System.String"/>
+      <Column Name="IMP_IVA" DataType="System.Double"/>
+      <Column Name="IMP_IEPS" DataType="System.Double"/>
+      <Column Name="peso_x_pie" DataType="System.Double"/>
+      <Column Name="imagen" DataType="System.String"/>
+      <Column Name="cli_lista" DataType="System.Int32"/>
+      <Column Name="CHOFER_descrip" DataType="System.String"/>
+      <Column Name="COBRADOR_descrip" DataType="System.String"/>
+      <Column Name="TASA_DESC1" DataType="System.Double"/>
+      <Column Name="fecha_venc" DataType="System.DateTime"/>
+      <Column Name="fecha_afe" DataType="System.DateTime"/>
+      <Column Name="ESTANTE" DataType="System.String"/>
+      <Column Name="USUARIO_AUT" DataType="System.String"/>
+      <Column Name="cia_corto" DataType="System.String"/>
+      <Column Name="cliregimen" DataType="System.String"/>
+      <Column Name="cant_emp" DataType="System.Int32"/>
+      <Column Name="fecha1" DataType="System.DateTime"/>
+      <Column Name="qr" DataType="System.String"/>
+      <Column Name="clides_catcolonia" DataType="System.String"/>
+      <Column Name="clides_catlocalidad" DataType="System.String"/>
+      <Column Name="clides_catciudad" DataType="System.String"/>
+      <Column Name="clides_catestado" DataType="System.String"/>
+      <Column Name="clides_catpais" DataType="System.String"/>
+      <Column Name="cliori_catcolonia" DataType="System.String"/>
+      <Column Name="cliori_catlocalidad" DataType="System.String"/>
+      <Column Name="cliori_catciudad" DataType="System.String"/>
+      <Column Name="cliori_catestado" DataType="System.String"/>
+      <Column Name="cliori_catpais" DataType="System.String"/>
+      <Column Name="cam_primaseguro" DataType="System.Double"/>
+      <Column Name="numpermisosct" DataType="System.String"/>
+      <Column Name="permsct" DataType="System.String"/>
+      <Column Name="configvehicular" DataType="System.String"/>
+      <Column Name="chof_rfc" DataType="System.String"/>
+      <Column Name="placas_remolque" DataType="System.String"/>
+      <Column Name="subtiporem" DataType="System.String"/>
+    </TableDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" PaperWidth="215.9" PaperHeight="279.4" RawPaperSize="1" LeftMargin="6" TopMargin="6" RightMargin="6" BottomMargin="6" FirstPageSource="15" OtherPagesSource="15" Guides="645.8,744.2,169.35,607.85,647.8,740.8,646.35,744.15,479.95,744.55,174.3,602.9,9.45,162.05,0,500.35,3,494.9,493.9,226.8,236.25,406.35,58.7,184.75,533.5,57.7,129.75,533.4,639.8,640.1,746.5,1,160,501.85,605.8,746.8,503.85,601.85,504.35,601.35,605.55,743.6,130.3,185,298.3,595.35,596.35,159,-0.45,594.9,482.95,481.95,199.8,120.85,519.75,623.7,520.2,746.95,521.75,619.75,522.3,619.3,742.2,622.7,10,112.95,2.77,120.17,122.85,289.35,288.35,121.85,520.75,85.05,604.8,718.2" Watermark.Enabled="true" StartPageEvent="_StartPage">
+    <ReportTitleBand Name="ReportTitle1" Width="770.74" Height="94.5" Fill.Color="White" Guides="19.9,42.8,77.15,94.5,0,28.35,24.35,43.25,41.25,60.15,23.35,36.25,2.45,21.35,5.9,17.9,56.7,75.6,100.95,119.85,122.85,139.75,12.45,125.05">
+      <TextObject Name="Text102" Left="9.72" Top="76.8" Width="485.75" Height="14.35" Text="RFC. CCF-221214-IZ4" Font="Arial, 7pt"/>
+      <TextObject Name="Text22" Left="608.37" Top="15" Width="140.25" Height="22.35" Text="[DSTABLA.folio]" HorzAlign="Center" Font="Arial, 14pt"/>
+      <TextObject Name="Text48" Left="608.37" Top="-1.45" Width="140.25" Height="21.45" Text="FACTURA" HorzAlign="Center" Font="Arial, 14pt, style=Bold"/>
+      <TextObject Name="Text56" Left="487.77" Top="73.15" Width="264.6" Height="18.9" Text="EXPEDIDO EN: MONTERREY NUEVO LEON" HorzAlign="Right" Font="Arial, 9pt"/>
+      <TextObject Name="Text4" Left="589.47" Top="58.35" Width="159.15" Height="14.9" Text="[DSTABLA.fecha_alta]" HorzAlign="Right" Font="Arial, 9pt"/>
+      <TextObject Name="Text60" Left="589.47" Top="45.45" Width="159.15" Height="12" Text="FECHA DE EMISION Y HORA" HorzAlign="Right" Font="Arial, 8pt"/>
+      <TextObject Name="Text1" Left="9.45" Top="17.9" Width="245.7" Height="28.35" Text="COMERCIALIZADORA Y CONSULTORIA LA FAVORITA S.A. DE C.V.&#13;&#10;" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text2" Left="9.45" Top="48.25" Width="236.25" Height="9.45" Text="[DSTABLA.ciadir] [DSTABLA.cianum]" Font="Arial, 7pt"/>
+      <TextObject Name="Text105" Left="9.45" Top="57.7" Width="236.25" Height="9.45" Text="COL.[DSTABLA.ciacol] C.P. [DSTABLA.ciacp]" Font="Arial, 7pt"/>
+      <TextObject Name="Text106" Left="9.45" Top="67.15" Width="236.25" Height="9.45" Text="[DSTABLA.ciacd], [DSTABLA.ciaest]" Font="Arial, 7pt"/>
+      <PictureObject Name="Picture1" Left="236.25" Top="-18.9" Width="311.85" Height="113.4" Image="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"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="98.5" Width="770.74" Height="127.3" Fill.Color="White" Guides="17.9,92.5,18.9,37.8,75.6,94.5,96.95,111.85,0,3.45,17.45,-0.1,92.4,-0.65,29.25,27.25,45.15,43.15,61.05,7.35,19.35,28.8,42.8,47.7,61.7,58.7,76.6,75.15,93.05,61.25,75.25,90.6,-1,25.9,29.35,45.25,59.15,76.8,93.7">
+      <TextObject Name="Text14" Left="188.3" Top="111.5" Width="264.9" Height="13.9" Border.Lines="All" Fill.Color="LightGray" Text="DESCRIPCON" HorzAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text28" Left="111.4" Top="111.5" Width="48.15" Height="13.9" Border.Lines="All" Fill.Color="LightGray" Text="CANT." HorzAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text29" Left="453.35" Top="111.5" Width="77.45" Height="13.9" Border.Lines="All" Fill.Color="LightGray" Text="PRECIO UNI." HorzAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text30" Left="530.7" Top="111.5" Width="75.45" Height="13.9" Border.Lines="All" Fill.Color="LightGray" Text="IMPORTE" HorzAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <RichObject Name="Rich1" Left="7" Top="13.9" Width="444.6" Height="98.15" Border.Lines="All" Text="{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1034{\fonttbl{\f0\fnil\fcharset0 Arial;}{\f1\fnil\fcharset0 Tahoma;}}&#13;&#10;{\*\generator Riched20 10.0.14393}\viewkind4\uc1 &#13;&#10;\pard\fs20 ( [DSTABLA.DV_CLIENTE] )[DSTABLA.clinom]\par&#13;&#10;[Trim([DSTABLA.clidir])] [Trim([DSTABLA.clinum])]\par&#13;&#10;[Trim([DSTABLA.clicol])]\par&#13;&#10;[Trim([DSTABLA.cliciu])], [Trim([DSTABLA.cliest])]\par&#13;&#10;RFC: [DSTABLA.clirfc]\tab\tab\tab CP: [Trim([DSTABLA.clicp])]\par&#13;&#10;REGIMEN:[DSTABLA.cliregimen]\f1\par&#13;&#10;}&#13;&#10;"/>
+      <TextObject Name="Text6" Left="7" Width="444.6" Height="13.9" Border.Lines="All" Fill.Color="LightGray" Text="FACTURAR A:" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text70" Left="452.05" Width="317.4" Height="13.9" Border.Lines="All" Fill.Color="LightGray" Font="Arial, 9pt, style=Bold"/>
+      <RichObject Name="Rich4" Left="452.05" Top="13.9" Width="317.4" Height="98.15" Border.Lines="All" CanBreak="false" Text="{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1034{\fonttbl{\f0\fnil\fcharset0 Tahoma;}{\f1\fnil Tahoma;}}&#13;&#10;{\*\generator Riched20 10.0.19041}\viewkind4\uc1 &#13;&#10;\pard\f0\fs16\lang2058 Folio Fiscal: [DSTABLA.uuid]\par&#13;&#10;No. Certificado: [DSTABLA.num_cert]\par&#13;&#10;No. Certificado Sat: [DSTABLA.certificadosat]\par&#13;&#10;Fecha Emision: [DSTABLA.fecha_alta]\par&#13;&#10;Fecha Certificacion: [DSTABLA.certificadofecha]\par&#13;&#10;Vendedor: [DSTABLA.agente_descrip]\f1\par&#13;&#10;}&#13;&#10;"/>
+      <TextObject Name="Text92" Left="7" Top="111.5" Width="46.8" Height="13.9" Border.Lines="All" Fill.Color="LightGray" Text="CVE UNI" HorzAlign="Center" VertAlign="Center" Font="Arial, 7pt, style=Bold"/>
+      <TextObject Name="Text94" Left="53.5" Top="111.5" Width="58.45" Height="13.9" Border.Lines="All" Fill.Color="LightGray" Text="CVE PROD" HorzAlign="Center" VertAlign="Center" Font="Arial, 7pt, style=Bold"/>
+      <TextObject Name="Text96" Left="605.25" Top="111.5" Width="81.45" Height="13.9" Border.Lines="All" Fill.Color="LightGray" Text="IVA" HorzAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text98" Left="686.85" Top="111.5" Width="82" Height="13.9" Border.Lines="All" Fill.Color="LightGray" Text="IMP. TOTAL" HorzAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text103" Left="159.65" Top="111.5" Width="30.15" Height="13.9" Border.Lines="All" Fill.Color="LightGray" Text="UNI" HorzAlign="Center" Font="Arial, 8pt, style=Bold"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="229.8" Width="770.74" Height="13.9" Fill.Color="White" CanGrow="true" CanBreak="true" Guides="0,18.9" DataSource="DSTABLA" KeepTogether="true">
+      <TextObject Name="Text15" Left="111.4" Width="48.15" Height="13.9" Text="[DSTABLA.cantidad]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="0" Format.DecimalSeparator="." Format.GroupSeparator="" Format.NegativePattern="1" HorzAlign="Center" WordWrap="false" Font="Arial, 9pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text16" Left="453.35" Width="77.45" Height="13.9" Text="[DSTABLA.precio_uni]" Format="Currency" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.CurrencySymbol="$" Format.PositivePattern="2" Format.NegativePattern="12" HorzAlign="Right" WordWrap="false" Font="Arial, 9pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text17" Left="530.7" Width="75.45" Height="13.9" Text="[DSTABLA.importe]" Format="Currency" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.CurrencySymbol="$" Format.PositivePattern="2" Format.NegativePattern="12" HorzAlign="Right" WordWrap="false" Font="Arial, 9pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text93" Left="7" Width="46.8" Height="13.9" Text="[DSTABLA.claveunidad]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="0" Format.DecimalSeparator="." Format.GroupSeparator="" Format.NegativePattern="1" HorzAlign="Center" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text95" Left="53.5" Width="58.45" Height="13.9" Text="[DSTABLA.claveprodserv]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="0" Format.DecimalSeparator="." Format.GroupSeparator="" Format.NegativePattern="1" HorzAlign="Center" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text97" Left="605.25" Width="81.45" Height="13.9" Text="[DSTABLA.IMP_IVA]" Format="Currency" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.CurrencySymbol="$" Format.PositivePattern="2" Format.NegativePattern="12" HorzAlign="Right" WordWrap="false" Font="Arial, 9pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text99" Left="686.85" Width="82" Height="13.9" Text="[Abs([DSTABLA.importe]+[DSTABLA.IMP_IVA]+[DSTABLA.IMP_IEPS])]" Format="Currency" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.CurrencySymbol="$" Format.PositivePattern="2" Format.NegativePattern="12" HorzAlign="Right" WordWrap="false" Font="Arial, 9pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text13" Left="188.3" Top="-0.55" Width="264.9" Height="13.9" CanGrow="true" GrowToBottom="true" Text="[IIf([DSTABLA.codigo_pro]=1 OR [DSTABLA.codigo_pro]=1470 OR [DSTABLA.codigo_pro]=1471 OR [DSTABLA.codigo_pro]=1472, [DSTABLA.descrip_am], [DSTABLA.descripcion])]&#13;&#10;[IIf(([DSTABLA.codigo_pro]&lt;&gt;1) AND([DSTABLA.codigo_pro]&lt;&gt;1470) AND([DSTABLA.codigo_pro]&lt;&gt;1471) AND([DSTABLA.codigo_pro]&lt;&gt;1472), [DSTABLA.descrip_am],&quot;&quot;)]" Font="Arial, 9pt"/>
+      <TextObject Name="Text104" Left="159.65" Top="-0.1" Width="30.15" Height="13.9" Text="[DSTABLA.unidad]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="0" Format.DecimalSeparator="." Format.GroupSeparator="" Format.NegativePattern="1" HorzAlign="Center" WordWrap="false" Font="Arial, 9pt" Trimming="EllipsisCharacter"/>
+    </DataBand>
+    <ReportSummaryBand Name="ReportSummary1" Top="247.7" Width="770.74" Fill.Color="White"/>
+    <PageFooterBand Name="PageFooter1" Top="251.7" Width="770.74" Height="266.6" Fill.Color="White" Guides="75.05,93.95,96.95,115.85,100.35,114.35,157.1,176,158.5,172.5,204.35,223.25,205.75,219.75,153.65,174.55,202.9,221.8,259.6,0,37.8,18.9,1,15,41.25,50.7,40.7,59.6,58.15,77.05,1.45,19.35,16.9,35.8,33.8,52.7,20.45,33.45,36.8,50.8,20.9,3.45,18.35,51.7,44.8,58.7,61.15,78.6,89.5,60.15,75.6,77.6,92.5,44.25,17.45,279.6,294.5,265.6,280.5,141.75,255.15">
+      <TextObject Name="Text19" Left="6" Top="98.5" Width="638.05" Height="33.7" Border.Lines="All" Text="[DSTABLA.sellosat]" Font="Arial, 7pt"/>
+      <TextObject Name="Text20" Left="6" Top="143.2" Width="638.05" Height="42.8" Border.Lines="All" Text="[DSTABLA.cadenasat]" Font="Arial, 7pt"/>
+      <TextObject Name="Text21" Left="6" Top="197.45" Width="760.9" Height="38.8" Border.Lines="All" Text="[DSTABLA.sellodigital]" Font="Arial, 7pt"/>
+      <TextObject Name="Text8" Left="6" Top="12.9" Width="547.1" Height="12.9" Border.Lines="All" CanBreak="false" Text="** [DSTABLA.letras] **" WordWrap="false" Font="Arial, 8pt"/>
+      <TextObject Name="Text55" Left="6" Top="243.7" Width="745.45" Height="13.25" Text="ESTE DOCUMENTO ES UNA REPRESENTACION IMPRESA DE UN CFDI.          USO DE CFDI: [DSTABLA.DocvenUsocfdi]" HorzAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text57" Left="6" Top="235.6" Width="745.45" Height="10.35" Text="TIPO DE COMPROBANTE: INGRESO   EFECTOS FISCALES AL PAGO. CFDI 4.0" HorzAlign="Center" Font="Arial, 7pt, style=Bold"/>
+      <TextObject Name="Text38" Left="10.1" Top="27.25" Width="110.3" Height="10.9" Text="FORMA DE PAGO" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text40" Left="122.95" Top="27.25" Width="146.6" Height="10.9" Text="[DSTABLA.metodopago]" VertAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text39" Left="10.1" Top="37.7" Width="110.3" Height="10.9" Text="NUMCTAPAGO" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text41" Left="122.95" Top="37.7" Width="146.6" Height="10.9" Text="[DSTABLA.numctapago]" VertAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text75" Left="6" Top="86.7" Width="638.05" Height="11.9" Border.Lines="All" Fill.Color="LightGray" Text="SELLO SAT" HorzAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text76" Left="6" Top="131.4" Width="638.05" Height="11.9" Border.Lines="All" Fill.Color="LightGray" Text="CADENA SAT" HorzAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text77" Left="5.9" Top="185.65" Width="760.9" Height="11.9" Border.Lines="All" Fill.Color="LightGray" Text="CADENA SAT" HorzAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text78" Left="6" Width="546.65" Height="12.9" Border.Lines="All" Fill.Color="LightGray" Text="CANTIDAD EN LETRAS:" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text18" Left="6" Top="253.7" Width="745.45" Height="12.9" Text="REGIMEN FISCAL: [DSTABLA.serieRegimen]" HorzAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <RichObject Name="Rich2" Left="5.45" Top="63.15" Width="568" Height="17.45" Text="{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang2058{\fonttbl{\f0\fnil\fcharset0 Tahoma;}{\f1\fnil Tahoma;}}&#13;&#10;{\*\generator Riched20 10.0.14393}\viewkind4\uc1 &#13;&#10;\pard\b\f0\fs18 Remisiones: [DSTABLA.remisiones]\b0\f1\fs17\par&#13;&#10;}&#13;&#10;"/>
+      <TextObject Name="Text83" Left="570.75" Top="31.3" Width="71.55" Height="16" Border.Lines="All" Fill.Color="LightGray" Text="TOTAL" HorzAlign="Right" Font="Arial, 11pt, style=Bold"/>
+      <TextObject Name="Text85" Left="641.7" Top="31.3" Width="128.5" Height="16" Border.Lines="Right, Top, Bottom" Text="[DSTABLA.total]" Format="Currency" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.CurrencySymbol="$" Format.PositivePattern="2" Format.NegativePattern="12" HorzAlign="Right" WordWrap="false" Font="Arial, 11pt, style=Bold" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text89" Left="570.55" Top="15.8" Width="71.55" Height="16" Border.Lines="All" Fill.Color="LightGray" Text="I.V.A" HorzAlign="Right" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text81" Left="641.7" Top="15.8" Width="128.5" Height="16" Border.Lines="Right" Text="[DSTABLA.tot_iva]" Format="Currency" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.CurrencySymbol="$" Format.PositivePattern="2" Format.NegativePattern="12" HorzAlign="Right" WordWrap="false" Font="Arial, 9pt, style=Bold" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text23" Left="641.7" Width="128.5" Height="16" Border.Lines="Right, Top" Text="[DSTABLA.subs_total]" Format="Currency" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.CurrencySymbol="$" Format.PositivePattern="2" Format.NegativePattern="12" HorzAlign="Right" WordWrap="false" Font="Arial, 9pt, style=Bold" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text86" Left="570.75" Width="71.55" Height="16" Border.Lines="All" Fill.Color="LightGray" Text="Substotal" HorzAlign="Right" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text90" Left="10.45" Top="48.7" Width="110.3" Height="10.9" Text="METODO DE PAGO" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text91" Left="123.3" Top="48.7" Width="326.15" Height="12.9" Text="[DSTABLA.SerieMetodo]" VertAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text100" Left="274.05" Top="27.25" Width="110.3" Height="10.9" Text="MONEDA:" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text101" Left="386.9" Top="27.25" Width="146.6" Height="10.9" Text="[DSTABLA.moneda]" VertAlign="Center" Font="Arial, 8pt"/>
+      <BarcodeObject Name="Barcode1" Left="594.9" Top="81.5" Width="180" Height="180" Expression="&quot;?re=&quot;+[DSTABLA.ciarfc]+&quot;&amp;rr=&quot;+[DSTABLA.clirfc]+&quot;&amp;tt=&quot;+PadLeft(ToString(FormatNumber([DSTABLA.total_mn],6)),17,&quot;0&quot;)+&quot;&amp;id=&quot;+[DSTABLA.uuid]" Text="?re=CCF221214IZ4   &amp;rr=SAOR7612259P7&amp;tt=000003,574.260000&amp;id=7F536BF2-34F1-2142-ABC0-14E0E4493DA2    " ShowText="false" Barcode="QR Code" Barcode.ErrorCorrection="L" Barcode.Encoding="UTF8" Barcode.QuietZone="true"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

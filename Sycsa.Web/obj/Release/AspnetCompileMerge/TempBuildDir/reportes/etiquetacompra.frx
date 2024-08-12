@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="08/29/2015 13:55:13" ReportInfo.Modified="10/07/2015 13:26:14" ReportInfo.CreatorVersion="2014.1.5.0">
+  <Dictionary>
+    <TableDataSource Name="dstemp" ReferenceName="Data.dstemp" DataType="System.Int32" Enabled="true">
+      <Column Name="clave" DataType="System.Int32"/>
+      <Column Name="descripcion" DataType="System.String"/>
+    </TableDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" PaperWidth="35" PaperHeight="25" LeftMargin="0" TopMargin="0" RightMargin="0" BottomMargin="0" FirstPageSource="4" OtherPagesSource="4" Guides="94.5">
+    <DataBand Name="Data1" Width="132.3" Height="94.5" DataSource="dstemp">
+      <BarcodeObject Name="Barcode1" Left="17.33" Top="17.9" Width="98.75" Height="31.25" DataColumn="dstemp.clave" ShowText="false" Barcode="Code128" Barcode.AutoEncode="true"/>
+      <TextObject Name="Text1" Top="64.6" Width="132.3" Height="28.35" CanGrow="true" GrowToBottom="true" Text="[dstemp.descripcion]" HorzAlign="Center" Font="Arial, 6pt"/>
+      <TextObject Name="Text2" Left="18.9" Top="-1" Width="94.5" Height="13.9" Text="SYCSA" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text3" Left="7" Top="9.45" Width="117.3" Height="18.9" Text="Tels: 8142-0172 y 8142-0381" HorzAlign="Center" Font="Arial, 6pt"/>
+      <TextObject Name="Text5" Left="-1.57" Top="49.25" Width="135.55" Height="10.9" CanGrow="true" GrowToBottom="true" Text="[dstemp.clave][Format(&quot;{0:dd}&quot;,[dstemp.fecha_alta])][Month([dstemp.fecha_alta])][Substring(ToString(Year([dstemp.fecha_alta])),2)][Hour([dstemp.fecha_alta])][Minute([dstemp.fecha_alta])]" HorzAlign="Center" Font="Arial, 6pt">
+        <Formats>
+          <GeneralFormat/>
+          <DateFormat/>
+          <GeneralFormat/>
+          <DateFormat/>
+          <GeneralFormat/>
+          <GeneralFormat/>
+        </Formats>
+      </TextObject>
+      <TextObject Name="Text6" Left="2.45" Top="56.15" Width="127.3" Height="10.9" CanGrow="true" GrowToBottom="true" Text="[dstemp.referencia]" HorzAlign="Center" Font="Arial, 6pt"/>
+    </DataBand>
+  </ReportPage>
+</Report>

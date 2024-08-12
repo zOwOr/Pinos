@@ -1,0 +1,2199 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+sycsa.Web
+</name>
+</assembly>
+<members>
+<member name="T:sycsa.Web.My.MyWebExtension">
+ <summary>
+ Module used to define the properties that are available in the My Namespace for Web projects.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:sycsa.Web.My.MyWebExtension.Computer">
+ <summary>
+ Returns information about the host computer.
+ </summary>
+</member>
+<member name="P:sycsa.Web.My.MyWebExtension.User">
+ <summary>
+ Returns information for the current Web user.
+ </summary>
+</member>
+<member name="P:sycsa.Web.My.MyWebExtension.Request">
+ <summary>
+ Returns Request object.
+ </summary>
+</member>
+<member name="P:sycsa.Web.My.MyWebExtension.Response">
+ <summary>
+ Returns Response object.
+ </summary>
+</member>
+<member name="P:sycsa.Web.My.MyWebExtension.Log">
+ <summary>
+ Returns the Asp log object.
+ </summary>
+</member>
+<member name="T:sycsa.Web.My.Resources.Resources">
+<summary>
+  Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
+</summary>
+</member>
+<member name="P:sycsa.Web.My.Resources.Resources.ResourceManager">
+<summary>
+  Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
+</summary>
+</member>
+<member name="P:sycsa.Web.My.Resources.Resources.Culture">
+<summary>
+  Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
+  búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
+</summary>
+</member>
+<member name="F:sycsa.Web.AccountAddressBookEdit._linkCancel">
+<summary>
+linkCancel control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.AccountAddressBookEdit._txtCompany">
+<summary>
+txtCompany control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.AccountAddressBookEdit._txtRFC">
+<summary>
+txtRFC control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.AccountAddressBookEdit._txtPhoneAddress">
+<summary>
+txtPhoneAddress control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.AccountAddressBookEdit._txtAdress">
+<summary>
+txtAdress control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.AccountAddressBookEdit._txtColony">
+<summary>
+txtColony control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.AccountAddressBookEdit._txtCP">
+<summary>
+txtCP control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.AccountAddressBookEdit._txtCity">
+<summary>
+txtCity control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.AccountAddressBookEdit._txtState">
+<summary>
+txtState control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.AccountAddressBookEdit._chAdreesDefault">
+<summary>
+chAdreesDefault control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.AccountAddressBookEdit._btnSave">
+<summary>
+btnSave control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.AccountAddressBookNew._linkCancel">
+<summary>
+linkCancel control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.AccountAddressBookNew._txtCompany">
+<summary>
+txtCompany control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.AccountAddressBookNew._txtRFC">
+<summary>
+txtRFC control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.AccountAddressBookNew._txtPhoneAddress">
+<summary>
+txtPhoneAddress control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.AccountAddressBookNew._txtAdress">
+<summary>
+txtAdress control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.AccountAddressBookNew._txtColony">
+<summary>
+txtColony control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.AccountAddressBookNew._txtCP">
+<summary>
+txtCP control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.AccountAddressBookNew._txtCity">
+<summary>
+txtCity control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.AccountAddressBookNew._txtState">
+<summary>
+txtState control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.AccountAddressBookNew._chAdreesDefault">
+<summary>
+chAdreesDefault control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.AccountAddressBookNew._btnSave">
+<summary>
+btnSave control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.AccountHistory._Linkback">
+<summary>
+Control Linkback.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.AccountHistory._tbHistorySales">
+<summary>
+Control tbHistorySales.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.AccountHistory._Imprimir">
+<summary>
+Control Imprimir.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.AccountHistory._Label1">
+<summary>
+Control Label1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.AccountLogin._Linkback">
+<summary>
+Linkback control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.AccountLogin._txtPass">
+<summary>
+txtPass control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.AccountLogin._txtPassRepeat">
+<summary>
+txtPassRepeat control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.AccountLogin._btnActualizar">
+<summary>
+btnActualizar control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutPayment._lblPaymentMethodTitle">
+<summary>
+Control lblPaymentMethodTitle.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutPayment._lblPaymentMethod">
+<summary>
+Control lblPaymentMethod.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutPayment._dlPaymentMethod">
+<summary>
+Control dlPaymentMethod.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutPayment._InfoTitleShipping">
+<summary>
+Control InfoTitleShipping.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutPayment._hProductos">
+<summary>
+Control hProductos.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutPayment._txtInforSend">
+<summary>
+Control txtInforSend.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutPayment._lbDir">
+<summary>
+Control lbDir.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutPayment._pListProducts">
+<summary>
+Control pListProducts.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutPayment._gvListProductos">
+<summary>
+Control gvListProductos.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutPayment._txtInforConfirmation">
+<summary>
+Control txtInforConfirmation.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutPayment._lblTitleFill">
+<summary>
+Control lblTitleFill.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutPayment._chFill">
+<summary>
+Control chFill.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutPayment._txtFill">
+<summary>
+Control txtFill.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutPayment._lblCompany">
+<summary>
+Control lblCompany.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutPayment._txtCompany">
+<summary>
+Control txtCompany.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutPayment._lblRFC">
+<summary>
+Control lblRFC.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutPayment._txtRFC">
+<summary>
+Control txtRFC.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutPayment._lblPhone">
+<summary>
+Control lblPhone.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutPayment._txtPhone">
+<summary>
+Control txtPhone.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutPayment._lblAdress">
+<summary>
+Control lblAdress.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutPayment._txtAdress">
+<summary>
+Control txtAdress.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutPayment._lblColony">
+<summary>
+Control lblColony.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutPayment._txtColony">
+<summary>
+Control txtColony.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutPayment._lblCP">
+<summary>
+Control lblCP.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutPayment._txtCP">
+<summary>
+Control txtCP.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutPayment._lblCity">
+<summary>
+Control lblCity.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutPayment._txtCity">
+<summary>
+Control txtCity.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutPayment._lblState">
+<summary>
+Control lblState.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutPayment._txtState">
+<summary>
+Control txtState.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutPayment._lblCountry">
+<summary>
+Control lblCountry.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutPayment._txtCountry">
+<summary>
+Control txtCountry.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutPayment._lblTitleNotesShipping">
+<summary>
+Control lblTitleNotesShipping.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutPayment._lblNotesShipping">
+<summary>
+Control lblNotesShipping.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutPayment._txtNotes">
+<summary>
+Control txtNotes.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutPayment._btnPrevious">
+<summary>
+Control btnPrevious.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutPayment._btnContinue">
+<summary>
+Control btnContinue.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutShipping._lblTitleNotesShipping">
+<summary>
+Control lblTitleNotesShipping.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutShipping._lblNotesShipping">
+<summary>
+Control lblNotesShipping.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutShipping._txtNotes">
+<summary>
+Control txtNotes.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutShipping._DeliveryData">
+<summary>
+Control DeliveryData.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutShipping._textImportDataSend">
+<summary>
+Control textImportDataSend.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutShipping._lblorden">
+<summary>
+Control lblorden.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutShipping._txtorden">
+<summary>
+Control txtorden.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutShipping._lblName">
+<summary>
+Control lblName.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutShipping._txtName">
+<summary>
+Control txtName.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutShipping._lblLastName">
+<summary>
+Control lblLastName.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutShipping._txtLastName">
+<summary>
+Control txtLastName.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutShipping._lblPhone">
+<summary>
+Control lblPhone.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutShipping._txtPhone">
+<summary>
+Control txtPhone.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutShipping._lblAdress">
+<summary>
+Control lblAdress.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutShipping._txtAdress">
+<summary>
+Control txtAdress.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutShipping._lblColony">
+<summary>
+Control lblColony.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutShipping._txtColony">
+<summary>
+Control txtColony.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutShipping._lblCP">
+<summary>
+Control lblCP.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutShipping._txtCP">
+<summary>
+Control txtCP.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutShipping._lblCity">
+<summary>
+Control lblCity.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutShipping._txtCity">
+<summary>
+Control txtCity.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutShipping._lblState">
+<summary>
+Control lblState.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutShipping._txtState">
+<summary>
+Control txtState.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutShipping._lblCountry">
+<summary>
+Control lblCountry.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutShipping._txtCountry">
+<summary>
+Control txtCountry.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutShipping._btnContinue">
+<summary>
+Control btnContinue.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutShipping._HfMethosSend">
+<summary>
+Control HfMethosSend.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.CheckoutShipping._Hfaddress">
+<summary>
+Control Hfaddress.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.Cobranza._ListProducts">
+<summary>
+ListProducts control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.contact._txtsubject">
+<summary>
+txtsubject control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.contact._txtname">
+<summary>
+txtname control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.contact._txtEmail">
+<summary>
+txtEmail control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.contact._txtMessage">
+<summary>
+txtMessage control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.contact._btnContact">
+<summary>
+btnContact control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web._Default._form2">
+<summary>
+form2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web._Default._WebReport1">
+<summary>
+WebReport1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.DocFisc._dvDocFisc">
+<summary>
+dvDocFisc control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.home._gvListProductos">
+<summary>
+Control gvListProductos.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.iforgot._txtMail">
+<summary>
+Control txtMail.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.iforgot._btnSendRequest">
+<summary>
+Control btnSendRequest.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.Facturas._chFill">
+<summary>
+chFill control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.Facturas._ListProducts">
+<summary>
+ListProducts control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWeb._html_description">
+<summary>
+Control html_description.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWeb._thml_Keywords">
+<summary>
+Control thml_Keywords.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWeb._form1">
+<summary>
+Control form1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWeb._ScriptManager1">
+<summary>
+Control ScriptManager1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWeb._Image1">
+<summary>
+Control Image1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWeb._dvLogin">
+<summary>
+Control dvLogin.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWeb._txtUserName">
+<summary>
+Control txtUserName.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWeb._txtPassword">
+<summary>
+Control txtPassword.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWeb._btnLogin">
+<summary>
+Control btnLogin.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWeb._dvLogin1">
+<summary>
+Control dvLogin1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWeb._dvLogin2">
+<summary>
+Control dvLogin2.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWeb._txtLabelQuantity">
+<summary>
+Control txtLabelQuantity.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWeb._txtNameProductSearch">
+<summary>
+Control txtNameProductSearch.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWeb._txtShears">
+<summary>
+Control txtShears.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWeb._txtTitleSearch">
+<summary>
+Control txtTitleSearch.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWeb._dlCategories">
+<summary>
+Control dlCategories.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWeb._LinkShowCart">
+<summary>
+Control LinkShowCart.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWeb._lblTextCart">
+<summary>
+Control lblTextCart.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWeb._txtRecently">
+<summary>
+Control txtRecently.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWeb._gvListProductos">
+<summary>
+Control gvListProductos.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWeb._cartFooterPrice">
+<summary>
+Control cartFooterPrice.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWeb._lblSubtotal">
+<summary>
+Control lblSubtotal.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWeb._lblIva">
+<summary>
+Control lblIva.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWeb._lblTotal">
+<summary>
+Control lblTotal.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWeb._LinkCart2">
+<summary>
+Control LinkCart2.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWeb._Html_sidebar">
+<summary>
+Control Html_sidebar.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWeb._Html_head">
+<summary>
+Control Html_head.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWeb._Html_Content">
+<summary>
+Control Html_Content.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWebSim._html_description">
+<summary>
+html_description control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWebSim._thml_Keywords">
+<summary>
+thml_Keywords control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWebSim._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWebSim._Image1">
+<summary>
+Image1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWebSim._dvLogin">
+<summary>
+dvLogin control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWebSim._txtUserName">
+<summary>
+txtUserName control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWebSim._txtPassword">
+<summary>
+txtPassword control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWebSim._chRemenberLogin">
+<summary>
+chRemenberLogin control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWebSim._btnLogin">
+<summary>
+btnLogin control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWebSim._dvLogin1">
+<summary>
+dvLogin1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWebSim._dvLogin2">
+<summary>
+dvLogin2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWebSim._txtLabelQuantity">
+<summary>
+txtLabelQuantity control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWebSim._txtNameProductSearch">
+<summary>
+txtNameProductSearch control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWebSim._txtShears">
+<summary>
+txtShears control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWebSim._txtTitleSearch">
+<summary>
+txtTitleSearch control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWebSim._dlCategories">
+<summary>
+dlCategories control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWebSim._LinkShowCart">
+<summary>
+LinkShowCart control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWebSim._lblTextCart">
+<summary>
+lblTextCart control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWebSim._txtRecently">
+<summary>
+txtRecently control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWebSim._gvListProductos">
+<summary>
+gvListProductos control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWebSim._cartFooterPrice">
+<summary>
+cartFooterPrice control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWebSim._lblSubtotal">
+<summary>
+lblSubtotal control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWebSim._lblIva">
+<summary>
+lblIva control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWebSim._lblTotal">
+<summary>
+lblTotal control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWebSim._LinkCart2">
+<summary>
+LinkCart2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWebSim._Html_Content">
+<summary>
+Html_Content control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWebSim._Html_head">
+<summary>
+Html_head control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.ListProducts._DataPager">
+<summary>
+DataPager control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.ListProducts._pTextLabelResultForPage">
+<summary>
+pTextLabelResultForPage control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.ListProducts._ResultPage">
+<summary>
+ResultPage control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.ListProducts._dataPagerNumeric">
+<summary>
+dataPagerNumeric control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.ListProducts._ListProducts">
+<summary>
+ListProducts control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.Login._lbTitleLogin">
+<summary>
+lbTitleLogin control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.Login._lbTextInfo">
+<summary>
+lbTextInfo control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.Login._txtUserName">
+<summary>
+txtUserName control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.Login._txtPass">
+<summary>
+txtPass control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.Login._btnLogin">
+<summary>
+btnLogin control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.Login._LinkIforgot">
+<summary>
+LinkIforgot control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.Login._txtNewAccountTitle">
+<summary>
+txtNewAccountTitle control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.Login._txtTitleNewUser">
+<summary>
+txtTitleNewUser control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.Login._TextNewUser">
+<summary>
+TextNewUser control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.Login._btnNewAccount">
+<summary>
+btnNewAccount control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.marks._txtTitleCategorie">
+<summary>
+Control txtTitleCategorie.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.marks._txtDescMark1">
+<summary>
+Control txtDescMark1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.marks._ListProducts">
+<summary>
+Control ListProducts.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.myAccount._txtNombre">
+<summary>
+txtNombre control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.myAccount._txtLastName">
+<summary>
+txtLastName control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.myAccount._txtEmail">
+<summary>
+txtEmail control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.myAccount._txtphone">
+<summary>
+txtphone control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.myAccount._btnActualizar">
+<summary>
+btnActualizar control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.newAccount._txtREmail">
+<summary>
+txtREmail control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.newAccount._txtRPassword">
+<summary>
+txtRPassword control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.newAccount._txtName">
+<summary>
+txtName control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.newAccount._txtLastName">
+<summary>
+txtLastName control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.newAccount._txtPhone">
+<summary>
+txtPhone control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.newAccount._txtPhoneAddress">
+<summary>
+txtPhoneAddress control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.newAccount._btnRegister">
+<summary>
+btnRegister control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.NotasCredito._ListProducts">
+<summary>
+ListProducts control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.Pedidos._ListProducts">
+<summary>
+ListProducts control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.Productos._ListProducts">
+<summary>
+ListProducts control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.Reportes._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.search._DataPager">
+<summary>
+Control DataPager.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.search._pTextLabelResultForPage">
+<summary>
+Control pTextLabelResultForPage.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.search._ResultPage">
+<summary>
+Control ResultPage.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.search._dataPagerNumeric">
+<summary>
+Control dataPagerNumeric.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.search._ListProducts">
+<summary>
+Control ListProducts.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.seleccAddress._form1">
+<summary>
+Control form1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.seleccAddress._lblAddress">
+<summary>
+Control lblAddress.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.seleccAddress._lblTitleAddress">
+<summary>
+Control lblTitleAddress.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.seleccAddress._listAd">
+<summary>
+Control listAd.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.seleccAddress._SqlAddress">
+<summary>
+Control SqlAddress.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.ShoppingSend._txtLabelTitle">
+<summary>
+Control txtLabelTitle.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.ShoppingSend._textInfo5">
+<summary>
+Control textInfo5.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.ShoppingSend._textInfo6">
+<summary>
+Control textInfo6.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.ShoppingSend._DivClienteNuevo">
+<summary>
+Control DivClienteNuevo.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.ShoppingSend._textInfo2">
+<summary>
+Control textInfo2.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.ShoppingSend._textInfo1">
+<summary>
+Control textInfo1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.ShowCart._linkContinuarComprando">
+<summary>
+Control linkContinuarComprando.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.ShowCart._gvListProductos">
+<summary>
+Control gvListProductos.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.ShowCart._divButton">
+<summary>
+Control divButton.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.ShowCart._btnComprar">
+<summary>
+Control btnComprar.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.ShowProduct._ImagenDefaultProduct">
+<summary>
+ImagenDefaultProduct control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.ShowProduct._LInkFullScreen_Button">
+<summary>
+LInkFullScreen_Button control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.ShowProduct._htmlDivCarousel">
+<summary>
+htmlDivCarousel control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.ShowProduct._PanelImagen">
+<summary>
+PanelImagen control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.ShowProduct._txtProductName">
+<summary>
+txtProductName control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.ShowProduct._txtLabelMark">
+<summary>
+txtLabelMark control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.ShowProduct._LinkMark">
+<summary>
+LinkMark control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.ShowProduct._HmtlUnitStock">
+<summary>
+HmtlUnitStock control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.ShowProduct._txtLabelAvailability">
+<summary>
+txtLabelAvailability control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.ShowProduct._txtAvailability">
+<summary>
+txtAvailability control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.ShowProduct._txtLabelCodeProduct">
+<summary>
+txtLabelCodeProduct control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.ShowProduct._txtCodeProduct">
+<summary>
+txtCodeProduct control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.ShowProduct._Htmlprice">
+<summary>
+Htmlprice control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.ShowProduct._txtPrice">
+<summary>
+txtPrice control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.ShowProduct._txtshortDescriptionProduct">
+<summary>
+txtshortDescriptionProduct control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.ShowProduct._tab1Description">
+<summary>
+tab1Description control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.ShowProduct._txtLabelQuantity">
+<summary>
+txtLabelQuantity control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.ShowProduct._txtLabelButtonCart">
+<summary>
+txtLabelButtonCart control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.ShowProduct._LinkTabs1">
+<summary>
+LinkTabs1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.ShowProduct._txtLabelRelatedProducts">
+<summary>
+txtLabelRelatedProducts control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:sycsa.Web.ShowProduct._HtmlCarousel">
+<summary>
+HtmlCarousel control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+</members>
+</doc>

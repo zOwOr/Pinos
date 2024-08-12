@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="Vb" ReferencedAssemblies="System.dll&#13;&#10;System.Drawing.dll&#13;&#10;System.Windows.Forms.dll&#13;&#10;System.Data.dll&#13;&#10;System.Xml.dll&#13;&#10;FastReport.RPTImportPlugin.dll" TextQuality="ClearType" ReportInfo.Created="12/22/2013 21:51:44" ReportInfo.Modified="04/26/2017 12:53:04" ReportInfo.CreatorVersion="2014.1.5.0">
+  <ScriptText>Imports System
+Imports System.Collections
+Imports System.Collections.Generic
+Imports System.ComponentModel
+Imports System.Windows.Forms
+Imports System.Drawing
+Imports Microsoft.VisualBasic
+Imports FastReport
+Imports FastReport.Data
+Imports FastReport.Dialog
+Imports FastReport.Table
+Imports FastReport.Barcode
+Imports FastReport.Utils
+
+Namespace FastReport
+  Public Class ReportScript
+               
+  End Class
+End Namespace
+</ScriptText>
+  <Dictionary>
+    <TableDataSource Name="dsPRODUCTO" ReferenceName="Data.dsPRODUCTO" DataType="System.Int32" Enabled="true">
+      <Column Name="clave" DataType="System.Int32"/>
+      <Column Name="descripcion" DataType="System.String"/>
+      <Column Name="unidad" DataType="System.String"/>
+      <Column Name="tasa_iva" DataType="System.Decimal"/>
+      <Column Name="precio_lista" DataType="System.Decimal"/>
+      <Column Name="desc_1" DataType="System.Decimal"/>
+      <Column Name="desc_2" DataType="System.Decimal"/>
+      <Column Name="desc_3" DataType="System.Decimal"/>
+      <Column Name="desc_4" DataType="System.Decimal"/>
+      <Column Name="desc_5" DataType="System.Decimal"/>
+      <Column Name="desc_6" DataType="System.Decimal"/>
+      <Column Name="costo_neto" DataType="System.Decimal"/>
+      <Column Name="precio_v1" DataType="System.Decimal"/>
+      <Column Name="precio_v2" DataType="System.Decimal"/>
+      <Column Name="precio_v3" DataType="System.Decimal"/>
+      <Column Name="precio_v4" DataType="System.Decimal"/>
+      <Column Name="precio_v5" DataType="System.Decimal"/>
+      <Column Name="precio_v1_ii" DataType="System.Decimal"/>
+      <Column Name="precio_v2_ii" DataType="System.Decimal"/>
+      <Column Name="precio_v3_ii" DataType="System.Decimal"/>
+      <Column Name="precio_v4_ii" DataType="System.Decimal"/>
+      <Column Name="precio_v5_ii" DataType="System.Decimal"/>
+      <Column Name="empresa" DataType="System.String"/>
+      <Column Name="moneda" DataType="System.String"/>
+      <Column Name="CODIGO_FAC" DataType="System.String"/>
+      <Column Name="CODIGO_PV" DataType="System.String"/>
+    </TableDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" PaperWidth="220" LeftMargin="6" TopMargin="6" RightMargin="6" BottomMargin="6" Guides="283.5,425.25,0,85.05,9.45,75.6,56.7,585.9,699.3,699.3,264.6,349.65,28.35,415.8,585.9,425.25,576.45,406.35,425.25,425.25,576.45,406.35,340.2,37.8,425.25,425.25,699.3,746.55,-9.45,746.55,283.5,283.5,264.6,585.9,425.25,415.8,425.25,415.8,415.8,396.9">
+    <ReportTitleBand Name="ReportTitle1" Width="786.24" Height="66.15" Guides="18.9">
+      <TextObject Name="Text23" Top="39.8" Width="179.55" Height="16.9" Text="Costos" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text24" Left="615.25" Width="170.1" Height="12.45" Text="Pagina [Page] de [TotalPages#]" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text25" Left="170.1" Width="387.45" Height="24.9" Text="[dsPRODUCTO.empresa]" HorzAlign="Center" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text26" Left="615.25" Top="12.45" Width="170.1" Height="12.45" Text="[Date]" HorzAlign="Right" Font="Arial, 8pt"/>
+      <TextObject Name="Text38" Left="680.4" Top="28.35" Width="110.75" Height="25.9" Text="SYAD4010.FRX" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/>
+    </ReportTitleBand>
+    <ColumnHeaderBand Name="ColumnHeader1" Top="70.15" Width="786.24" Height="28.9" Border.Lines="Bottom">
+      <TextObject Name="Text4" Left="58.5" Width="278.25" Height="28.9" Text="Producto" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text7" Left="412" Width="66.5" Height="28.9" Text="Precio Lista" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text8" Left="720.2" Width="66.5" Height="28.9" Text="Costo Neto" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text9" Left="487.4" Top="13.45" Width="40.5" Height="15.36" Text="1" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text10" Left="527" Top="13.45" Width="40.5" Height="15.36" Text="2" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text22" Left="0.1" Width="57.5" Height="28.9" Text="CVE" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text27" Left="567.65" Top="13.45" Width="40.5" Height="15.36" Text="3" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text28" Left="336.85" Width="36.5" Height="28.9" Text="U.M." HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text30" Left="608.35" Top="13.45" Width="40.5" Height="15.36" Text="4" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text32" Left="648.4" Top="13.45" Width="40.5" Height="15.36" Text="5" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text34" Left="487.4" Top="-0.55" Width="242.5" Height="14.36" Text="Descuentos" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text35" Left="391.75" Width="39.5" Height="28.9" Text="Mon." HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text36" Left="688.85" Top="13.45" Width="40.5" Height="15.36" Text="6" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+    </ColumnHeaderBand>
+    <DataBand Name="Data1" Top="103.05" Width="786.24" Height="19" Fill.Color="176, 255, 255, 255" CanGrow="true" CanShrink="true" CanBreak="true" DataSource="dsPRODUCTO">
+      <TextObject Name="Text11" Left="39.6" Width="316.05" Height="18.45" CanGrow="true" Text="[dsPRODUCTO.descripcion]" VertAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text6" Left="527" Width="40.5" Height="18.45" Text="[dsPRODUCTO.desc_2]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text13" Left="487.4" Width="40.5" Height="18.45" Text="[dsPRODUCTO.desc_1]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text14" Left="421.45" Width="66.5" Height="18.45" Text="[dsPRODUCTO.precio_lista]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text16" Left="720.2" Width="66.5" Height="18.45" Text="[dsPRODUCTO.costo_neto]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text12" Left="0.1" Width="48.05" Height="18.45" Text="[dsPRODUCTO.clave]" VertAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text15" Left="567.65" Width="40.5" Height="18.45" Text="[dsPRODUCTO.desc_3]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text29" Left="327.4" Width="64.85" Height="18.45" Text="[dsPRODUCTO.unidad]" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text31" Left="608.35" Width="40.5" Height="18.45" Text="[dsPRODUCTO.desc_4]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text33" Left="648.4" Width="40.5" Height="18.45" Text="[dsPRODUCTO.desc_5]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text1" Left="391.75" Width="39.5" Height="18.45" Text="[dsPRODUCTO.moneda]" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text37" Left="688.85" Width="40.5" Height="18.45" Text="[dsPRODUCTO.desc_6]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt"/>
+    </DataBand>
+    <ColumnFooterBand Name="ColumnFooter1" Top="126.05" Width="786.24" Height="28.35"/>
+  </ReportPage>
+</Report>

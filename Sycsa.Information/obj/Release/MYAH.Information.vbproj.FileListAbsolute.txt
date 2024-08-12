@@ -1,0 +1,16 @@
+E:\Desarrollo\Codigo\MYAH\MYAH.Information\bin\Release\MYAH.Information.dll
+E:\Desarrollo\Codigo\MYAH\MYAH.Information\bin\Release\MYAH.Information.pdb
+E:\Desarrollo\Codigo\MYAH\MYAH.Information\bin\Release\MYAH.Information.xml
+E:\Desarrollo\Codigo\MYAH\MYAH.Information\obj\Release\MYAH.Information.Resources.resources
+E:\Desarrollo\Codigo\MYAH\MYAH.Information\obj\Release\MYAH.Information.vbproj.GenerateResource.Cache
+E:\Desarrollo\Codigo\MYAH\MYAH.Information\obj\Release\MYAH.Information.dll
+E:\Desarrollo\Codigo\MYAH\MYAH.Information\obj\Release\MYAH.Information.xml
+E:\Desarrollo\Codigo\MYAH\MYAH.Information\obj\Release\MYAH.Information.pdb
+D:\Sycsa\MYAH\MYAH.Information\bin\Release\MYAH.Information.dll
+D:\Sycsa\MYAH\MYAH.Information\bin\Release\MYAH.Information.pdb
+D:\Sycsa\MYAH\MYAH.Information\bin\Release\MYAH.Information.xml
+D:\Sycsa\MYAH\MYAH.Information\obj\Release\MYAH.Information.Resources.resources
+D:\Sycsa\MYAH\MYAH.Information\obj\Release\MYAH.Information.vbproj.GenerateResource.Cache
+D:\Sycsa\MYAH\MYAH.Information\obj\Release\MYAH.Information.dll
+D:\Sycsa\MYAH\MYAH.Information\obj\Release\MYAH.Information.xml
+D:\Sycsa\MYAH\MYAH.Information\obj\Release\MYAH.Information.pdb

@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="Vb" ReferencedAssemblies="System.dll&#13;&#10;System.Drawing.dll&#13;&#10;System.Windows.Forms.dll&#13;&#10;System.Data.dll&#13;&#10;System.Xml.dll&#13;&#10;FastReport.RPTImportPlugin.dll" ReportInfo.Created="12/22/2013 21:51:44" ReportInfo.Modified="02/10/2016 08:13:07" ReportInfo.CreatorVersion="2014.1.5.0">
+  <ScriptText>Imports System
+Imports System.Collections
+Imports System.Collections.Generic
+Imports System.ComponentModel
+Imports System.Windows.Forms
+Imports System.Drawing
+Imports Microsoft.VisualBasic
+Imports FastReport
+Imports FastReport.Data
+Imports FastReport.Dialog
+Imports FastReport.Table
+Imports FastReport.Barcode
+Imports FastReport.Utils
+
+Namespace FastReport
+  Public Class ReportScript
+
+  End Class
+End Namespace
+</ScriptText>
+  <Styles>
+    <Style Name="CONCEPTO 1" Border.Lines="All" Fill.Color="176, 255, 224, 192"/>
+    <Style Name="CONCEPTO 2" Border.Lines="All" Fill.Color="255, 242, 191"/>
+    <Style Name="CABECERA" Border.Lines="All" Fill="Hatch" Fill.ForeColor="236, 180, 104" Fill.BackColor="241, 200, 143" Fill.Style="BackwardDiagonal"/>
+    <Style Name="TOTALES" Border.Lines="All" Fill.Color="PaleGreen"/>
+    <Style Name="PUNTERO" Border.Lines="All" Fill.Color="DodgerBlue" Font="Arial, 9pt, style=Bold"/>
+    <Style Name="CARGOS1" Border.Lines="All" Fill.Color="131, 255, 140, 0"/>
+    <Style Name="CARGOS2" Border.Lines="All" Fill.Color="121, 255, 165, 0"/>
+    <Style Name="CREDITOS1" Border.Lines="All" Fill.Color="175, 255, 215, 0"/>
+    <Style Name="CREDITOS2" Border.Lines="All" Fill.Color="121, 255, 215, 0"/>
+  </Styles>
+  <Dictionary>
+    <TableDataSource Name="dsproveedor" ReferenceName="Data.dsproveedor" DataType="System.Int32" Enabled="true">
+      <Column Name="clave" DataType="System.Int32"/>
+      <Column Name="proveedor" DataType="System.String"/>
+      <Column Name="cia" DataType="System.String"/>
+      <Column Name="cia2" DataType="System.String"/>
+      <Column Name="cia_corto" DataType="System.String"/>
+      <Column Name="direccion" DataType="System.String"/>
+      <Column Name="entre_calles" DataType="System.String"/>
+      <Column Name="colonia" DataType="System.String"/>
+      <Column Name="ciudad" DataType="System.String"/>
+      <Column Name="plano_gr" DataType="System.String"/>
+      <Column Name="cp" DataType="System.String"/>
+      <Column Name="telefonos" DataType="System.String"/>
+      <Column Name="fax" DataType="System.String"/>
+      <Column Name="rfc" DataType="System.String"/>
+      <Column Name="curp" DataType="System.String"/>
+      <Column Name="contacto" DataType="System.String"/>
+      <Column Name="asistencia" DataType="System.String"/>
+      <Column Name="cuenta" DataType="System.String"/>
+      <Column Name="estatus" DataType="System.String"/>
+      <Column Name="e_mail" DataType="System.String"/>
+      <Column Name="prov_compra" DataType="System.String"/>
+      <Column Name="cuenta_ban" DataType="System.String"/>
+      <Column Name="clabe" DataType="System.String"/>
+      <Column Name="usuario_baja" DataType="System.String"/>
+      <Column Name="tipo_ter" DataType="System.String"/>
+      <Column Name="tipo_ope" DataType="System.String"/>
+      <Column Name="numero_id" DataType="System.String"/>
+      <Column Name="n_extranjero" DataType="System.String"/>
+      <Column Name="pais_residen" DataType="System.String"/>
+      <Column Name="nacionalidad" DataType="System.String"/>
+      <Column Name="observacion" DataType="System.String"/>
+      <Column Name="obser_pago" DataType="System.String"/>
+      <Column Name="dias_pp" DataType="System.Decimal"/>
+      <Column Name="desc_1" DataType="System.Decimal"/>
+      <Column Name="desc_2" DataType="System.Decimal"/>
+      <Column Name="desc_3" DataType="System.Decimal"/>
+      <Column Name="desc_4" DataType="System.Decimal"/>
+      <Column Name="desc_5" DataType="System.Decimal"/>
+      <Column Name="desc_6" DataType="System.Decimal"/>
+      <Column Name="desc_ppp" DataType="System.Decimal"/>
+      <Column Name="dias_ppp" DataType="System.Decimal"/>
+      <Column Name="margen_1" DataType="System.Decimal"/>
+      <Column Name="margen_2" DataType="System.Decimal"/>
+      <Column Name="margen_3" DataType="System.Decimal"/>
+      <Column Name="margen_4" DataType="System.Decimal"/>
+      <Column Name="margen_5" DataType="System.Decimal"/>
+      <Column Name="saldo_ini" DataType="System.Decimal"/>
+      <Column Name="saldo" DataType="System.Decimal"/>
+      <Column Name="cambio_glo" DataType="System.Decimal"/>
+      <Column Name="idbanco" DataType="System.Decimal"/>
+      <Column Name="idproveedor" DataType="System.Decimal"/>
+      <Column Name="cliente_prov" DataType="System.Decimal"/>
+      <Column Name="fecha_alta" DataType="System.DateTime"/>
+      <Column Name="numero" DataType="System.String"/>
+      <Column Name="estado" DataType="System.String"/>
+      <Column Name="pais" DataType="System.String"/>
+      <Column Name="backorder" DataType="System.Decimal"/>
+      <Column Name="clave1" DataType="System.Int32"/>
+      <Column Name="nombre" DataType="System.String"/>
+      <Column Name="direccion1" DataType="System.String"/>
+      <Column Name="numero1" DataType="System.String"/>
+      <Column Name="cp1" DataType="System.Decimal"/>
+      <Column Name="rfc1" DataType="System.String"/>
+      <Column Name="certificadoarch" DataType="System.String"/>
+      <Column Name="llave" DataType="System.String"/>
+      <Column Name="nocertificado" DataType="System.String"/>
+      <Column Name="series" DataType="System.String"/>
+      <Column Name="clavecfd" DataType="System.String"/>
+      <Column Name="tasa_iva" DataType="System.Decimal"/>
+      <Column Name="ret_iva" DataType="System.Decimal"/>
+      <Column Name="ret_isr" DataType="System.Decimal"/>
+      <Column Name="modificaretenciones" DataType="System.Decimal"/>
+      <Column Name="formato" DataType="System.String"/>
+      <Column Name="cvekey" DataType="System.String"/>
+      <Column Name="rutalogo" DataType="System.String"/>
+      <Column Name="telefonos1" DataType="System.String"/>
+      <Column Name="paginaweb" DataType="System.String"/>
+      <Column Name="email" DataType="System.String"/>
+      <Column Name="teldis" DataType="System.String"/>
+      <Column Name="usuarioemail" DataType="System.String"/>
+      <Column Name="actualizar" DataType="System.String"/>
+      <Column Name="rutaopenssl" DataType="System.String"/>
+      <Column Name="mensajes" DataType="System.String"/>
+      <Column Name="nombre_corto" DataType="System.String"/>
+      <Column Name="serienomina" DataType="System.String"/>
+      <Column Name="clavenomina" DataType="System.String"/>
+      <Column Name="registro_patronal" DataType="System.String"/>
+      <Column Name="clavecompras" DataType="System.String"/>
+      <Column Name="clavepuntodeventa" DataType="System.String"/>
+      <Column Name="clavebancos" DataType="System.String"/>
+      <Column Name="EMPRESA" DataType="System.Int32"/>
+      <Column Name="TELEFONOS2" DataType="System.String"/>
+      <Column Name="PAIS1" DataType="System.String"/>
+      <Column Name="ESTADO1" DataType="System.String"/>
+      <Column Name="CIUDAD1" DataType="System.String"/>
+      <Column Name="COLONIA1" DataType="System.String"/>
+      <Column Name="CLAVECONTABILIDAD" DataType="System.String"/>
+      <Column Name="CLAVESERVICIO" DataType="System.String"/>
+      <Column Name="POP3_COMPRAS" DataType="System.String"/>
+      <Column Name="EMAIL_COMPRAS" DataType="System.String"/>
+      <Column Name="CONTRASENA_COMPRAS" DataType="System.String"/>
+      <Column Name="PUERTO_COMPRAS" DataType="System.Int32"/>
+      <Column Name="CERTIFICADO" DataType="System.String"/>
+      <Column Name="VIGENCIAINI" DataType="System.DateTime"/>
+      <Column Name="VIGENCIAFIN" DataType="System.DateTime"/>
+      <Column Name="USUARIO_BUZONE" DataType="System.String"/>
+      <Column Name="CLAVE_BUZONE" DataType="System.String"/>
+      <Column Name="FILETYPE_BUZONE" DataType="System.String"/>
+      <Column Name="USUARIO_FACTUPRONTO" DataType="System.String"/>
+      <Column Name="CLAVE_FACTUPRONTO" DataType="System.String"/>
+      <Column Name="PAC" DataType="System.String"/>
+    </TableDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" LeftMargin="6" TopMargin="6" RightMargin="6" BottomMargin="6" Guides="283.5,425.25,0,85.05,9.45,75.6,56.7,585.9,699.3,699.3,264.6,349.65,28.35,415.8,585.9,425.25,576.45,406.35,425.25,425.25,576.45,406.35,340.2,37.8,425.25,425.25,699.3,746.55,-9.45,746.55,283.5,283.5,264.6,585.9,425.25,415.8,425.25,415.8,415.8,396.9">
+    <ReportTitleBand Name="ReportTitle1" Top="20" Width="748.44" Height="47.25" Guides="18.9">
+      <TextObject Name="Text23" Top="23.9" Width="217.35" Height="16.9" Text="Reporte de Proveedores" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text24" Left="578.45" Width="170.1" Height="12.45" Text="Pagina [Page] de [TotalPages#]" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text25" Left="151.2" Width="387.45" Height="18.9" Text="[dsproveedor.nombre]" HorzAlign="Center" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text26" Left="578.45" Top="12.45" Width="170.1" Height="12.45" Text="[Date]" HorzAlign="Right" Font="Arial, 8pt"/>
+    </ReportTitleBand>
+    <ColumnHeaderBand Name="ColumnHeader1" Top="87.25" Width="748.44" Height="29.8" Border.Lines="Bottom">
+      <TextObject Name="Text2" Left="0.45" Width="38.5" Height="14.9" Text="Clave" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text4" Left="39.25" Width="594" Height="14.9" Text="Nombre" HorzAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text6" Left="633.25" Width="114.3" Height="14.9" Text="RFC" HorzAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text16" Left="39.25" Top="14.9" Width="596.25" Height="14.9" Text="Direccion" HorzAlign="Center" Font="Arial, 8pt, style=Bold"/>
+    </ColumnHeaderBand>
+    <DataBand Name="Data1" Top="137.05" Width="748.44" Height="73.95" Fill.Color="176, 255, 255, 255" CanGrow="true" CanShrink="true" CanBreak="true" DataSource="dsproveedor" KeepTogether="true" KeepDetail="true">
+      <TextObject Name="Text11" Left="39.25" Top="27.8" Width="527.75" Height="18.35" CanGrow="true" CanShrink="true" Text="[dsproveedor.direccion] #[dsproveedor.numero]" VertAlign="Center" Font="Arial, 7pt"/>
+      <TextObject Name="Text13" Left="39.25" Top="46.15" Width="470.5" Height="18.35" CanGrow="true" CanShrink="true" Text="[dsproveedor.colonia]" VertAlign="Center" Font="Arial, 7pt"/>
+      <TextObject Name="Text14" Left="553.55" Top="46.15" Width="99.95" Height="18.35" CanGrow="true" CanShrink="true" Text="[dsproveedor.estado]" VertAlign="Center" Font="Arial, 7pt"/>
+      <TextObject Name="Text15" Left="654.5" Top="46.15" Width="93.05" Height="18.35" CanGrow="true" CanShrink="true" Text="[dsproveedor.ciudad]" VertAlign="Center" Font="Arial, 7pt"/>
+      <TextObject Name="Text21" Left="509.75" Top="46.15" Width="45.25" Height="18.35" CanGrow="true" CanShrink="true" Text="[dsproveedor.cp]" VertAlign="Center" Font="Arial, 7pt"/>
+      <TextObject Name="Text5" Left="633.25" Top="9.45" Width="114.3" Height="18.35" CanGrow="true" CanShrink="true" Text="[dsproveedor.rfc]" VertAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text7" Left="567" Top="27.8" Width="179.55" Height="18.35" CanGrow="true" CanShrink="true" Text="[dsproveedor.telefonos1]" VertAlign="Center" Font="Arial, 7pt"/>
+      <TextObject Name="Text3" Left="39.25" Top="9.45" Width="594" Height="18.35" CanGrow="true" CanShrink="true" Text="[dsproveedor.cia]" VertAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text1" Left="0.45" Top="9.45" Width="38.5" Height="18.35" CanGrow="true" CanShrink="true" Text="[dsproveedor.clave]" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/>
+    </DataBand>
+    <ReportSummaryBand Name="ReportSummary1" Top="269.9" Width="748.44" Height="28.35"/>
+    <ColumnFooterBand Name="ColumnFooter1" Top="231" Width="748.44" Height="18.9"/>
+  </ReportPage>
+</Report>

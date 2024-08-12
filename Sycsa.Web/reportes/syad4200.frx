@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="Vb" ReferencedAssemblies="System.dll&#13;&#10;System.Drawing.dll&#13;&#10;System.Windows.Forms.dll&#13;&#10;System.Data.dll&#13;&#10;System.Xml.dll&#13;&#10;FastReport.RPTImportPlugin.dll" ReportInfo.Created="12/22/2013 21:51:44" ReportInfo.Modified="10/09/2015 16:36:55" ReportInfo.CreatorVersion="2014.1.5.0">
+  <ScriptText>Imports System
+Imports System.Collections
+Imports System.Collections.Generic
+Imports System.ComponentModel
+Imports System.Windows.Forms
+Imports System.Drawing
+Imports Microsoft.VisualBasic
+Imports FastReport
+Imports FastReport.Data
+Imports FastReport.Dialog
+Imports FastReport.Table
+Imports FastReport.Barcode
+Imports FastReport.Utils
+
+Namespace FastReport
+  Public Class ReportScript
+
+  End Class
+End Namespace
+</ScriptText>
+  <Styles>
+    <Style Name="CONCEPTO 1" Border.Lines="All" Fill.Color="176, 255, 224, 192"/>
+    <Style Name="CONCEPTO 2" Border.Lines="All" Fill.Color="255, 242, 191"/>
+    <Style Name="CABECERA" Border.Lines="All" Fill="Hatch" Fill.ForeColor="236, 180, 104" Fill.BackColor="241, 200, 143" Fill.Style="BackwardDiagonal"/>
+    <Style Name="TOTALES" Border.Lines="All" Fill.Color="PaleGreen"/>
+    <Style Name="PUNTERO" Border.Lines="All" Fill.Color="DodgerBlue" Font="Arial, 9pt, style=Bold"/>
+    <Style Name="CARGOS1" Border.Lines="All" Fill.Color="131, 255, 140, 0"/>
+    <Style Name="CARGOS2" Border.Lines="All" Fill.Color="121, 255, 165, 0"/>
+    <Style Name="CREDITOS1" Border.Lines="All" Fill.Color="175, 255, 215, 0"/>
+    <Style Name="CREDITOS2" Border.Lines="All" Fill.Color="121, 255, 215, 0"/>
+  </Styles>
+  <Dictionary>
+    <TableDataSource Name="dsPRODUCTO" ReferenceName="Data.dsPRODUCTO" DataType="System.Int32" Enabled="true">
+      <Column Name="nombre" DataType="System.String"/>
+      <Column Name="rfc" DataType="System.String"/>
+      <Column Name="descripcion" DataType="System.String"/>
+      <Column Name="almacen" DataType="System.String"/>
+      <Column Name="almacen_sal" DataType="System.String"/>
+      <Column Name="partida" DataType="System.Int32"/>
+      <Column Name="codigo_pro" DataType="System.Int32"/>
+      <Column Name="descripcion1" DataType="System.String"/>
+      <Column Name="cantidad_act" DataType="System.Double"/>
+      <Column Name="Cant_Ajuste" DataType="System.Double"/>
+      <Column Name="costo_neto" DataType="System.Double"/>
+      <Column Name="usuario_alta" DataType="System.String"/>
+    </TableDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" PaperWidth="215.9" PaperHeight="279.4" RawPaperSize="1" LeftMargin="6" TopMargin="6" RightMargin="6" BottomMargin="6" FirstPageSource="15" OtherPagesSource="15" Guides="283.5,425.25,0,85.05,9.45,75.6,56.7,585.9,699.3,699.3,264.6,349.65,28.35,415.8,585.9,425.25,576.45,406.35,425.25,425.25,576.45,406.35,340.2,37.8,425.25,425.25,699.3,746.55,-9.45,746.55,283.5,283.5,264.6,585.9,425.25,415.8,425.25,415.8,415.8,396.9">
+    <ReportTitleBand Name="ReportTitle1" Top="20" Width="770.74" Height="66.15" Guides="18.9">
+      <TextObject Name="Text23" Top="41.8" Width="264.6" Height="16.9" Text="Reporte de Ajuste de Inventario" Font="Arial, 12pt, style=Bold"/>
+      <TextObject Name="Text24" Left="578.45" Top="2" Width="170.1" Height="12.45" Text="Pagina [Page] de [TotalPages#]" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text25" Left="75.6" Width="500.85" Height="18.9" Text="[dsPRODUCTO.nombre]" HorzAlign="Center" Font="Arial, 14pt, style=Bold"/>
+      <TextObject Name="Text26" Left="578.45" Top="14.45" Width="170.1" Height="12.45" Text="[Date]" HorzAlign="Right" Font="Arial, 8pt"/>
+      <TextObject Name="Text27" Left="236.25" Top="18.9" Width="189" Height="18.9" Text="[dsPRODUCTO.rfc]" HorzAlign="Center" Font="Arial, 14pt, style=Bold"/>
+    </ReportTitleBand>
+    <ColumnHeaderBand Name="ColumnHeader1" Top="106.15" Width="770.74" Height="67.6" Border.Lines="All" Guides="28.35">
+      <TextObject Name="Text2" Left="0.45" Top="28.35" Width="47.95" Height="14.9" Text="Clave" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text4" Left="39.25" Top="28.35" Width="582.1" Height="14.9" Text="Nombre" HorzAlign="Center" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text6" Left="620.8" Top="28.35" Width="144.65" Height="14.9" Text="RFC" HorzAlign="Center" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text16" Left="39.25" Top="43.25" Width="580.45" Height="14.9" Text="Direccion" HorzAlign="Center" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text1" Left="85.05" Width="491.4" Height="18.9" Text="[dsPRODUCTO.descripcion]"/>
+      <TextObject Name="Text3" Left="595.35" Width="47.25" Height="18.9" Text="[dsPRODUCTO.almacen]"/>
+      <TextObject Name="Text5" Left="661.5" Width="66.15" Height="18.9" Text="[dsPRODUCTO.almacen_sal]"/>
+    </ColumnHeaderBand>
+    <DataBand Name="Data1" Top="193.75" Width="770.74" Height="41.25" Border.Lines="All" DataSource="dsPRODUCTO">
+      <TextObject Name="Text7" Left="85.05" Width="47.25" Height="18.9" Text="[dsPRODUCTO.partida]"/>
+      <TextObject Name="Text8" Left="141.75" Width="56.7" Height="18.9" Text="[dsPRODUCTO.codigo_pro]"/>
+      <TextObject Name="Text9" Left="207.9" Width="274.05" Height="18.9" Text="[dsPRODUCTO.descripcion1]"/>
+      <TextObject Name="Text10" Left="491.4" Width="94.5" Height="18.9" Text="[dsPRODUCTO.cantidad_act]" Format="Number" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text11" Left="604.8" Width="94.5" Height="18.9" Text="[dsPRODUCTO.Cant_Ajuste]" Format="Number" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Trimming="EllipsisCharacter"/>
+    </DataBand>
+    <ReportSummaryBand Name="ReportSummary1" Top="293.9" Width="770.74" Height="28.35"/>
+    <ColumnFooterBand Name="ColumnFooter1" Top="255" Width="770.74" Height="18.9" Guides="0"/>
+  </ReportPage>
+</Report>

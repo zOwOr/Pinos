@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Este archivo se usa en el proceso de publicación y empaquetado del proyecto web. Para personalizar el comportamiento de este proceso,
+edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 para obtener más información. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArLZRUo7hGkGyDx9tbe1E/wAAAAACAAAAAAAQZgAAAAEAACAAAABVJPD+fkRU2ksGe4CB0QKEcVWvBK+hvNTvfaTq0AHALAAAAAAOgAAAAAIAACAAAADjQLppcEhVNIyo9sTChxglB1MMw6xU5W/b7hcq0KLA0CAAAAAPQz+HFI4YbdsZif1W2t6gjg25HWRdXPy6ol306H61m0AAAAC/apVIipoHMBKkOgy1m+8KraEfcw1OSU09w5WbZrk1ThhZ6Q1AqnDwESVhGGMiSAu4bqcK2KKcsx1J2YRphZ1o</EncryptedPassword>
+    <_PublishTargetUrl>ftp://ftp.imcomsa.com.mx/ftp.imcomsa.com.mx/httpdocs</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="AboutUs.aspx">
+      <publishTime>11/14/2018 12:59:04</publishTime>
+    </File>
+    <File Include="AboutUs.aspx.designer.vb">
+      <publishTime>11/14/2018 12:59:04</publishTime>
+    </File>
+    <File Include="AboutUs.aspx.vb">
+      <publishTime>11/14/2018 12:59:04</publishTime>
+    </File>
+    <File Include="AccountAddressBook.aspx">
+      <publishTime>11/14/2018 12:59:04</publishTime>
+    </File>
+    <File Include="AccountAddressBook.aspx.designer.vb">
+      <publishTime>11/14/2018 12:59:04</publishTime>
+    </File>
+    <File Include="AccountAddressBook.aspx.vb">
+      <publishTime>11/14/2018 12:59:04</publishTime>
+    </File>
+    <File Include="AccountAddressBookEdit.aspx">
+      <publishTime>11/14/2018 12:59:04</publishTime>
+    </File>
+    <File Include="AccountAddressBookEdit.aspx.designer.vb">
+      <publishTime>11/14/2018 12:59:04</publishTime>
+    </File>
+    <File Include="AccountAddressBookEdit.aspx.vb">
+      <publishTime>11/14/2018 12:59:04</publishTime>
+    </File>
+    <File Include="AccountAddressBookNew.aspx">
+      <publishTime>11/14/2018 12:59:04</publishTime>
+    </File>
+    <File Include="AccountAddressBookNew.aspx.designer.vb">
+      <publishTime>11/14/2018 12:59:04</publishTime>
+    </File>
+    <File Include="AccountAddressBookNew.aspx.vb">
+      <publishTime>11/14/2018 12:59:04</publishTime>
+    </File>
+    <File Include="AccountHistory.aspx">
+      <publishTime>11/14/2018 12:59:04</publishTime>
+    </File>
+    <File Include="AccountHistory.aspx.designer.vb">
+      <publishTime>11/14/2018 12:59:04</publishTime>
+    </File>
+    <File Include="AccountHistory.aspx.vb">
+      <publishTime>11/15/2018 15:22:42</publishTime>
+    </File>
+    <File Include="AccountLogin.aspx">
+      <publishTime>12/06/2018 09:26:08</publishTime>
+    </File>
+    <File Include="AccountLogin.aspx.designer.vb">
+      <publishTime>12/06/2018 09:26:08</publishTime>
+    </File>
+    <File Include="AccountLogin.aspx.vb">
+      <publishTime>11/14/2018 12:59:04</publishTime>
+    </File>
+    <File Include="CheckoutPayment.aspx">
+      <publishTime>11/14/2018 12:59:04</publishTime>
+    </File>
+    <File Include="CheckoutPayment.aspx.designer.vb">
+      <publishTime>11/14/2018 12:59:04</publishTime>
+    </File>
+    <File Include="CheckoutPayment.aspx.vb">
+      <publishTime>11/14/2018 21:07:28</publishTime>
+    </File>
+    <File Include="CheckoutShipping.aspx">
+      <publishTime>11/14/2018 12:59:04</publishTime>
+    </File>
+    <File Include="CheckoutShipping.aspx.designer.vb">
+      <publishTime>11/14/2018 12:59:04</publishTime>
+    </File>
+    <File Include="CheckoutShipping.aspx.vb">
+      <publishTime>11/14/2018 12:59:04</publishTime>
+    </File>
+    <File Include="Cobranza.aspx">
+      <publishTime>01/10/2019 14:35:00</publishTime>
+    </File>
+    <File Include="Cobranza.aspx.designer.vb">
+      <publishTime>12/07/2018 11:46:56</publishTime>
+    </File>
+    <File Include="Cobranza.aspx.vb">
+      <publishTime>01/08/2019 12:22:32</publishTime>
+    </File>
+    <File Include="config.xml">
+      <publishTime>11/14/2018 12:59:04</publishTime>
+    </File>
+    <File Include="Contact.aspx">
+      <publishTime>01/08/2019 13:55:24</publishTime>
+    </File>
+    <File Include="Contact.aspx.designer.vb">
+      <publishTime>11/14/2018 12:59:04</publishTime>
+    </File>
+    <File Include="Contact.aspx.vb">
+      <publishTime>01/09/2019 11:21:04</publishTime>
+    </File>
+    <File Include="Default.aspx">
+      <publishTime>11/15/2018 15:40:44</publishTime>
+    </File>
+    <File Include="Default.aspx.designer.vb">
+      <publishTime>11/15/2018 15:40:40</publishTime>
+    </File>
+    <File Include="Default.aspx.vb">
+      <publishTime>12/07/2018 09:45:12</publishTime>
+    </File>
+    <File Include="DocFisc.aspx">
+      <publishTime>11/15/2018 09:20:14</publishTime>
+    </File>
+    <File Include="DocFisc.aspx.designer.vb">
+      <publishTime>11/14/2018 16:48:28</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

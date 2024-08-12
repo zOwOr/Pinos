@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="Vb" ReferencedAssemblies="System.dll&#13;&#10;System.Drawing.dll&#13;&#10;System.Windows.Forms.dll&#13;&#10;System.Data.dll&#13;&#10;System.Xml.dll&#13;&#10;FastReport.RPTImportPlugin.dll" ReportInfo.Created="12/22/2013 21:51:44" ReportInfo.Modified="05/10/2017 18:29:11" ReportInfo.CreatorVersion="2014.1.5.0">
+  <ScriptText>Imports System
+Imports System.Collections
+Imports System.Collections.Generic
+Imports System.ComponentModel
+Imports System.Windows.Forms
+Imports System.Drawing
+Imports Microsoft.VisualBasic
+Imports FastReport
+Imports FastReport.Data
+Imports FastReport.Dialog
+Imports FastReport.Table
+Imports FastReport.Barcode
+Imports FastReport.Utils
+
+Namespace FastReport
+  Public Class ReportScript
+
+  End Class
+End Namespace
+</ScriptText>
+  <Dictionary>
+    <TableDataSource Name="dsCOBRANZA" ReferenceName="Data.dsCOBRANZA" DataType="System.Int32" Enabled="true">
+      <Column Name="folio" DataType="System.String"/>
+      <Column Name="fecha_alta" DataType="System.DateTime"/>
+      <Column Name="nombre" DataType="System.String"/>
+      <Column Name="descripcion" DataType="System.String"/>
+      <Column Name="valor_mov" DataType="System.Double"/>
+      <Column Name="total_aplicado" DataType="System.Double"/>
+      <Column Name="tipo_doc" DataType="System.String"/>
+      <Column Name="empresa" DataType="System.String"/>
+      <Column Name="rfc" DataType="System.String"/>
+      <Column Name="estatus" DataType="System.String"/>
+      <Column Name="moneda" DataType="System.String"/>
+      <Column Name="tipo" DataType="System.String"/>
+      <Column Name="factura" DataType="System.String"/>
+      <Column Name="fecha_fac" DataType="System.DateTime"/>
+      <Column Name="total_fac" DataType="System.Double"/>
+      <Column Name="saldo_fac" DataType="System.Double"/>
+      <Column Name="imp_aplicado" DataType="System.Double"/>
+    </TableDataSource>
+    <Total Name="Total-Valor_mov" Expression="[dsCOBRANZA.valor_mov]" Evaluator="Data2" PrintOn="ReportSummary1" EvaluateCondition="[dsCOBRANZA.tipo]=&quot;&quot;"/>
+    <Total Name="Total-aplicado" Expression="[dsCOBRANZA.total_aplicado]" Evaluator="Data2" PrintOn="ReportSummary1" EvaluateCondition="[dsCOBRANZA.tipo]=&quot;&quot;"/>
+    <Total Name="Total-valor_mov_tipodoc" Expression="[dsCOBRANZA.valor_mov]" Evaluator="Data2" PrintOn="GroupFooter2" EvaluateCondition="[dsCOBRANZA.tipo]=&quot;&quot;"/>
+    <Total Name="Totalaplicado_tipo_doc" Expression="[dsCOBRANZA.total_aplicado]" Evaluator="Data2" PrintOn="GroupFooter2" EvaluateCondition="[dsCOBRANZA.tipo]=&quot;&quot;"/>
+  </Dictionary>
+  <ReportPage Name="Page1" LeftMargin="6" TopMargin="6" RightMargin="6" BottomMargin="6" MirrorMargins="true" FirstPageSource="4" OtherPagesSource="4" Guides="179.55,538.65,0,75.6,9.45,85.05,56.7,179.55,576.45,652.05,652.05,756,179.55,368.55,28.35,576.45,727.65,538.65,538.65,538.65,538.65,576.45,368.55,368.55,37.8,538.65,538.65,652.05,727.65,-9.45,179.55,368.55,179.55,576.45,727.65">
+    <ReportTitleBand Name="ReportTitle1" Width="748.44" Fill.Color="White"/>
+    <PageHeaderBand Name="PageHeader1" Top="4" Width="748.44" Fill.Color="White" Guides="0,18.9,9.45,28.35,37.8,56.7"/>
+    <ColumnHeaderBand Name="ColumnHeader1" Top="8" Width="748.44" Height="87.05" Guides="28.35,28.35">
+      <TextObject Name="Text24" Left="85.05" Width="491.4" Height="18.9" Text="[dsCOBRANZA.empresa]" HorzAlign="Center" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text17" Left="37.8" Top="47.25" Width="141.75" Height="18.9" Font="Arial, 8pt"/>
+      <TextObject Name="Text3" Left="42.45" Top="66.15" Width="67.95" Height="20.9" Border.Lines="Bottom" Text="Folio" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text4" Left="171.35" Top="66.15" Width="246.6" Height="20.9" Border.Lines="Bottom" Text="Cliente" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text5" Left="110.4" Top="66.15" Width="61.05" Height="20.9" Border.Lines="Bottom" Text="Fecha" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text7" Left="578.9" Top="66.15" Width="77.5" Height="20.9" Border.Lines="Bottom" Text="Valor Mov" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text8" Left="647.5" Top="56.7" Width="77.5" Height="30.35" Border.Lines="Bottom" Text="Total Aplicado" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text22" Left="-0.45" Top="66.15" Width="42.5" Height="20.9" Border.Lines="Bottom" Text="T.Doc" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text23" Left="720.95" Top="66.15" Width="33.5" Height="20.9" Border.Lines="Bottom" Text="Est" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 8pt, style=Bold"/>
+      <TextObject Name="Text25" Top="28.35" Width="538.65" Height="18.9" Text="Reporte de Cobranza" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text27" Left="576.45" Top="31.8" Width="151.2" Height="12.45" Text="Pagina [Page] de [TotalPages#]" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text28" Left="576.45" Top="44.25" Width="151.2" Height="12.45" Text="[Date]" HorzAlign="Right" Font="Arial, 8pt"/>
+      <TextObject Name="Text30" Left="414.9" Top="66.15" Width="161.55" Height="20.9" Border.Lines="Bottom" Text="Descripcion" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+    </ColumnHeaderBand>
+    <GroupHeaderBand Name="GroupHeader2" Top="99.05" Width="748.44" Condition="[dsCOBRANZA.tipo_doc]">
+      <GroupHeaderBand Name="GroupHeader1" Top="103.05" Width="748.44" Height="15.12" Condition="[dsCOBRANZA.folio]">
+        <TextObject Name="Text2" Left="100.95" Width="70.5" Height="15.12" Text="[dsCOBRANZA.fecha_alta]" Format="Date" Format.Format="d" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt">
+          <Highlight>
+            <Condition Expression="[dsCOBRANZA.estatus] = &quot;CAN&quot;" Fill.Color="PeachPuff" ApplyFill="true"/>
+          </Highlight>
+        </TextObject>
+        <TextObject Name="Text11" Left="171.35" Width="218.25" Height="15.12" Text="[dsCOBRANZA.nombre]" VertAlign="Center" WordWrap="false" Font="Arial, 8pt">
+          <Highlight>
+            <Condition Expression="[dsCOBRANZA.estatus] = &quot;CAN&quot;" Fill.Color="PeachPuff" ApplyFill="true"/>
+          </Highlight>
+        </TextObject>
+        <TextObject Name="Text14" Left="578.9" Width="77.5" Height="15.12" Text="[dsCOBRANZA.valor_mov]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter">
+          <Highlight>
+            <Condition Expression="[dsCOBRANZA.estatus] = &quot;CAN&quot;" Fill.Color="PeachPuff" ApplyFill="true"/>
+          </Highlight>
+        </TextObject>
+        <TextObject Name="Text16" Left="656.95" Width="68.05" Height="15.12" Text="[dsCOBRANZA.total_aplicado]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter">
+          <Highlight>
+            <Condition Expression="[dsCOBRANZA.estatus] = &quot;CAN&quot;" Fill.Color="PeachPuff" ApplyFill="true"/>
+          </Highlight>
+        </TextObject>
+        <TextObject Name="Text12" Left="-0.45" Width="42.5" Height="15.12" Text="[dsCOBRANZA.tipo_doc]" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt">
+          <Highlight>
+            <Condition Expression="[dsCOBRANZA.estatus] = &quot;CAN&quot;" Fill.Color="PeachPuff" ApplyFill="true"/>
+          </Highlight>
+        </TextObject>
+        <TextObject Name="Text15" Left="720.95" Width="33.5" Height="15.12" Text="[dsCOBRANZA.estatus]" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 8pt">
+          <Highlight>
+            <Condition Expression="[dsCOBRANZA.estatus] = &quot;CAN&quot;" Fill.Color="PeachPuff" ApplyFill="true"/>
+          </Highlight>
+        </TextObject>
+        <TextObject Name="Text1" Left="42.45" Width="67.95" Height="15.12" Text="[dsCOBRANZA.folio]" VertAlign="Center" Font="Arial, 8pt">
+          <Highlight>
+            <Condition Expression="[dsCOBRANZA.estatus] = &quot;CAN&quot;" Fill.Color="PeachPuff" ApplyFill="true"/>
+          </Highlight>
+        </TextObject>
+        <TextObject Name="Text29" Left="542.95" Width="42.95" Height="15.12" Text="[dsCOBRANZA.moneda]" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 8pt">
+          <Highlight>
+            <Condition Expression="[dsCOBRANZA.estatus] = &quot;CAN&quot;" Fill.Color="PeachPuff" ApplyFill="true"/>
+          </Highlight>
+        </TextObject>
+        <TextObject Name="Text31" Left="386.55" Width="161.55" Height="15.12" CanBreak="false" Text="[dsCOBRANZA.descripcion]" VertAlign="Center" WordWrap="false" Font="Arial, 7pt">
+          <Highlight>
+            <Condition Expression="[dsCOBRANZA.estatus] = &quot;CAN&quot;" Fill.Color="PeachPuff" ApplyFill="true"/>
+          </Highlight>
+        </TextObject>
+        <DataBand Name="Data2" Top="122.17" Width="748.44" Height="15.12" Guides="0,18.9,18.9,9.45,9.45" DataSource="dsCOBRANZA">
+          <TextObject Name="Text32" Left="96.3" Width="49.05" Height="15.12" Text="[dsCOBRANZA.tipo]" VertAlign="Center" Font="Arial, 7pt">
+            <Highlight>
+              <Condition Expression="[dsCOBRANZA.tipo]=&quot;&quot;" Visible="false" ApplyTextFill="false"/>
+            </Highlight>
+          </TextObject>
+          <TextObject Name="Text33" Left="151.2" Width="67.95" Height="15.12" Text="[dsCOBRANZA.factura]" HideZeros="true" VertAlign="Center" Font="Arial, 7pt">
+            <Highlight>
+              <Condition Expression="[dsCOBRANZA.tipo]=&quot;&quot;" Visible="false" ApplyTextFill="false"/>
+            </Highlight>
+          </TextObject>
+          <TextObject Name="Text34" Left="228.6" Width="52.92" Height="15.12" CanBreak="false" Text="[dsCOBRANZA.fecha_fac]" HideZeros="true" VertAlign="Center" WordWrap="false" Font="Arial, 7pt">
+            <Highlight>
+              <Condition Expression="[dsCOBRANZA.tipo]=&quot;&quot;" Visible="false" ApplyTextFill="false"/>
+            </Highlight>
+          </TextObject>
+          <TextObject Name="Text35" Left="304.2" Width="58.5" Height="15.12" Text="[dsCOBRANZA.total_fac]" HideZeros="true" Format="Number" Format.UseLocale="true" HorzAlign="Right" VertAlign="Center" Font="Arial, 7pt">
+            <Highlight>
+              <Condition Expression="[dsCOBRANZA.tipo]=&quot;&quot;" Visible="false" ApplyTextFill="false"/>
+            </Highlight>
+          </TextObject>
+          <TextObject Name="Text36" Left="415.8" Width="58.5" Height="15.12" Text="[dsCOBRANZA.saldo_fac]" HideZeros="true" Format="Number" Format.UseLocale="true" HorzAlign="Right" VertAlign="Center" Font="Arial, 7pt">
+            <Highlight>
+              <Condition Expression="[dsCOBRANZA.tipo]=&quot;&quot;" Visible="false" ApplyTextFill="false"/>
+            </Highlight>
+          </TextObject>
+          <TextObject Name="Text37" Left="359.1" Width="58.5" Height="15.12" Text="[dsCOBRANZA.imp_aplicado]" HideZeros="true" Format="Number" Format.UseLocale="true" HorzAlign="Right" VertAlign="Center" Font="Arial, 7pt">
+            <Highlight>
+              <Condition Expression="[dsCOBRANZA.tipo]=&quot;&quot;" Visible="false" ApplyTextFill="false"/>
+            </Highlight>
+          </TextObject>
+          <Sort>
+            <Sort Expression="[dsCOBRANZA.folio]"/>
+            <Sort Expression="[dsCOBRANZA.tipo]" Descending="true"/>
+          </Sort>
+        </DataBand>
+        <GroupFooterBand Name="GroupFooter1" Top="141.29" Width="748.44"/>
+      </GroupHeaderBand>
+      <GroupFooterBand Name="GroupFooter2" Top="145.29" Width="748.44" Height="37.8">
+        <TextObject Name="Text38" Left="642.15" Width="78.5" Height="18.9" Border.Lines="Top" Text="[Totalaplicado_tipo_doc]" Format="Currency" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.CurrencySymbol="$" Format.PositivePattern="0" Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" Font="Times New Roman, 8pt"/>
+        <TextObject Name="Text39" Left="573.55" Width="78.5" Height="18.9" Border.Lines="Top" Text="[Total-valor_mov_tipodoc]" Format="Currency" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.CurrencySymbol="$" Format.PositivePattern="0" Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" Font="Times New Roman, 8pt"/>
+        <TextObject Name="Text40" Left="477.6" Top="-1" Width="61.05" Height="20.9" Border.Lines="Top" Text="Total" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      </GroupFooterBand>
+    </GroupHeaderBand>
+    <ReportSummaryBand Name="ReportSummary1" Top="191.09" Width="748.44" Height="18.9" Fill.Color="White" Guides="0,18.9">
+      <TextObject Name="Text18" Left="642.15" Width="78.5" Height="18.9" Border.Lines="Top" Text="[Total-aplicado]" Format="Currency" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.CurrencySymbol="$" Format.PositivePattern="0" Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" Font="Times New Roman, 8pt"/>
+      <TextObject Name="Text19" Left="573.55" Width="78.5" Height="18.9" Border.Lines="Top" Text="[Total-Valor_mov]" Format="Currency" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.CurrencySymbol="$" Format.PositivePattern="0" Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" Font="Times New Roman, 8pt"/>
+      <TextObject Name="Text41" Left="458.7" Top="-2" Width="79.95" Height="20.9" Border.Lines="Top" Text="Total General" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+    </ReportSummaryBand>
+    <ColumnFooterBand Name="ColumnFooter1" Top="187.09" Width="748.44"/>
+    <PageFooterBand Name="PageFooter1" Top="213.99" Width="748.44" Fill.Color="White"/>
+  </ReportPage>
+</Report>

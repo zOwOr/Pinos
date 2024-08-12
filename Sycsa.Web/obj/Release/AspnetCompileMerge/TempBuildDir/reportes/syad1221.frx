@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="Vb" ReferencedAssemblies="System.dll&#13;&#10;System.Drawing.dll&#13;&#10;System.Windows.Forms.dll&#13;&#10;System.Data.dll&#13;&#10;System.Xml.dll&#13;&#10;FastReport.RPTImportPlugin.dll" ReportInfo.Created="12/22/2013 21:51:44" ReportInfo.Modified="05/22/2016 20:57:42" ReportInfo.CreatorVersion="2014.1.5.0">
+  <ScriptText>Imports System
+Imports System.Collections
+Imports System.Collections.Generic
+Imports System.ComponentModel
+Imports System.Windows.Forms
+Imports System.Drawing
+Imports Microsoft.VisualBasic
+Imports FastReport
+Imports FastReport.Data
+Imports FastReport.Dialog
+Imports FastReport.Table
+Imports FastReport.Barcode
+Imports FastReport.Utils
+
+Namespace FastReport
+  Public Class ReportScript
+
+  End Class
+End Namespace
+</ScriptText>
+  <Dictionary>
+    <TableDataSource Name="dsCortePuntoVenta" ReferenceName="Data.dsCortePuntoVenta" DataType="System.Int32" Enabled="true">
+      <Column Name="folio" DataType="System.Int32"/>
+      <Column Name="fecha" DataType="System.DateTime"/>
+      <Column Name="cliente" DataType="System.String"/>
+      <Column Name="total_mn" DataType="System.Decimal"/>
+      <Column Name="saldo_mn" DataType="System.Decimal"/>
+      <Column Name="estatus" DataType="System.String"/>
+      <Column Name="referencia" DataType="System.String"/>
+      <Column Name="moneda" DataType="System.String"/>
+      <Column Name="tipo_cambio" DataType="System.Decimal"/>
+      <Column Name="subtotal" DataType="System.Decimal"/>
+      <Column Name="iva" DataType="System.Decimal"/>
+      <Column Name="totaliva" DataType="System.Decimal"/>
+      <Column Name="retencion" DataType="System.Decimal"/>
+      <Column Name="fechacancelado" DataType="System.DateTime"/>
+      <Column Name="clave" DataType="System.Int32"/>
+      <Column Name="vendedor" DataType="System.String"/>
+      <Column Name="tipo_doc" DataType="System.String"/>
+      <Column Name="Orden_comp" DataType="System.String"/>
+      <Column Name="ret_iva" DataType="System.Double"/>
+      <Column Name="ret_isr" DataType="System.Double"/>
+      <Column Name="CLIENTE1" DataType="System.String"/>
+      <Column Name="Cli_mos" DataType="System.String"/>
+      <Column Name="EMPRESA" DataType="System.Int32"/>
+      <Column Name="EMPRESA1" DataType="System.String"/>
+      <Column Name="serie" DataType="System.String"/>
+      <Column Name="TotalIeps" DataType="System.Double"/>
+    </TableDataSource>
+    <Total Name="totalsaldo" Expression="[dsCortePuntoVenta.saldo_mn]" Evaluator="Data2" PrintOn="ReportSummary1"/>
+    <Total Name="Total-total" Expression="[dsCortePuntoVenta.total_mn]" Evaluator="Data2"/>
+    <Total Name="Total-iva" Expression="[dsCortePuntoVenta.totaliva]" Evaluator="Data2"/>
+    <Total Name="Total-subtotal" Expression="[dsCortePuntoVenta.subtotal]" Evaluator="Data2"/>
+    <Total Name="Totalcliente" Expression="[dsCortePuntoVenta.total_mn]" Evaluator="Data2" PrintOn="GroupFooter1"/>
+    <Total Name="saldocliente" Expression="[dsCortePuntoVenta.saldo_mn]" Evaluator="Data2" PrintOn="GroupFooter1"/>
+  </Dictionary>
+  <ReportPage Name="Page1" LeftMargin="6" TopMargin="6" RightMargin="6" BottomMargin="6" MirrorMargins="true" FirstPageSource="4" OtherPagesSource="4" Guides="264.6,463.05,0,75.6,9.45,85.05,56.7,160.65,576.45,652.05,652.05,756,264.6,330.75,28.35,406.35,576.45,737.1,472.5,557.55,415.8,500.85,500.85,567,396.9,321.3,37.8,472.5,491.4,642.6,737.1,-9.45,727.65,207.9,321.3,179.55,576.45">
+    <ReportTitleBand Name="ReportTitle1" Width="748.44" Fill.Color="White"/>
+    <PageHeaderBand Name="PageHeader1" Top="4" Width="748.44" Fill.Color="White" Guides="0,18.9,9.45,28.35,37.8,56.7"/>
+    <ColumnHeaderBand Name="ColumnHeader1" Top="8" Width="748.44" Height="68.15" Guides="28.35,28.35">
+      <TextObject Name="Text24" Left="85.05" Width="500.85" Height="18.9" Text="[dsCortePuntoVenta.EMPRESA1]" HorzAlign="Center" Font="Arial, 14pt, style=Bold"/>
+      <TextObject Name="Text17" Left="18.9" Top="28.35" Width="141.75" Height="18.9" Text="[dsCortePuntoVenta.vendedor]" Font="Arial, 8pt"/>
+      <TextObject Name="Text3" Left="51.9" Top="47.25" Width="67.95" Height="20.9" Border.Lines="Bottom" Text="Serie" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text4" Left="190.25" Top="47.25" Width="218.25" Height="20.9" Border.Lines="Bottom" Text="Cliente" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text5" Left="119.85" Top="47.25" Width="70.5" Height="20.9" Border.Lines="Bottom" Text="Fecha" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text7" Left="408.8" Top="47.25" Width="77.5" Height="20.9" Border.Lines="Bottom" Text="Sub-total" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text8" Left="486.85" Top="47.25" Width="77.5" Height="20.9" Border.Lines="Bottom" Text="Total-iva" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text9" Left="564.9" Top="47.25" Width="77.5" Height="20.9" Border.Lines="Bottom" Text="Total" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 9pt, style=Bold"/>
+      <TextObject Name="Text10" Left="642.95" Top="47.25" Width="77.5" Height="20.9" Border.Lines="Bottom" Text="Saldo" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 9pt, style=Bold"/>
+      <TextObject Name="Text22" Left="9" Top="47.25" Width="42.5" Height="20.9" Border.Lines="Bottom" Text="T.Doc" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text23" Left="720.95" Top="47.25" Width="33.5" Height="20.9" Border.Lines="Bottom" Text="Est" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 9pt, style=Bold"/>
+    </ColumnHeaderBand>
+    <GroupHeaderBand Name="GroupHeader1" Top="80.15" Width="748.44" Condition="[dsCortePuntoVenta.cliente]">
+      <DataBand Name="Data2" Top="84.15" Width="748.44" Height="18.9" Guides="0,18.9,9.45,9.45,9.45" DataSource="dsCortePuntoVenta">
+        <TextObject Name="Text1" Left="42.45" Width="67.95" Height="18.9" Text="[dsCortePuntoVenta.folio]" VertAlign="Center" Font="Arial, 8pt"/>
+        <TextObject Name="Text2" Left="110.4" Width="70.5" Height="18.9" Text="[dsCortePuntoVenta.fecha]" Format="Date" Format.Format="d" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/>
+        <TextObject Name="Text11" Left="180.8" Top="3" Width="218.25" Height="12.9" Text="[dsCortePuntoVenta.cliente]" Duplicates="Hide" WordWrap="false" Font="Arial, 8pt"/>
+        <TextObject Name="Text6" Left="633.5" Width="77.5" Height="18.9" Text="[dsCortePuntoVenta.saldo_mn]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="Times New Roman, 8pt" Trimming="EllipsisCharacter"/>
+        <TextObject Name="Text13" Left="555.45" Width="77.5" Height="18.9" Text="[dsCortePuntoVenta.total_mn]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="Times New Roman, 8pt" Trimming="EllipsisCharacter"/>
+        <TextObject Name="Text14" Left="399.35" Width="77.5" Height="18.9" Text="[dsCortePuntoVenta.subtotal]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+        <TextObject Name="Text16" Left="477.4" Width="77.5" Height="18.9" Text="[dsCortePuntoVenta.totaliva]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+        <TextObject Name="Text12" Left="-0.45" Width="42.5" Height="18.9" Text="[dsCortePuntoVenta.tipo_doc]" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/>
+        <TextObject Name="Text15" Left="711.5" Width="33.5" Height="18.9" Text="[dsCortePuntoVenta.estatus]" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 8pt"/>
+        <Sort>
+          <Sort Expression="[dsCortePuntoVenta.folio]"/>
+        </Sort>
+      </DataBand>
+      <GroupFooterBand Name="GroupFooter1" Top="107.05" Width="748.44" Height="28.35">
+        <TextObject Name="Text25" Left="548.1" Width="85.05" Height="18.9" Border.Lines="Top" Text="[Totalcliente]" Format="Number" Format.UseLocale="true" HorzAlign="Right" Font="Times New Roman, 8pt"/>
+        <TextObject Name="Text26" Left="633.15" Width="75.6" Height="18.9" Border.Lines="Top" Text="[saldocliente]" Format="Number" Format.UseLocale="true" HorzAlign="Right" Font="Times New Roman, 8pt"/>
+      </GroupFooterBand>
+    </GroupHeaderBand>
+    <ReportSummaryBand Name="ReportSummary1" Top="162.3" Width="748.44" Height="18.9" Fill.Color="White" Guides="0,18.9">
+      <TextObject Name="Text19" Left="564.1" Width="78.5" Height="18.9" Border.Lines="Top" Text="[Total-total]" Format="Currency" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.CurrencySymbol="$" Format.PositivePattern="0" Format.NegativePattern="1" HorzAlign="Right" VertAlign="Bottom" Font="Times New Roman, 8pt"/>
+      <TextObject Name="Text21" Left="404" Width="80.5" Height="18.9" Border.Lines="Top" Text="[Total-subtotal]" Format="Currency" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.CurrencySymbol="$" Format.PositivePattern="0" Format.NegativePattern="1" HorzAlign="Right" VertAlign="Bottom" Font="Arial, 8pt"/>
+      <TextObject Name="Text20" Left="485.05" Width="78.5" Height="18.9" Border.Lines="Top" Text="[Total-iva]" Format="Currency" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.CurrencySymbol="$" Format.PositivePattern="0" Format.NegativePattern="1" HorzAlign="Right" VertAlign="Bottom" Font="Arial, 8pt"/>
+      <TextObject Name="Text18" Left="642.15" Width="78.5" Height="18.9" Border.Lines="Top" Text="[totalsaldo]" Format="Currency" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.CurrencySymbol="$" Format.PositivePattern="0" Format.NegativePattern="1" HorzAlign="Right" VertAlign="Bottom" Font="Times New Roman, 8pt"/>
+    </ReportSummaryBand>
+    <ColumnFooterBand Name="ColumnFooter1" Top="139.4" Width="748.44" Height="18.9"/>
+    <PageFooterBand Name="PageFooter1" Top="185.2" Width="748.44" Fill.Color="White"/>
+  </ReportPage>
+</Report>

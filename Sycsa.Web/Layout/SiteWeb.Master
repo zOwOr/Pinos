@@ -1,0 +1,598 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="SiteWeb.master.vb" Inherits="sycsa.Web.SiteWeb" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta id="html_description" runat="server" name="description" content="<%= Response.Write(Html._Layout_metadescription)%>" />
+    <meta id="thml_Keywords" runat="server" name="Keywords" content="<%= Response.Write(Html._Layout_metadekeyword)%>" />
+    <title runat="server"></title>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,700,900,700italic,500italic' rel='stylesheet' type='text/css' />
+
+    <!-- Stylesheets -->
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+    <link rel="stylesheet" href="//cdn.datatables.net/2.0.8/css/dataTables.dataTables.min.css" />
+    <!-- Latest compiled and minified CSS -->
+
+    <link rel="stylesheet" href="/in/css/perfect-scrollbar.css" />
+
+    <link rel="stylesheet" href="/in/css/flexslider.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/in/css/fontello.css" />
+    <link rel="stylesheet" type="text/css" href="/in/css/settings.css" media="screen" />
+    <link href="/in/css/jquery.nouislider.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/in/css/animation.css" />
+    <link rel="stylesheet" href="/in/css/chosen.css" />
+    <link rel="stylesheet" href="/in/css/owl.carousel.css" />
+    <link rel="stylesheet" href="/in/css/owl.theme.css" />
+
+    <link rel="stylesheet" href="/in/css/flexslider.css" type="text/css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/in/css/settings.css" media="screen" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <style>
+        .navbar-nav .nav-link:hover {
+            color: blue;
+        }
+    </style>
+
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<link rel="stylesheet" href="css/ie.css">
+        <![endif]-->
+    <!--[if IE 7]>
+			<link rel="stylesheet" href="css/fontello-ie7.css">
+		<![endif]-->
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-5Q948GP');</script>
+    <!-- End Google Tag Manager -->
+</head>
+<body class="bg-body-tertiary">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5Q948GP"
+            height="0" width="0" style="display: none; visibility: hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <div class="container">
+
+            <!-- Header -->
+            <header class="row">
+
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <!-- Top Header -->
+                    <div id="top-header">
+                        <div class="row">
+                            <nav class="navbar navbar-expand-lg  navbar-light bg-light ">
+
+
+                                <!-- Container wrapper -->
+                                <div class="container-fluid">
+                                    <!-- Navbar brand -->
+                                    <div class="col-4 d-flex align-items-center justify-content-between">
+
+                                        <a href="../Ferrepinos/index.html" class="d-flex align-items-center me-auto me-lg-0 link-underline link-dark link-underline-opacity-0">
+                                            <% If (Html._Layout_logoimg = True) Then %>
+                                            <asp:Image ID="Image2" runat="server" DescriptionUrl="~/imagen/logo2.png" ImageUrl="~/imagen/logo2.png" Width="120px" />
+                                            <%Else%>
+                                            <span class="logo"><%Response.Write(Html._Layout_Empresa) %></span>
+                                            <% End If  %>
+                                            <h4><strong><em>Ferreteria Pinos</em></strong></h4>
+
+
+                                        </a>
+                                    </div>
+
+                                    <!-- Toggle button -->
+                                    <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent"
+                                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                        <i class="fas fa-bars"></i>
+                                    </button>
+
+                                    <!-- Collapsible wrapper -->
+                                    <div class="collapse navbar-collapse col-5" id="navbarSupportedContent">
+                                        <!-- Left links -->
+                                        <ul class="navbar-nav mx-auto ">
+                                            <li class="nav-item  ">
+                                                <a class="nav-link active" aria-current="page" href="<% Response.Write(ResolveUrl("~/home.aspx"))%>">
+                                                    <button type="button" class="btn btn-outline-primary">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                                                            <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5" />
+                                                        </svg>
+                                                        Inicio</button></a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="<% Response.Write(ResolveUrl("~/Productos.aspx"))%>">
+                                                    <button type="button" class="btn btn-outline-primary">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-fill" viewBox="0 0 16 16">
+                                                            <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4z" />
+                                                        </svg>
+                                                        Productos</button></a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="<% Response.Write(ResolveUrl("~/Login.aspx"))%>">
+                                                    <button type="button" class="btn btn-outline-primary">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-square" viewBox="0 0 16 16">
+                                                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                                                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z" />
+                                                        </svg>
+                                                        Mi cuenta</button></a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="<% Response.Write(ResolveUrl("~/facturacion.aspx"))%>">
+                                                    <button type="button" class="btn btn-outline-primary">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-pdf" viewBox="0 0 16 16">
+                                                            <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2M9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z" />
+                                                            <path d="M4.603 14.087a.8.8 0 0 1-.438-.42c-.195-.388-.13-.776.08-1.102.198-.307.526-.568.897-.787a7.7 7.7 0 0 1 1.482-.645 20 20 0 0 0 1.062-2.227 7.3 7.3 0 0 1-.43-1.295c-.086-.4-.119-.796-.046-1.136.075-.354.274-.672.65-.823.192-.077.4-.12.602-.077a.7.7 0 0 1 .477.365c.088.164.12.356.127.538.007.188-.012.396-.047.614-.084.51-.27 1.134-.52 1.794a11 11 0 0 0 .98 1.686 5.8 5.8 0 0 1 1.334.05c.364.066.734.195.96.465.12.144.193.32.2.518.007.192-.047.382-.138.563a1.04 1.04 0 0 1-.354.416.86.86 0 0 1-.51.138c-.331-.014-.654-.196-.933-.417a5.7 5.7 0 0 1-.911-.95 11.7 11.7 0 0 0-1.997.406 11.3 11.3 0 0 1-1.02 1.51c-.292.35-.609.656-.927.787a.8.8 0 0 1-.58.029m1.379-1.901q-.25.115-.459.238c-.328.194-.541.383-.647.547-.094.145-.096.25-.04.361q.016.032.026.044l.035-.012c.137-.056.355-.235.635-.572a8 8 0 0 0 .45-.606m1.64-1.33a13 13 0 0 1 1.01-.193 12 12 0 0 1-.51-.858 21 21 0 0 1-.5 1.05zm2.446.45q.226.245.435.41c.24.19.407.253.498.256a.1.1 0 0 0 .07-.015.3.3 0 0 0 .094-.125.44.44 0 0 0 .059-.2.1.1 0 0 0-.026-.063c-.052-.062-.2-.152-.518-.209a4 4 0 0 0-.612-.053zM8.078 7.8a7 7 0 0 0 .2-.828q.046-.282.038-.465a.6.6 0 0 0-.032-.198.5.5 0 0 0-.145.04c-.087.035-.158.106-.196.283-.04.192-.03.469.046.822q.036.167.09.346z" />
+                                                        </svg>
+                                                        Facturación</button></a>
+                                            </li>
+                                        </ul>
+                                        <!-- Left links -->
+
+                                        <!-- Search form -->
+
+
+
+                                    </div>
+                                    <ul class="text-right navbar-nav col-3 mx-auto">
+                                        <li id="dvLogin" runat="server" visible="true" class="mx-auto">
+                                            <a href="#" class="btn btn-primary fs-6" id="loginLink" data-bs-toggle="modal" data-bs-target="#loginModal"><i class="icons icon-user-3"></i>Login</a>
+                                            <div id="loginModal" class="modal fade" tabindex="-1" role="dialog">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h4 class="modal-title">Iniciar Sesión</h4>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="mb-3 row">
+                                                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                                                <div class="col-sm-12">
+                                                                    <input id="txtUserName" runat="server" placeholder="Usuario" class="form-control" autocomplete="off" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="mb-3 row">
+                                                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                                                <div class="col-sm-12">
+                                                                    <input id="txtPassword" type="password" runat="server" placeholder="Contraseña" class="form-control" autocomplete="off" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btn btn-success" />
+                                                            <a href="<% Response.Write(ResolveUrl("~/iforgot/iforgot.aspx"))%>" class="btn btn-link">¿Olvidaste tu contraseña?</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li id="dvLogin1" runat="server" visible="true" class="mx-auto">
+                                            <a href="<% Response.Write(ResolveUrl("~/newAccount.aspx"))%>" class="btn btn-primary fs-6">
+                                                <i class="icons icon-lock"></i>Crear una cuenta
+                                            </a>
+                                        </li>
+
+                                        <li id="dvLogin2" runat="server" visible="true" class="login-create purple">
+                                            <i class="icons icon-user"></i>
+                                            <asp:Label ID="txtLabelQuantity" runat="server" Text="Quantity" meta:resourcekey="txtLabelQuantity"></asp:Label>
+                                            <br />
+                                            <a href="/?cs=1"><strong>Cerrar sesión</strong> </a>
+                                        </li>
+                                    </ul>
+
+
+                                    <!-- Collapsible wrapper -->
+                                </div>
+                                <!-- Container wrapper -->
+
+
+                            </nav>
+
+                        </div>
+
+                    </div>
+                    <!-- /Top Header -->
+
+
+
+
+
+
+                    <!-- Main Navigation -->
+
+                    <%--                    <nav id="main-navigation" class="my-5">
+                        <div class="card">
+                            <div class="card-body">
+
+                                <div id="search-bar">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <table id=" search-bar-table">
+                                            <tr>
+                                                <td class="search-column-1">
+                                                    <p id="txtNameProductSearch" runat="server" meta:resourcekey="txtNameProductSearch">Nombre del producto a buscar:</p>
+                                                    <asp:TextBox ID="txtShears" runat="server" CssClass="form-control" placeholder="Producto" meta:resourcekey="txtShears" MaxLength="250"></asp:TextBox>
+                                                </td>
+                                                <td class="search-column-2">
+                                                    <p id="P1" runat="server" meta:resourcekey="txtNameProductSearch">Seleccionar categoria:</p>
+                                                    <asp:DropDownList runat="server" ID="dlCategories" CssClass="form-select" DataTextField="CategoryName" DataValueField="idCategories" class="chosen-select-search ">
+                                                    </asp:DropDownList>
+                                                </td>
+                                                <td class="search-column-3">
+                                                    <button type="button" class="btn btn-outline-warning  mt-4" id="search-button" onclick="__doPostBack('shearch', '');">Buscar <i class="icons icon-search-1"></i></button>
+
+                                                </td>
+                                            </tr>
+                                        </table>
+
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </nav>--%>
+                    <p>
+                        &nbsp;
+                    </p>
+
+                </div>
+                <div class="d-flex justify-content-end">
+                    <div class="orange">
+                        <div id="cart-dropdown" class="box-dropdown parent-arrow">
+                            <div class="hidden">
+                                <div class="box-wrapper parent-border modal" role="dialog">
+                                    <div class="modal-dialog carritow" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h3 id="txtRecently" runat="server" meta:resourcekey="txtRecently">Carrito de compras</h3>
+                                            </div>
+                                            <div class="modal-body">
+                                                <asp:GridView ID="gvListProductos" runat="server" CssClass="orderinfo-table" AutoGenerateColumns="False"
+                                                    DataKeyNames="IdProduct" Width="450" EmptyDataText="No hay nada en su carrito de compras." GridLines="None">
+                                                    <Columns>
+                                                        <asp:BoundField DataField="IdProduct" Visible="false"></asp:BoundField>
+
+                                                        <asp:TemplateField>
+                                                            <ItemTemplate>
+                                                                <img src="/imagen/products/sample1-thumb.jpg" alt="<%#Eval("Producto") %>" width="100%" class="img-thumbnail">
+                                                            </ItemTemplate>
+                                                            <HeaderStyle Width="25%"></HeaderStyle>
+                                                        </asp:TemplateField>
+
+                                                        <asp:BoundField DataField="Producto" HeaderText="" ItemStyle-HorizontalAlign="Right"
+                                                            HeaderStyle-HorizontalAlign="Right">
+                                                            <HeaderStyle HorizontalAlign="Center" Font-Bold="True" VerticalAlign="Middle" Width="45%"></HeaderStyle>
+                                                            <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle"></ItemStyle>
+                                                        </asp:BoundField>
+
+                                                        <asp:TemplateField HeaderText="">
+                                                            <ItemTemplate>
+                                                                <small><%#Eval("Cantidad") %></small>
+                                                                <small><%# IIf(Session("MM_Lista") Is Nothing, " x ", " x " & FormatCurrency(Eval("Precio"), 2))%></small>
+                                                                <asp:LinkButton runat="server" ID="btnEliminar" Text="Eliminar" CommandName="Eliminar" CssClass="parent-color" CommandArgument='<%# Eval("IdProduct").ToString() & "," & Eval("Unidad") %>' Style="font-size: 12px;" CausesValidation="False"></asp:LinkButton>
+                                                            </ItemTemplate>
+                                                            <HeaderStyle HorizontalAlign="Center" Font-Bold="True" VerticalAlign="Middle" Width="30%"></HeaderStyle>
+                                                            <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle"></ItemStyle>
+                                                        </asp:TemplateField>
+                                                    </Columns>
+                                                </asp:GridView>
+                                            </div>
+                                            <div id="cartFooterPrice" runat="server">
+                                                <div class="footer" style="height: inherit">
+                                                    <table class="checkout-table pull-right">
+                                                        <tr>
+                                                            <td><strong id="lblSubtotal" runat="server" meta:resourcekey="lblSubtotal">Sub Total</strong></td>
+                                                            <td><% Response.Write(IIf(Session("MM_Lista") Is Nothing, "", FormatCurrency(Session("_SubTotal"), 2)))%></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="align-right"><strong id="lblIva" runat="server" meta:resourcekey="lblIva">Iva</strong></td>
+                                                            <td><% Response.Write(IIf(Session("MM_Lista") Is Nothing, "", FormatCurrency(Session("_PorcentajeIva"), 2)))%></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="align-right"><strong id="lblTotal" runat="server" meta:resourcekey="lblTotal">Total</strong></td>
+                                                            <td><strong class="parent-color"><% Response.Write(IIf(Session("MM_Lista") Is Nothing, "", FormatCurrency((Session("_SubTotal") + Session("_PorcentajeIva")), 2)))%></strong></td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <div class="box-wrapper no-border">
+                                                    <asp:HyperLink runat="server" ID="LinkCart2" NavigateUrl="~/ShowCart.aspx" CssClass="button pull-right" Text="Ver Carrito" meta:resourcekey="LinkCart2"> </asp:HyperLink>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div>
+                            <a href="ShowCart.aspx">
+                                <button type="button" class="btn btn-primary position-relative">
+                                    <i class="bi bi-cart4"></i>Carrito <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill text-bg-warning"><%
+                                                                                                                                                                               If Session("_TotalItemsProduct") Is Nothing Then
+                                                                                                                                                                                   Response.Write("0")
+                                                                                                                                                                               Else
+                                                                                                                                                                                   Response.Write(Session("_TotalItemsProduct"))
+                                                                                                                                                                               End If
+                                    %> <span class="visually-hidden">Sin Articulos</span></span>
+                                </button>
+                            </a>
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- /Header -->
+
+
+
+
+
+
+
+            <div class="row">
+
+                <!-- Main Content -->
+                <asp:ContentPlaceHolder ID="Html_sidebar" runat="server" ClientIDMode="Static">
+                </asp:ContentPlaceHolder>
+
+                <asp:ContentPlaceHolder ID="Html_head" runat="server" ClientIDMode="Static">
+                </asp:ContentPlaceHolder>
+
+                <asp:ContentPlaceHolder ID="Html_Content" runat="server" ClientIDMode="Static">
+                </asp:ContentPlaceHolder>
+                <!-- /Sidebar -->
+
+            </div>
+            <!-- Footer -->
+
+
+
+
+
+
+
+            <footer id="footer" class="bg-light  text-white">
+                <!-- Grid container -->
+                <div class="container p-4">
+                    <!-- Section: Social media -->
+                    <section class="mb-4 text-center">
+                        <!-- Facebook -->
+                        <a class="btn btn-light btn-outline-dark btn-floating m-1" href="https://es-la.facebook.com/ferrepinos" target="_blank" role="button"><i class="bi bi-facebook"></i></a>
+
+                        <!-- TikTok -->
+
+
+                    </section>
+
+                    <!-- Section: Text -->
+
+
+                    <%--                    <div class="row">
+                        <!-- section: text -->
+                        <section class="col-12 ">
+                            <p class="m-5">
+                                lorem ipsum dolor sit amet consectetur adipisicing elit. sunt distinctio earum
+        repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
+        eum harum corrupti dicta, aliquam sequi voluptate quas.
+                            </p>
+                        </section>
+                    </div>--%>
+
+                    <!-- Section: Links -->
+                    <section class="text-left ">
+                        <!--Grid row-->
+                        <div class="row m-5">
+                            <!--Grid column-->
+                            <div class="col-3">
+                                <h5 class="text-uppercase text-dark">Servicios</h5>
+
+                                <ul class="align-left ">
+                                    <li class="my-2 link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><a href="<% Response.Write(ResolveUrl("~/myAccount.aspx?"))%>">Mi Cuenta</a></li>
+                                    <li class="my-2 link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><a href="<% Response.Write(ResolveUrl("~/AccountHistory.aspx?"))%>">Historial de pedidos</a></li>
+                                </ul>
+                            </div>
+                            <!--Grid column-->
+
+                            <!--Grid column-->
+                            <div class="col-4">
+                                <h5 class="text-uppercase  text-dark">Información</h5>
+
+                                <ul class="align-left">
+                                    <li class="my-2 link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><a href="<% Response.Write(ResolveUrl("~/AboutUs.aspx?"))%>">Acerca de nosotros</a></li>
+                                    <%--                                    <li class="my-2 link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><a href="<% Response.Write(ResolveUrl("~/PrivacyPolicy.aspx"))%>">Politica de privacidad</a></li>
+                                    <li class="my-2 link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><a href="<% Response.Write(ResolveUrl("~/TermsConditions.aspx"))%>">Terminos &amp; Condiciones</a></li>--%>
+                                </ul>
+                            </div>
+                            <!--Grid column-->
+
+                            <!--Grid column-->
+                            <div class="col-5">
+                                <h5 class="text-uppercase  text-dark">Contacto</h5>
+
+                                <ul class="align-left">
+                                    <li class="my-2 link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><a><i class="icon fa fa-map-pin"></i><% Response.Write(Html._Layout_address)%></a></li>
+
+                                    <li class="my-2 link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><i class="icon-location"></i><a href="<% Response.Write(ResolveUrl("~/contact.aspx"))%>">Ubicacion </a></li>
+                                    <li class="my-2 link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><i class="icon-phone"></i><% Response.Write(Html._Layout_phone)%> </li>
+                                    <li class="my-2 link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><i class="icon-mail-alt"></i><a href="<%--<% Response.Write(Html._Layout_emailContact)%>--%> mailto: info@ferreteriapinos.com"><%--<% Response.Write(Html._Layout_emailContact)%> --%> info@ferreteriapinos.com</a></li>
+                                </ul>
+                            </div>
+
+                            <!--Grid column-->
+                        </div>
+                        <!--Grid row-->
+                    </section>
+                    <!-- Section: Links -->
+                </div>
+                <!-- Grid container -->
+
+                <!-- Copyright -->
+                <div class="text-center p-3  text-dark" style="background-color: rgba(0, 0, 0, 0.2);">
+                    <strong>© Copyright:
+    <% Response.Write(Now.Date.Year())%> <a href="<%  Response.Write(ResolveUrl("~/home.aspx"))%>">Ferreteria Pinos</a>. All Rights Reserved. </strong>
+                </div>
+                <!-- Copyright -->
+            </footer>
+
+            <!-- Footer -->
+
+            <div id="back-to-top">
+                <i class="icon-up-dir"></i>
+            </div>
+
+        </div>
+    </form>
+
+
+    <!-- Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script src="//cdn.datatables.net/2.0.8/js/dataTables.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let table = new DataTable('#myTable', {
+                // Configuración de DataTable
+                language: {
+                    "decimal": "",
+                    "emptyTable": "No hay datos disponibles en la tabla",
+                    "info": "Mostrando _START_ a _END_ de _TOTAL_ productos",
+                    "infoEmpty": "Mostrando 0 a 0 de 0 productos",
+                    "infoFiltered": "(filtrado de _MAX_ entradas totales)",
+                    "infoPostFix": "",
+                    "thousands": ",",
+                    "lengthMenu": "Mostrar _MENU_ productos",
+                    "loadingRecords": "Cargando...",
+                    "processing": "Procesando...",
+                    "search": "Buscar:",
+                    "zeroRecords": "No se encontraron productos coincidentes",
+                    "paginate": {
+                        "first": "Primero",
+                        "last": "Último",
+                        "next": "Siguiente",
+                        "previous": "Anterior"
+                    },
+                    "aria": {
+                        "sortAscending": ": activar para ordenar la columna ascendente",
+                        "sortDescending": ": activar para ordenar la columna descendente"
+                    }
+                },
+                "deferRender": true,
+                "processing": true,
+                "scrollY": 400,
+                "scrollCollapse": true,
+                "paging": false,
+                "scroller": true
+                lengthMenu: [5, 10, 25, 50],
+                stateSave: true // Guarda el estado de la tabla en localStorage
+            });
+
+            $('.dataTables_filter input').addClass('form-control form-control-lg');
+
+            // Guardar estado de la tabla antes de hacer una acción
+            document.getElementById('addToCartButton').addEventListener('click', function () {
+                localStorage.setItem('dataTableState', JSON.stringify(table.state()));
+            });
+        });
+    </script>
+
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const spinner = document.getElementById('spinner');
+            const table = document.getElementById('myTable');
+            const tbody = table.querySelector('tbody');
+            const tablehidden = document.getElementById('tablehidden');
+
+            // Mostrar el spinner
+            spinner.style.display = 'flex';
+
+            // Simular la carga de datos
+            setTimeout(() => {
+                // Aquí iría tu lógica para obtener y cargar los datos
+
+                const row = document.createElement('tr');
+
+                tbody.appendChild(row);
+
+                spinner.style.display = 'none';
+                tablehidden.hidden = false;
+            }, 0); // Simula 2 segundos de carga
+        });
+    </script>
+
+    <script>
+        let table = new DataTable('#tableFact');
+    </script>
+
+    <script>
+        document.getElementById('loginLink').addEventListener('mouseover', function () {
+            var loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
+            loginModal.show();
+        });
+    </script>
+
+
+    <script src="//rawgit.com/hhurz/tableExport.jquery.plugin/master/tableExport.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.2/extensions/export/bootstrap-table-export.min.js"></script>
+
+    <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.min.js"></script>
+    <script src="/in/js/modernizr.min.js"></script>
+    <%--<script src="/in/js/jquery-1.11.0.min.js"></script>--%>
+    <script type="text/javascript" src="/in/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/in/js/jquery.raty.min.js"></script>
+
+    <!-- Scroll Bar -->
+    <script src="/in/js/perfect-scrollbar.min.js"></script>
+    <!-- Cloud Zoom -->
+    <script src="/in/js/zoomsl-3.0.min.js"></script>
+    <script src="/in/js/jquery.fancybox.pack.js"></script>
+    <!-- jQuery REVOLUTION Slider  -->
+    <script type="text/javascript" src="/in/js/jquery.themepunch.plugins.min.js"></script>
+    <script type="text/javascript" src="/in/js/jquery.themepunch.revolution.min.js"></script>
+    <!-- FlexSlider -->
+    <script defer src="/in/js/flexslider.min.js"></script>
+    <script src="/in/js/jquery.iosslider.min.js"></script>
+    <!-- noUi Slider -->
+    <script src="/in/js/jquery.nouislider.min.js"></script>
+    <!-- Owl Carousel -->
+    <script src="/in/js/owl.carousel.min.js"></script>
+    <script src="/in/js/zoomsl-3.0.min.js"></script>
+    <!-- SelectJS -->
+    <script src="/in/js/chosen.jquery.min.js" type="text/javascript"></script>
+    <!-- Main JS -->
+    <%--<script defer src="/in/js/bootstrap.min.js"></script>--%>
+    <script src="/in/js/main-script.js"></script>
+    <script src="/in/js/booting.js"></script>
+</body>
+</html>

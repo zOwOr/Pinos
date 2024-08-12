@@ -1,0 +1,431 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="SiteWeb.master.vb" Inherits="sycsa.Web.SiteWeb" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta id="html_description" runat="server" name="description" content="<%= Response.Write(Html._Layout_metadescription)%>" />
+    <meta id="thml_Keywords" runat="server" name="Keywords" content="<%= Response.Write(Html._Layout_metadekeyword)%>" />
+    <title runat="server"></title>
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,700,900,700italic,500italic' rel='stylesheet' type='text/css' />
+
+    <!-- Stylesheets -->
+    <!-- BOOTSTRAP -->
+    <%--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />--%>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous" />
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.2/bootstrap-table.min.css" />
+
+    <link rel="stylesheet" href="/in/css/perfect-scrollbar.css" />
+
+    <link rel="stylesheet" href="/in/css/flexslider.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/in/css/fontello.css" />
+    <link rel="stylesheet" type="text/css" href="/in/css/settings.css" media="screen" />
+    <link href="/in/css/jquery.nouislider.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/in/css/animation.css" />
+    <link rel="stylesheet" href="/in/css/chosen.css" />
+    <link rel="stylesheet" href="/in/css/owl.carousel.css" />
+    <link rel="stylesheet" href="/in/css/owl.theme.css" />
+    <link rel="stylesheet" href="../in/css/style.css" />
+
+    <link rel="stylesheet" href="/in/css/flexslider.css" type="text/css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/in/css/settings.css" media="screen" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<link rel="stylesheet" href="css/ie.css">
+        <![endif]-->
+    <!--[if IE 7]>
+			<link rel="stylesheet" href="css/fontello-ie7.css">
+		<![endif]-->
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+    w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+    }); var f = d.getElementsByTagName(s)[0],
+    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+})(window, document, 'script', 'dataLayer', 'GTM-5Q948GP');</script>
+    <!-- End Google Tag Manager -->
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5Q948GP"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <div class="container">
+
+            <!-- Header -->
+            <header class="row">
+
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <!-- Top Header -->
+                    <div id="top-header">
+                        <div class="row">
+                            <nav id="top-navigation" class="col-lg-7 col-md-7 col-sm-7">
+                                <a href="<% Response.Write(ResolveUrl("~/home.aspx"))%>">
+                                    <% If (Html._Layout_logoimg = True) Then %>
+                                            <asp:Image ID="Image1" runat="server" DescriptionUrl="~/imagen/logo1.jpg" ImageUrl="~/imagen/logo1.jpg" Width="397px" Height="84px"/>
+                                        <%Else%>
+                                            <span class="logo"><%Response.Write(Html._Layout_Empresa) %></span>
+                                        <% End If  %>
+                                </a>
+                            </nav>
+                            <!-- Login -->
+                            <nav class="col-lg-5 col-md-5 col-sm-5">
+                                <ul class="pull-right">
+                                    <li id="dvLogin" runat="server" visible="true" class="purple"><a href="<% Response.Write(ResolveUrl("~/Login.aspx"))%>"><i class="icons icon-user-3"></i>Login </a>
+                                        <ul id="login-dropdown" class="box-dropdown">
+                                            <li>
+                                                <div class="box-wrapper modal" role="dialog">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h4>Iniciar Sesion</h4>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <div class="form-group input-group">
+                                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                                                    <input id="txtUserName" runat="server" placeholder="Usuario" class="form-control" autocomplete="off" />
+                                                                </div>
+                                                                <div class="form-group input-group">
+                                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                                                    <input id="txtPassword" type="password" runat="server" placeholder="Password" class="form-control" autocomplete="off" />
+                                                                </div>
+                                                            </div>
+                                                            <div class=" modal-footer">
+                                                                <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="orange" />
+                                                                <a href="<% Response.Write(ResolveUrl("~/iforgot/iforgot.aspx"))%>">¿Olvidaste tu contraseña?</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li id="dvLogin1" runat="server" visible="true"><a href="<% Response.Write(ResolveUrl("~/newAccount.aspx"))%>"><i class="icons icon-lock"></i>Crear una cuenta</a></li>
+                                    <li id="dvLogin2" runat="server" visble="true" class="login-create purple">
+                                        <i class="icons icon-user"></i>
+                                        <asp:Label ID="txtLabelQuantity" runat="server" Text="Quantity" meta:resourcekey="txtLabelQuantity"></asp:Label>
+                                        <br />
+                                        <a href="/?cs=1"><strong>Cerrar sesión</strong> </a>
+                                    </li>
+                                </ul>
+                            </nav>
+
+                        </div>
+
+                    </div>
+                    <!-- /Top Header -->
+
+                    <!-- Main Navigation -->
+                    <nav id="main-navigation" class="style1">
+                        <ul>
+
+                            <li class="home-green current-item">
+                                <a href="<% Response.Write(ResolveUrl("~/home.aspx"))%>">
+                                    <i class="icons icon-shop-1"></i>
+                                    <span class="nav-caption">Inicio</span>
+                                </a>
+                            </li>
+                            <li class="home-green current-item">
+                                <a href="<% Response.Write(ResolveUrl("~/Marks.aspx"))%>">
+                                    <i class="icons icon-marquee"></i>
+                                    <span class="nav-caption">Productos</span>
+                                </a>
+                            </li>
+                            <li class="home-green current-item">
+                                <a href="<% Response.Write(ResolveUrl("~/Login.aspx"))%>">
+                                    <i class="icons icon-contacts"></i>
+                                    <span class="nav-caption">Mi cuenta</span>
+                                </a>
+                            </li>
+                            <li class="nav-search">
+                                <i class="icons icon-search-1"></i>
+                            </li>
+                        </ul>
+                        <div id="search-bar">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <table id="search-bar-table">
+                                    <tr>
+                                        <td class="search-column-1">
+                                            <p id="txtNameProductSearch" runat="server" meta:resourcekey="txtNameProductSearch">Nombre del producto a buscar</p>
+                                            <asp:TextBox ID="txtShears" runat="server" placeholder="Producto" meta:resourcekey="txtShears" MaxLength="250"></asp:TextBox>
+                                        </td>
+                                        <td class="search-column-2">
+                                            <p class="align-right"><a href="#" id="txtTitleSearch" runat="server" meta:resourcekey="txtTitleSearch">Categorias</a></p>
+                                            <asp:DropDownList runat="server" ID="dlCategories" DataTextField="CategoryName" DataValueField="idCategories" class="chosen-select-search">
+                                            </asp:DropDownList>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div id="search-button" onclick="__doPostBack('shearch', '');">
+                                <button type="button"></button>
+                                <i class="icons icon-search-1"></i>
+                            </div>
+                        </div>
+                    </nav>
+                    <div id="middle-navigation" class="pull-right">
+                        <ul>
+                            <li class="orange">
+                                <asp:HyperLink ID="LinkShowCart" runat="server" NavigateUrl="~/ShowCart.aspx">
+                                    <i class="icons icon-basket-2"></i>
+                                    <asp:Label ID="lblTextCart" runat="server" meta:resourcekey="lblTextCart" Text="Carrito"></asp:Label>
+                                    [ <%
+                                          If Session("_TotalItemsProduct") Is Nothing Then
+                                              Response.Write("0")
+                                          Else
+                                              Response.Write(Session("_TotalItemsProduct"))
+                                          End If
+
+                                    %> ]
+                                </asp:HyperLink>
+                                <ul id="cart-dropdown" class="box-dropdown parent-arrow">
+                                    <li class="hidden">
+                                        <div class="box-wrapper parent-border modal" role="dialog">
+                                            <div class="modal-dialog carritow" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h3 id="txtRecently" runat="server" meta:resourcekey="txtRecently">Carrito de compras</h3>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <asp:GridView ID="gvListProductos" runat="server" CssClass="orderinfo-table" AutoGenerateColumns="False"
+                                                            DataKeyNames="IdProduct" Width="450" EmptyDataText="No hay nada en su carrito de compras." GridLines="None">
+                                                            <Columns>
+                                                                <asp:BoundField DataField="IdProduct" Visible="false"></asp:BoundField>
+
+                                                                <asp:TemplateField>
+                                                                    <ItemTemplate>
+                                                                        <img src="/imagen/products/sample1-thumb.jpg" alt="<%#Eval("Producto") %>" width="100%" class="img-thumbnail"></td>
+                                                                    </ItemTemplate>
+                                                                    <HeaderStyle Width="25%"></HeaderStyle>
+                                                                </asp:TemplateField>
+
+                                                                <asp:BoundField DataField="Producto" HeaderText="" ItemStyle-HorizontalAlign="Right"
+                                                                    HeaderStyle-HorizontalAlign="Right">
+                                                                    <HeaderStyle HorizontalAlign="Center" Font-Bold="True" VerticalAlign="Middle" Width="45%"></HeaderStyle>
+                                                                    <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle"></ItemStyle>
+                                                                </asp:BoundField>
+
+                                                                <asp:TemplateField HeaderText="">
+                                                                    <ItemTemplate>
+                                                                        <small><%#Eval("Cantidad") %>    </span> <%# IIf(Session("MM_Lista") Is Nothing, " x ", " x " & FormatCurrency(Eval("Precio"), 2))%></span> </small>
+                                                                        <asp:LinkButton runat="server" ID="btnEliminar" Text="Eliminar" CommandName="Eliminar" CssClass="parent-color" CommandArgument='<%# Eval("IdProduct").ToString() & "," & Eval("Unidad") %>' Style="font-size: 12px;" CausesValidation="False"></asp:LinkButton>
+                                                                    </ItemTemplate>
+                                                                    <HeaderStyle HorizontalAlign="Center" Font-Bold="True" VerticalAlign="Middle" Width="30%"></HeaderStyle>
+                                                                    <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle"></ItemStyle>
+                                                                </asp:TemplateField>
+                                                            </Columns>
+                                                        </asp:GridView>
+                                                    </div>
+                                                    <div id="cartFooterPrice" runat="server">
+                                                        <div class="footer" style="height: inherit">
+                                                            <table class="checkout-table pull-right">
+                                                                <tr>
+                                                                    <td><strong id="lblSubtotal" runat="server" meta:resourcekey="lblSubtotal">Sub Total</strong></td>
+                                                                    <td><% Response.Write(IIf(Session("MM_Lista") Is Nothing, "", FormatCurrency(Session("_SubTotal"), 2)))%></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="align-right"><strong id="lblIva" runat="server" meta:resourcekey="lblIva">Iva</strong></td>
+                                                                    <td><% Response.Write(IIf(Session("MM_Lista") Is Nothing, "", FormatCurrency(Session("_PorcentajeIva"), 2)))%></td>
+                                                                </tr>
+
+                                                                <tr>
+                                                                    <td class="align-right"><strong id="lblTotal" runat="server" meta:resourcekey="lblTotal">Total</strong></td>
+                                                                    <td><strong class="parent-color"><% Response.Write(IIf(Session("MM_Lista") Is Nothing, "", FormatCurrency((Session("_SubTotal") + Session("_PorcentajeIva")), 2)))%></strong></td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <div class="box-wrapper no-border">
+                                                            <asp:HyperLink runat="server" ID="LinkCart2" NavigateUrl="~/ShowCart.aspx" CssClass="button pull-right" Text="Ver Carrito" meta:resourcekey="LinkCart2"> </asp:HyperLink>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <%-- Opcion para el cambio de lenguaje  --%>
+                            <%--                            <li class="hidden"><a class="flag" href="#"><span class="spanish-flag "></span>Español</a>
+                                <ul class="box-dropdown parent-arrow">
+                                    <li>
+                                        <div class="box-wrapper no-padding parent-border">
+                                            <table class="language-table">
+                                                <tr>
+                                                    <td class="flag"><span class="english-flag"></span></td>
+                                                    <td class="country"><a href="<% Response.Write(ResolveUrl("~/home.aspx?lang=En"))%>">English</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="flag"><span class="spanish-flag"></span></td>
+                                                    <td class="country"><a href="<% Response.Write(ResolveUrl("~/home.aspx?lang=Es"))%>">Español</a></td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                            </li>--%>
+                        </ul>
+                    </div>
+                    <!-- Main Navigation -->
+
+                    <!-- Main Header -->
+                    <div id="main-header">
+                        <div class="row">
+                        </div>
+
+                    </div>
+                    <!-- /Main Header -->
+
+                    <!-- /Main Navigation -->
+
+                </div>
+
+            </header>
+            <!-- /Header -->
+
+            <!-- Content -->
+            <div class="row content">
+                <!-- Main Content -->
+                <asp:ContentPlaceHolder ID="Html_sidebar" runat="server" ClientIDMode="Static">
+                </asp:ContentPlaceHolder>
+
+                <asp:ContentPlaceHolder ID="Html_head" runat="server" ClientIDMode="Static">
+                </asp:ContentPlaceHolder>
+
+                <asp:ContentPlaceHolder ID="Html_Content" runat="server" ClientIDMode="Static">
+                </asp:ContentPlaceHolder>
+                <!-- /Sidebar -->
+
+            </div>
+            <!-- Footer -->
+            <footer id="footer" class="pt-4 my-md-5 pt-md-5 border-top">
+                <!-- /Upper Footer -->
+                <!-- Main Footer -->
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div id="main-footer">
+                        <div class="row">
+
+                            <!-- The Service -->
+                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                <h4>Servicios</h4>
+                                <ul>
+                                    <li><a href="<% Response.Write(ResolveUrl("~/myAccount.aspx?"))%>"><i class="icons icon-right-dir"></i>Mi Cuenta</a></li>
+                                    <li><a href="<% Response.Write(ResolveUrl("~/AccountHistory.aspx?"))%>"><i class="icons icon-right-dir"></i>Historial de pedidos</a></li>
+                                    <%--                                    <li><a href="<% Response.Write(ResolveUrl("~/categories.aspx?"))%>"><i class="icons icon-right-dir"></i>Categorias</a></li>
+                                    <li><a href="<% Response.Write(ResolveUrl("~/search.aspx?"))%>"><i class="icons icon-right-dir"></i>Busquedas</a></li>--%>
+                                </ul>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                <h4>Información</h4>
+                                <ul>
+                                    <li><a href="<% Response.Write(ResolveUrl("~/AboutUs.aspx?"))%>"><i class="icons icon-right-dir"></i>Acerca de nosotros</a></li>
+                                    <li><a href="<% Response.Write(ResolveUrl("~/PrivacyPolicy.aspx"))%>"><i class="icons icon-right-dir"></i>Politica de privacidad</a></li>
+                                    <li><a href="<% Response.Write(ResolveUrl("~/TermsConditions.aspx"))%>"><i class="icons icon-right-dir"></i>Terminos &amp; Condiciones</a></li>
+                                </ul>
+                            </div>
+                            <!-- /Information -->
+
+                            <!-- Contact Us -->
+                            <div class="col-lg-3 col-md-3 col-sm-6 contact-footer-info">
+                                <h4>Contacto</h4>
+                                <ul>
+                                    <li><i class="icon fa fa-map-pin"></i> <% Response.Write(Html._Layout_address)%> </li>
+                                    <li><i class="icon-location"></i><a href="<% Response.Write(ResolveUrl("~/contact.aspx"))%>">Ubicacion </a></li>
+                                    <li><i class="icon-phone"></i><% Response.Write(Html._Layout_phone)%> </li>
+                                    <li><i class="icon-mail-alt"></i><a href="<% Response.Write(Html._Layout_emailContact)%>"><% Response.Write(Html._Layout_emailContact)%> </a></li>
+                                    <%--<li><i class="icons icon-skype"></i><% Response.Write(Html._Layout_skype)%></li>--%>
+                                </ul>
+                            </div>
+                            <!-- /Contact Us -->
+
+                        </div>
+                    </div>
+                </div>
+                <!-- /Main Footer -->
+
+                <!-- Lower Footer -->
+                <div class="col-lg-12 col-md-12 col-sm-12">
+
+                    <div id="lower-footer">
+
+                        <div class="row">
+
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <p class="copyright">Copyright <% Response.Write(Now.Date.Year())%> <a href="<%  Response.Write(ResolveUrl("~/home.aspx"))%>">SYCSA</a>. All Rights Reserved.</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- /Lower Footer -->
+            </footer>
+            <!-- Footer -->
+
+            <div id="back-to-top">
+                <i class="icon-up-dir"></i>
+            </div>
+
+        </div>
+    </form>
+
+
+    <!-- Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.2/bootstrap-table.min.js"></script>
+    <script src="//rawgit.com/hhurz/tableExport.jquery.plugin/master/tableExport.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.2/extensions/export/bootstrap-table-export.min.js"></script>
+    <!-- Latest compiled and minified Locales -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.2/locale/bootstrap-table-es-MX.min.js"></script>
+    <!-- JavaScript -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.min.js"></script>
+    <script src="/in/js/modernizr.min.js"></script>
+    <%--<script src="/in/js/jquery-1.11.0.min.js"></script>--%>
+    <script type="text/javascript" src="/in/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/in/js/jquery.raty.min.js"></script>
+
+    <!-- Scroll Bar -->
+    <script src="/in/js/perfect-scrollbar.min.js"></script>
+    <!-- Cloud Zoom -->
+    <script src="/in/js/zoomsl-3.0.min.js"></script>
+    <script src="/in/js/jquery.fancybox.pack.js"></script>
+    <!-- jQuery REVOLUTION Slider  -->
+    <script type="text/javascript" src="/in/js/jquery.themepunch.plugins.min.js"></script>
+    <script type="text/javascript" src="/in/js/jquery.themepunch.revolution.min.js"></script>
+    <!-- FlexSlider -->
+    <script defer src="/in/js/flexslider.min.js"></script>
+    <script src="/in/js/jquery.iosslider.min.js"></script>
+    <!-- noUi Slider -->
+    <script src="/in/js/jquery.nouislider.min.js"></script>
+    <!-- Owl Carousel -->
+    <script src="/in/js/owl.carousel.min.js"></script>
+    <script src="/in/js/zoomsl-3.0.min.js"></script>
+    <!-- SelectJS -->
+    <script src="/in/js/chosen.jquery.min.js" type="text/javascript"></script>
+    <!-- Main JS -->
+    <%--<script defer src="/in/js/bootstrap.min.js"></script>--%>
+    <script src="/in/js/main-script.js"></script>
+    <script src="/in/js/booting.js"></script>
+</body>
+</html>

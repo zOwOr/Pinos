@@ -1,0 +1,933 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{EF2CB8E0-71C7-4F53-AA33-53A96A2EC9F8}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>sycsa.Web</RootNamespace>
+    <AssemblyName>sycsa.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort>44300</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>sycsa.Web.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <ExcludeGeneratedDebugSymbol>true</ExcludeGeneratedDebugSymbol>
+    <IncludeIisSettings>false</IncludeIisSettings>
+    <FilesToIncludeForPublish>AllFilesInProjectFolder</FilesToIncludeForPublish>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>sycsa.Web.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <ExcludeGeneratedDebugSymbol>false</ExcludeGeneratedDebugSymbol>
+    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CONECTASQL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\SAF\CONECTASQL.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport, Version=2017.3.20.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\FastReports\FastReport.Net Trial\Framework 4.0\FastReport.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.Bars, Version=2017.3.20.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\FastReports\FastReport.Net Trial\Framework 4.0\FastReport.Bars.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.Editor, Version=2017.3.20.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\FastReports\FastReport.Net Trial\Framework 4.0\FastReport.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.RPTImportPlugin">
+      <HintPath>..\..\..\SAF\FastReport.Editor\FastReport.RPTImportPlugin.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.Service">
+      <HintPath>C:\Program Files (x86)\FastReports\FastReport.Net Trial\Framework 4.0\FastReport.Service.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.VSDesign, Version=1.0.0.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\FastReports\FastReport.Net Trial\Framework 4.0\FastReport.VSDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.Web, Version=2017.3.20.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\FastReports\FastReport.Net Trial\Framework 4.0\FastReport.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="GroupDropDownList">
+      <HintPath>..\..\..\Resource\Library\GroupDropDownList.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Resource\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Resource\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Security.Cryptography, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Resource\Microsoft.Practices.EnterpriseLibrary.Security.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder">
+      <HintPath>..\..\..\..\..\..\..\..\..\..\..\..\bin\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AboutUs.aspx" />
+    <Content Include="AccountAddressBook.aspx" />
+    <Content Include="AccountAddressBookEdit.aspx" />
+    <Content Include="AccountAddressBookNew.aspx" />
+    <Content Include="AccountHistory.aspx" />
+    <Content Include="AccountLogin.aspx" />
+    <Content Include="bin\CONECTASQL.dll" />
+    <Content Include="bin\FastReport.RPTImportPlugin.dll" />
+    <Content Include="bin\FastReport.Service.dll" />
+    <Content Include="bin\GroupDropDownList.dll" />
+    <Content Include="bin\Microsoft.Practices.EnterpriseLibrary.Common.dll" />
+    <Content Include="bin\Microsoft.Practices.EnterpriseLibrary.Data.dll" />
+    <Content Include="bin\Microsoft.Practices.EnterpriseLibrary.Security.Cryptography.dll" />
+    <Content Include="bin\Microsoft.Practices.ObjectBuilder.dll" />
+    <Content Include="bin\sycsa.BusinessLayer.dll" />
+    <Content Include="bin\sycsa.BusinessLayer.pdb" />
+    <Content Include="bin\sycsa.BusinessLayer.xml" />
+    <Content Include="bin\sycsa.DataAccessLayer.dll" />
+    <Content Include="bin\sycsa.DataAccessLayer.pdb" />
+    <Content Include="bin\sycsa.DataAccessLayer.xml" />
+    <Content Include="bin\sycsa.Information.dll" />
+    <Content Include="bin\sycsa.Information.pdb" />
+    <Content Include="bin\sycsa.Information.xml" />
+    <Content Include="bin\sycsa.Web.dll" />
+    <Content Include="bin\sycsa.Web.pdb" />
+    <Content Include="bin\sycsa.Web.xml" />
+    <Content Include="CheckoutPayment.aspx" />
+    <Content Include="CheckoutShipping.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="fotos\2610.png" />
+    <Content Include="fotos\7477.jpg" />
+    <Content Include="fotos\aceite 2 tiempos.jpg" />
+    <Content Include="fotos\aceitera.jpg" />
+    <Content Include="fotos\grasa lubricante.jpg" />
+    <Content Include="fotos\pmm1.jpg" />
+    <Content Include="home.aspx" />
+    <Content Include="iforgot\iforgot.aspx" />
+    <Content Include="imagen\blog\sample1.jpg" />
+    <Content Include="imagen\blog\sample2.jpg" />
+    <Content Include="imagen\blog\sample3.jpg" />
+    <Content Include="imagen\blog\sample4.jpg" />
+    <Content Include="imagen\blog\sample5.jpg" />
+    <Content Include="imagen\brands\sample.jpg" />
+    <Content Include="imagen\datauri-file.png" />
+    <Content Include="imagen\logo.png" />
+    <Content Include="imagen\logo_sycsa.png" />
+    <Content Include="imagen\news\sample1-round.jpg" />
+    <Content Include="imagen\news\sample1.jpg" />
+    <Content Include="imagen\news\sample2-round.jpg" />
+    <Content Include="imagen\news\sample2.jpg" />
+    <Content Include="imagen\products\sample1-thumb.jpg" />
+    <Content Include="imagen\products\sample1.jpg" />
+    <Content Include="imagen\products\sample2-thumb.jpg" />
+    <Content Include="imagen\products\sample2.jpg" />
+    <Content Include="imagen\products\sample3-thumb.jpg" />
+    <Content Include="imagen\products\sample3.jpg" />
+    <Content Include="imagen\products\sample4-thumb.jpg" />
+    <Content Include="imagen\products\sample4.jpg" />
+    <Content Include="imagen\products\sample5.jpg" />
+    <Content Include="imagen\products\sample6.jpg" />
+    <Content Include="imagen\products\sample7.jpg" />
+    <Content Include="imagen\products\sample8.jpg" />
+    <Content Include="imagen\products\sample9.jpg" />
+    <Content Include="imagen\products\single1.jpg" />
+    <Content Include="imagen\products\single2.jpg" />
+    <Content Include="imagen\products\single3.jpg" />
+    <Content Include="imagen\products\single4.jpg" />
+    <Content Include="imagen\products\single5.jpg" />
+    <Content Include="img\background.jpg" />
+    <Content Include="img\bg_play_pause.png" />
+    <Content Include="img\blank.gif" />
+    <Content Include="img\blank.png" />
+    <Content Include="img\blog\sample1.jpg" />
+    <Content Include="img\blog\sample2.jpg" />
+    <Content Include="img\blog\sample3.jpg" />
+    <Content Include="img\blog\sample4.jpg" />
+    <Content Include="img\blog\sample5.jpg" />
+    <Content Include="img\brands\sample.jpg" />
+    <Content Include="img\captcha.jpg" />
+    <Content Include="img\category-heading.jpg" />
+    <Content Include="img\chosen-sprite.png" />
+    <Content Include="img\fancybox_loading%402x.gif" />
+    <Content Include="img\fancybox_loading.gif" />
+    <Content Include="img\fancybox_overlay.png" />
+    <Content Include="img\fancybox_sprite%402x.png" />
+    <Content Include="img\fancybox_sprite.png" />
+    <Content Include="img\helpers\fancybox_buttons.png" />
+    <Content Include="img\helpers\jquery.fancybox-buttons.css" />
+    <Content Include="img\helpers\jquery.fancybox-buttons.js" />
+    <Content Include="img\helpers\jquery.fancybox-media.js" />
+    <Content Include="img\helpers\jquery.fancybox-thumbs.css" />
+    <Content Include="img\helpers\jquery.fancybox-thumbs.js" />
+    <Content Include="img\ios-buttons.png" />
+    <Content Include="img\language-icons.png" />
+    <Content Include="img\logo.png" />
+    <Content Include="img\news\sample1-round.jpg" />
+    <Content Include="img\news\sample1.jpg" />
+    <Content Include="img\news\sample2-round.jpg" />
+    <Content Include="img\news\sample2.jpg" />
+    <Content Include="img\payment-icons.png" />
+    <Content Include="img\products\sample1-thumb.jpg" />
+    <Content Include="img\products\sample1.jpg" />
+    <Content Include="img\products\sample2-thumb.jpg" />
+    <Content Include="img\products\sample2.jpg" />
+    <Content Include="img\products\sample3-thumb.jpg" />
+    <Content Include="img\products\sample3.jpg" />
+    <Content Include="img\products\sample4-thumb.jpg" />
+    <Content Include="img\products\sample4.jpg" />
+    <Content Include="img\products\sample5.jpg" />
+    <Content Include="img\products\sample6.jpg" />
+    <Content Include="img\products\sample7.jpg" />
+    <Content Include="img\products\sample8.jpg" />
+    <Content Include="img\products\sample9.jpg" />
+    <Content Include="img\products\single1.jpg" />
+    <Content Include="img\products\single2.jpg" />
+    <Content Include="img\products\single3.jpg" />
+    <Content Include="img\products\single4.jpg" />
+    <Content Include="img\products\single5.jpg" />
+    <Content Include="img\sample.jpg" />
+    <Content Include="img\select-arrow.png" />
+    <Content Include="img\sidebar-slide1.jpg" />
+    <Content Include="img\sidebar-slide2.jpg" />
+    <Content Include="img\sidebar-slide3.jpg" />
+    <Content Include="img\slide1.jpg" />
+    <Content Include="img\slide2.jpg" />
+    <Content Include="img\slide3.jpg" />
+    <Content Include="img\social-icons.png" />
+    <Content Include="in\assets\arrowleft.png" />
+    <Content Include="in\assets\arrowright.png" />
+    <Content Include="in\assets\arrow_large_left.png" />
+    <Content Include="in\assets\arrow_large_right.png" />
+    <Content Include="in\assets\arrow_left.png" />
+    <Content Include="in\assets\arrow_left2.png" />
+    <Content Include="in\assets\arrow_right.png" />
+    <Content Include="in\assets\arrow_right2.png" />
+    <Content Include="in\assets\black50.png" />
+    <Content Include="in\assets\boxed_bgtile.png" />
+    <Content Include="in\assets\bullet.png" />
+    <Content Include="in\assets\bullets.png" />
+    <Content Include="in\assets\bullets2.png" />
+    <Content Include="in\assets\bullet_boxed.png" />
+    <Content Include="in\assets\coloredbg.png" />
+    <Content Include="in\assets\grain.png" />
+    <Content Include="in\assets\gridtile.png" />
+    <Content Include="in\assets\gridtile_3x3.png" />
+    <Content Include="in\assets\gridtile_3x3_white.png" />
+    <Content Include="in\assets\gridtile_white.png" />
+    <Content Include="in\assets\large_left.png" />
+    <Content Include="in\assets\large_right.png" />
+    <Content Include="in\assets\loader.gif" />
+    <Content Include="in\assets\loader2.gif" />
+    <Content Include="in\assets\navigdots.png" />
+    <Content Include="in\assets\navigdots_bgtile.png" />
+    <Content Include="in\assets\shadow1.png" />
+    <Content Include="in\assets\shadow2.png" />
+    <Content Include="in\assets\shadow3.png" />
+    <Content Include="in\assets\small_left.png" />
+    <Content Include="in\assets\small_left_boxed.png" />
+    <Content Include="in\assets\small_right.png" />
+    <Content Include="in\assets\small_right_boxed.png" />
+    <Content Include="in\assets\timer.png" />
+    <Content Include="in\assets\timerdot.png" />
+    <Content Include="in\assets\transparent.jpg" />
+    <Content Include="in\assets\white50.png" />
+    <Content Include="in\css\animation.css" />
+    <Content Include="in\css\bootstrap.min.css" />
+    <Content Include="in\css\chosen.css" />
+    <Content Include="in\css\cloud-zoom.css" />
+    <Content Include="in\css\flexslider.css" />
+    <Content Include="in\css\fontello-codes.css" />
+    <Content Include="in\css\fontello-embedded.css" />
+    <Content Include="in\css\fontello-ie7-codes.css" />
+    <Content Include="in\css\fontello-ie7.css" />
+    <Content Include="in\css\fontello.css" />
+    <Content Include="in\css\ie.css" />
+    <Content Include="in\css\jquery.fancybox.css" />
+    <Content Include="in\css\jquery.nouislider.min.css" />
+    <Content Include="in\css\owl.carousel.css" />
+    <Content Include="in\css\owl.theme.css" />
+    <Content Include="in\css\owl.transitions.css" />
+    <Content Include="in\css\perfect-scrollbar.css" />
+    <Content Include="in\css\select.css" />
+    <Content Include="in\css\settings-ie8.css" />
+    <Content Include="in\css\settings.css" />
+    <Content Include="in\css\style.css" />
+    <Content Include="in\font\flexslider-icon.svg" />
+    <Content Include="in\font\fontello.svg" />
+    <Content Include="in\img\background.jpg" />
+    <Content Include="in\img\bg_play_pause.png" />
+    <Content Include="in\img\blank.gif" />
+    <Content Include="in\img\blank.png" />
+    <Content Include="in\img\captcha.jpg" />
+    <Content Include="in\img\category-heading.jpg" />
+    <Content Include="in\img\chosen-sprite.png" />
+    <Content Include="in\img\fancybox_loading%402x.gif" />
+    <Content Include="in\img\fancybox_loading.gif" />
+    <Content Include="in\img\fancybox_overlay.png" />
+    <Content Include="in\img\fancybox_sprite%402x.png" />
+    <Content Include="in\img\fancybox_sprite.png" />
+    <Content Include="in\img\helpers\fancybox_buttons.png" />
+    <Content Include="in\img\helpers\jquery.fancybox-buttons.css" />
+    <Content Include="in\img\helpers\jquery.fancybox-buttons.js" />
+    <Content Include="in\img\helpers\jquery.fancybox-media.js" />
+    <Content Include="in\img\helpers\jquery.fancybox-thumbs.css" />
+    <Content Include="in\img\helpers\jquery.fancybox-thumbs.js" />
+    <Content Include="in\img\ios-buttons.png" />
+    <Content Include="in\img\language-icons.png" />
+    <Content Include="in\img\payment-icons.png" />
+    <Content Include="in\img\sample.jpg" />
+    <Content Include="in\img\select-arrow.png" />
+    <Content Include="in\img\sidebar-slide1.jpg" />
+    <Content Include="in\img\sidebar-slide2.jpg" />
+    <Content Include="in\img\sidebar-slide3.jpg" />
+    <Content Include="in\img\slide1.jpg" />
+    <Content Include="in\img\slide2.jpg" />
+    <Content Include="in\img\slide3.jpg" />
+    <Content Include="in\img\social-icons.png" />
+    <Content Include="in\js\bootstrap.min.js" />
+    <Content Include="in\js\chosen.jquery.min.js" />
+    <Content Include="in\js\cloud-zoom.1.0.3.min.js" />
+    <Content Include="in\js\flexslider.min.js" />
+    <Content Include="in\js\img\cancel-off.png" />
+    <Content Include="in\js\img\cancel-on.png" />
+    <Content Include="in\js\img\star-half.png" />
+    <Content Include="in\js\img\star-off.png" />
+    <Content Include="in\js\img\star-on.png" />
+    <Content Include="in\js\jquery-1.11.0.min.js" />
+    <Content Include="in\js\jquery-ui.min.js" />
+    <Content Include="in\js\jquery.cookie.js" />
+    <Content Include="in\js\jquery.fancybox.js" />
+    <Content Include="in\js\jquery.fancybox.pack.js" />
+    <Content Include="in\js\jquery.iosslider.min.js" />
+    <Content Include="in\js\jquery.nouislider.min.js" />
+    <Content Include="in\js\jquery.raty.min.js" />
+    <Content Include="in\js\jquery.themepunch.plugins.min.js" />
+    <Content Include="in\js\jquery.themepunch.revolution.js" />
+    <Content Include="in\js\jquery.themepunch.revolution.min.js" />
+    <Content Include="in\js\main-script.js" />
+    <Content Include="in\js\modernizr.min.js" />
+    <Content Include="in\js\owl.carousel.min.js" />
+    <Content Include="in\js\perfect-scrollbar.min.js" />
+    <Content Include="in\js\prism.js" />
+    <Content Include="in\js\selectJS.js" />
+    <Content Include="in\js\tinynav.min.js" />
+    <Content Include="in\js\zoomsl-3.0.min.js" />
+    <Content Include="Facturas.aspx" />
+    <Content Include="Layout\in\assets\arrowleft.png" />
+    <Content Include="Layout\in\assets\arrowright.png" />
+    <Content Include="Layout\in\assets\arrow_large_left.png" />
+    <Content Include="Layout\in\assets\arrow_large_right.png" />
+    <Content Include="Layout\in\assets\arrow_left.png" />
+    <Content Include="Layout\in\assets\arrow_left2.png" />
+    <Content Include="Layout\in\assets\arrow_right.png" />
+    <Content Include="Layout\in\assets\arrow_right2.png" />
+    <Content Include="Layout\in\assets\black50.png" />
+    <Content Include="Layout\in\assets\boxed_bgtile.png" />
+    <Content Include="Layout\in\assets\bullet.png" />
+    <Content Include="Layout\in\assets\bullets.png" />
+    <Content Include="Layout\in\assets\bullets2.png" />
+    <Content Include="Layout\in\assets\bullet_boxed.png" />
+    <Content Include="Layout\in\assets\coloredbg.png" />
+    <Content Include="Layout\in\assets\grain.png" />
+    <Content Include="Layout\in\assets\gridtile.png" />
+    <Content Include="Layout\in\assets\gridtile_3x3.png" />
+    <Content Include="Layout\in\assets\gridtile_3x3_white.png" />
+    <Content Include="Layout\in\assets\gridtile_white.png" />
+    <Content Include="Layout\in\assets\large_left.png" />
+    <Content Include="Layout\in\assets\large_right.png" />
+    <Content Include="Layout\in\assets\loader.gif" />
+    <Content Include="Layout\in\assets\loader2.gif" />
+    <Content Include="Layout\in\assets\navigdots.png" />
+    <Content Include="Layout\in\assets\navigdots_bgtile.png" />
+    <Content Include="Layout\in\assets\shadow1.png" />
+    <Content Include="Layout\in\assets\shadow2.png" />
+    <Content Include="Layout\in\assets\shadow3.png" />
+    <Content Include="Layout\in\assets\small_left.png" />
+    <Content Include="Layout\in\assets\small_left_boxed.png" />
+    <Content Include="Layout\in\assets\small_right.png" />
+    <Content Include="Layout\in\assets\small_right_boxed.png" />
+    <Content Include="Layout\in\assets\timer.png" />
+    <Content Include="Layout\in\assets\timerdot.png" />
+    <Content Include="Layout\in\assets\transparent.jpg" />
+    <Content Include="Layout\in\assets\white50.png" />
+    <Content Include="Layout\in\css\animation.css" />
+    <Content Include="Layout\in\css\bootstrap.min.css" />
+    <Content Include="Layout\in\css\chosen.css" />
+    <Content Include="Layout\in\css\cloud-zoom.css" />
+    <Content Include="Layout\in\css\flexslider.css" />
+    <Content Include="Layout\in\css\fontello-codes.css" />
+    <Content Include="Layout\in\css\fontello-embedded.css" />
+    <Content Include="Layout\in\css\fontello-ie7-codes.css" />
+    <Content Include="Layout\in\css\fontello-ie7.css" />
+    <Content Include="Layout\in\css\fontello.css" />
+    <Content Include="Layout\in\css\ie.css" />
+    <Content Include="Layout\in\css\jquery.fancybox.css" />
+    <Content Include="Layout\in\css\jquery.nouislider.min.css" />
+    <Content Include="Layout\in\css\owl.carousel.css" />
+    <Content Include="Layout\in\css\owl.theme.css" />
+    <Content Include="Layout\in\css\owl.transitions.css" />
+    <Content Include="Layout\in\css\perfect-scrollbar.css" />
+    <Content Include="Layout\in\css\select.css" />
+    <Content Include="Layout\in\css\settings-ie8.css" />
+    <Content Include="Layout\in\css\settings.css" />
+    <Content Include="Layout\in\css\style.css" />
+    <Content Include="Layout\in\font\flexslider-icon.svg" />
+    <Content Include="Layout\in\font\fontello.svg" />
+    <Content Include="Layout\in\img\background.jpg" />
+    <Content Include="Layout\in\img\bg_play_pause.png" />
+    <Content Include="Layout\in\img\blank.gif" />
+    <Content Include="Layout\in\img\blank.png" />
+    <Content Include="Layout\in\img\captcha.jpg" />
+    <Content Include="Layout\in\img\category-heading.jpg" />
+    <Content Include="Layout\in\img\chosen-sprite.png" />
+    <Content Include="Layout\in\img\fancybox_loading%402x.gif" />
+    <Content Include="Layout\in\img\fancybox_loading.gif" />
+    <Content Include="Layout\in\img\fancybox_overlay.png" />
+    <Content Include="Layout\in\img\fancybox_sprite%402x.png" />
+    <Content Include="Layout\in\img\fancybox_sprite.png" />
+    <Content Include="Layout\in\img\helpers\fancybox_buttons.png" />
+    <Content Include="Layout\in\img\helpers\jquery.fancybox-buttons.css" />
+    <Content Include="Layout\in\img\helpers\jquery.fancybox-buttons.js" />
+    <Content Include="Layout\in\img\helpers\jquery.fancybox-media.js" />
+    <Content Include="Layout\in\img\helpers\jquery.fancybox-thumbs.css" />
+    <Content Include="Layout\in\img\helpers\jquery.fancybox-thumbs.js" />
+    <Content Include="Layout\in\img\ios-buttons.png" />
+    <Content Include="Layout\in\img\language-icons.png" />
+    <Content Include="Layout\in\img\payment-icons.png" />
+    <Content Include="Layout\in\img\sample.jpg" />
+    <Content Include="Layout\in\img\select-arrow.png" />
+    <Content Include="Layout\in\img\sidebar-slide1.jpg" />
+    <Content Include="Layout\in\img\sidebar-slide2.jpg" />
+    <Content Include="Layout\in\img\sidebar-slide3.jpg" />
+    <Content Include="Layout\in\img\slide1.jpg" />
+    <Content Include="Layout\in\img\slide2.jpg" />
+    <Content Include="Layout\in\img\slide3.jpg" />
+    <Content Include="Layout\in\img\social-icons.png" />
+    <Content Include="Layout\in\js\bootstrap.min.js" />
+    <Content Include="Layout\in\js\chosen.jquery.min.js" />
+    <Content Include="Layout\in\js\cloud-zoom.1.0.3.min.js" />
+    <Content Include="Layout\in\js\flexslider.min.js" />
+    <Content Include="Layout\in\js\img\cancel-off.png" />
+    <Content Include="Layout\in\js\img\cancel-on.png" />
+    <Content Include="Layout\in\js\img\star-half.png" />
+    <Content Include="Layout\in\js\img\star-off.png" />
+    <Content Include="Layout\in\js\img\star-on.png" />
+    <Content Include="Layout\in\js\jquery-1.11.0.min.js" />
+    <Content Include="Layout\in\js\jquery-ui.min.js" />
+    <Content Include="Layout\in\js\jquery.cookie.js" />
+    <Content Include="Layout\in\js\jquery.fancybox.js" />
+    <Content Include="Layout\in\js\jquery.fancybox.pack.js" />
+    <Content Include="Layout\in\js\jquery.iosslider.min.js" />
+    <Content Include="Layout\in\js\jquery.nouislider.min.js" />
+    <Content Include="Layout\in\js\jquery.raty.min.js" />
+    <Content Include="Layout\in\js\jquery.themepunch.plugins.min.js" />
+    <Content Include="Layout\in\js\jquery.themepunch.revolution.js" />
+    <Content Include="Layout\in\js\jquery.themepunch.revolution.min.js" />
+    <Content Include="Layout\in\js\main-script.js" />
+    <Content Include="Layout\in\js\modernizr.min.js" />
+    <Content Include="Layout\in\js\owl.carousel.min.js" />
+    <Content Include="Layout\in\js\perfect-scrollbar.min.js" />
+    <Content Include="Layout\in\js\prism.js" />
+    <Content Include="Layout\in\js\selectJS.js" />
+    <Content Include="Layout\in\js\tinynav.min.js" />
+    <Content Include="Layout\in\js\zoomsl-3.0.min.js" />
+    <Content Include="ListProducts.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="Marks.aspx" />
+    <Content Include="MyAccount.aspx" />
+    <Content Include="newAccount.aspx" />
+    <Content Include="obj\Debug\sycsa.Web.dll" />
+    <Content Include="obj\Debug\sycsa.Web.pdb" />
+    <Content Include="obj\Debug\sycsa.Web.vbproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\sycsa.Web.xml" />
+    <Content Include="obj\Debug\TempPE\My Project.Resources.Designer.vb.dll" />
+    <Content Include="OrderHistory.aspx" />
+    <Content Include="PrivacyPolicy.aspx" />
+    <Content Include="reportes\logo3.png" />
+    <Content Include="seleccAddress.aspx" />
+    <Content Include="ShoppingSend.aspx" />
+    <Content Include="ShowCart.aspx" />
+    <Content Include="ShowProduct.aspx" />
+    <Content Include="ws\wsAccountHistory.aspx" />
+    <Content Include="bin\FastReport.config" />
+    <None Include="bin\sycsa.Web.dll.config" />
+    <Content Include="Layout\SiteWebSim.Master" />
+    <Content Include="Layout\in\assets\arrows.psd" />
+    <Content Include="Layout\in\assets\bullets.psd" />
+    <Content Include="Layout\in\assets\small_arrows.psd" />
+    <Content Include="Layout\in\font\flexslider-icon.eot" />
+    <Content Include="Layout\in\font\flexslider-icon.ttf" />
+    <Content Include="Layout\in\font\flexslider-icon.woff" />
+    <Content Include="Layout\in\font\fontello.eot" />
+    <Content Include="Layout\in\font\fontello.ttf" />
+    <Content Include="Layout\in\font\fontello.woff" />
+    <Content Include="reportes\Archivoprecios.frx" />
+    <Content Include="reportes\ch_general.frx" />
+    <Content Include="reportes\COTIZACION.frx" />
+    <Content Include="reportes\doccom.frx" />
+    <Content Include="reportes\DOCCP.FRX" />
+    <Content Include="reportes\etiqueta.frx" />
+    <Content Include="reportes\etiquetacompra.frx" />
+    <Content Include="reportes\etiquetaorden.frx" />
+    <Content Include="reportes\factura.frx" />
+    <Content Include="reportes\FACTURA.FRX_18" />
+    <Content Include="reportes\FACTURA.FRX_268" />
+    <Content Include="reportes\FACTURA.FRX_26823" />
+    <Content Include="reportes\FACTURA.FRX_28" />
+    <Content Include="reportes\facturaArrendamiento.frx" />
+    <Content Include="reportes\FACTURACOMPRA.frx" />
+    <Content Include="reportes\FACTURACOP.frx" />
+    <Content Include="reportes\facturadavid.frx" />
+    <Content Include="reportes\facturatransportes.frx" />
+    <Content Include="reportes\ficha_dep.frx" />
+    <Content Include="reportes\informe.frx" />
+    <Content Include="reportes\nota.frx" />
+    <Content Include="reportes\NOTA.FRX_178" />
+    <Content Include="reportes\NOTA.FRX_28" />
+    <Content Include="reportes\notadecredito.frx" />
+    <Content Include="reportes\ORDENCOMPRA.frx" />
+    <Content Include="reportes\ORDENCP.FRX" />
+    <Content Include="reportes\pedido.frx" />
+    <Content Include="reportes\PEDIDO.FRX_246" />
+    <Content Include="reportes\PEDIDO.FRX_24643" />
+    <Content Include="reportes\recibonomina.frx" />
+    <Content Include="reportes\recibonomina.frx_246" />
+    <Content Include="reportes\recibonomina.frx_287" />
+    <Content Include="reportes\recibonomina1.frx" />
+    <Content Include="reportes\REMISION.frx" />
+    <Content Include="reportes\remisiontransportes.frx" />
+    <Content Include="reportes\requisicion.frx" />
+    <Content Include="reportes\requisicion2.frx" />
+    <Content Include="reportes\syad1120.frx" />
+    <Content Include="reportes\syad1220.frx" />
+    <Content Include="reportes\syad1221.frx" />
+    <Content Include="reportes\syad1222.frx" />
+    <Content Include="reportes\syad1227.frx" />
+    <Content Include="reportes\syad1228.frx" />
+    <Content Include="reportes\syad1229.frx" />
+    <Content Include="reportes\syad1229d.frx" />
+    <Content Include="reportes\syad2120.frx" />
+    <Content Include="reportes\syad2121.frx" />
+    <Content Include="reportes\syad2220.frx" />
+    <Content Include="reportes\syad2220.frx_168" />
+    <Content Include="reportes\syad2220.frx_198" />
+    <Content Include="reportes\syad2221.frx" />
+    <Content Include="reportes\syad2223.frx" />
+    <Content Include="reportes\syad4010.frx" />
+    <Content Include="reportes\syad4010.frx_218" />
+    <Content Include="reportes\syad4011.frx" />
+    <Content Include="reportes\syad4012.frx" />
+    <Content Include="reportes\syad4110.frx" />
+    <Content Include="reportes\syad4111.frx" />
+    <Content Include="reportes\syad4200.frx" />
+    <Content Include="reportes\synopr00.frx" />
+    <Content Include="reportes\synopr10.frx" />
+    <Content Include="reportes\synopr11.frx" />
+    <Content Include="reportes\Untitled.frx" />
+    <None Include="My Project\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="My Project\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="My Project\PublishProfiles\local.pubxml" />
+    <None Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <Content Include="Search.aspx" />
+    <Content Include="TermsConditions.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutUs.aspx.designer.vb">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AboutUs.aspx.vb">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="AccountAddressBook.aspx.designer.vb">
+      <DependentUpon>AccountAddressBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AccountAddressBook.aspx.vb">
+      <DependentUpon>AccountAddressBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccountAddressBookEdit.aspx.designer.vb">
+      <DependentUpon>AccountAddressBookEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AccountAddressBookEdit.aspx.vb">
+      <DependentUpon>AccountAddressBookEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccountAddressBookNew.aspx.designer.vb">
+      <DependentUpon>AccountAddressBookNew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AccountAddressBookNew.aspx.vb">
+      <DependentUpon>AccountAddressBookNew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccountHistory.aspx.designer.vb">
+      <DependentUpon>AccountHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AccountHistory.aspx.vb">
+      <DependentUpon>AccountHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccountLogin.aspx.designer.vb">
+      <DependentUpon>AccountLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AccountLogin.aspx.vb">
+      <DependentUpon>AccountLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CheckoutPayment.aspx.designer.vb">
+      <DependentUpon>CheckoutPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CheckoutPayment.aspx.vb">
+      <DependentUpon>CheckoutPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CheckoutShipping.aspx.designer.vb">
+      <DependentUpon>CheckoutShipping.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CheckoutShipping.aspx.vb">
+      <DependentUpon>CheckoutShipping.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="class\addShoppingCart.vb" />
+    <Compile Include="class\Products.vb" />
+    <Compile Include="class\ShoppingCart.vb" />
+    <Compile Include="class\var_public.vb" />
+    <Compile Include="Contact.aspx.designer.vb">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.aspx.vb">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="home.aspx.designer.vb">
+      <DependentUpon>home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="home.aspx.vb">
+      <DependentUpon>home.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="iforgot\iforgot.aspx.designer.vb">
+      <DependentUpon>iforgot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="iforgot\iforgot.aspx.vb">
+      <DependentUpon>iforgot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Facturas.aspx.designer.vb">
+      <DependentUpon>Facturas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Facturas.aspx.vb">
+      <DependentUpon>Facturas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layout\SiteWeb.Master.designer.vb">
+      <DependentUpon>SiteWeb.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Layout\SiteWeb.Master.vb">
+      <DependentUpon>SiteWeb.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layout\SiteWebSim.Master.designer.vb">
+      <DependentUpon>SiteWebSim.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Layout\SiteWebSim.Master.vb">
+      <DependentUpon>SiteWebSim.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListProducts.aspx.designer.vb">
+      <DependentUpon>ListProducts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListProducts.aspx.vb">
+      <DependentUpon>ListProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Marks.aspx.designer.vb">
+      <DependentUpon>Marks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Marks.aspx.vb">
+      <DependentUpon>Marks.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="MyAccount.aspx.designer.vb">
+      <DependentUpon>MyAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyAccount.aspx.vb">
+      <DependentUpon>MyAccount.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="newAccount.aspx.designer.vb">
+      <DependentUpon>newAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="newAccount.aspx.vb">
+      <DependentUpon>newAccount.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="OrderHistory.aspx.designer.vb">
+      <DependentUpon>OrderHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OrderHistory.aspx.vb">
+      <DependentUpon>OrderHistory.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="PrivacyPolicy.aspx.designer.vb">
+      <DependentUpon>PrivacyPolicy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivacyPolicy.aspx.vb">
+      <DependentUpon>PrivacyPolicy.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Search.aspx.designer.vb">
+      <DependentUpon>Search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Search.aspx.vb">
+      <DependentUpon>Search.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="seleccAddress.aspx.designer.vb">
+      <DependentUpon>seleccAddress.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="seleccAddress.aspx.vb">
+      <DependentUpon>seleccAddress.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShoppingSend.aspx.designer.vb">
+      <DependentUpon>ShoppingSend.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShoppingSend.aspx.vb">
+      <DependentUpon>ShoppingSend.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShowCart.aspx.designer.vb">
+      <DependentUpon>ShowCart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShowCart.aspx.vb">
+      <DependentUpon>ShowCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShowProduct.aspx.designer.vb">
+      <DependentUpon>ShowProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShowProduct.aspx.vb">
+      <DependentUpon>ShowProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TermsConditions.aspx.designer.vb">
+      <DependentUpon>TermsConditions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TermsConditions.aspx.vb">
+      <DependentUpon>TermsConditions.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ws\wsAccountHistory.aspx.designer.vb">
+      <DependentUpon>wsAccountHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ws\wsAccountHistory.aspx.vb">
+      <DependentUpon>wsAccountHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="obj\Debug\sycsa.Web.Resources.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Layout\SiteWeb.Master" />
+    <Content Include="in\assets\arrows.psd" />
+    <Content Include="in\assets\bullets.psd" />
+    <Content Include="in\assets\small_arrows.psd" />
+    <Content Include="in\font\flexslider-icon.eot" />
+    <Content Include="in\font\flexslider-icon.ttf" />
+    <Content Include="in\font\flexslider-icon.woff" />
+    <Content Include="in\font\fontello.eot" />
+    <Content Include="in\font\fontello.ttf" />
+    <Content Include="in\font\fontello.woff" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\sycsa.Web.vbproj.GenerateResource.Cache" />
+    <Content Include="obj\Debug\sycsa.Web.vbprojResolveAssemblyReference.cache" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="carshop\" />
+    <Folder Include="src\" />
+    <Folder Include="xml\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sycsa.BusinessLayer\sycsa.BusinessLayer.vbproj">
+      <Project>{ed10ab88-56e1-4a9c-967d-89d3a96bb95f}</Project>
+      <Name>sycsa.BusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sycsa.DataAccessLayer\sycsa.DataAccessLayer.vbproj">
+      <Project>{9b591a9d-86f5-4ee8-8af6-2629e47c3b6e}</Project>
+      <Name>sycsa.DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sycsa.Information\sycsa.Information.vbproj">
+      <Project>{3e68fb6b-fa54-41d3-befc-485d4d231d8f}</Project>
+      <Name>sycsa.Information</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

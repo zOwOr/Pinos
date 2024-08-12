@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="Vb" ReferencedAssemblies="System.dll&#13;&#10;System.Drawing.dll&#13;&#10;System.Windows.Forms.dll&#13;&#10;System.Data.dll&#13;&#10;System.Xml.dll&#13;&#10;FastReport.RPTImportPlugin.dll" ReportInfo.Created="12/22/2013 21:51:44" ReportInfo.Modified="04/18/2017 14:53:07" ReportInfo.CreatorVersion="2014.1.5.0">
+  <ScriptText>Imports System
+Imports System.Collections
+Imports System.Collections.Generic
+Imports System.ComponentModel
+Imports System.Windows.Forms
+Imports System.Drawing
+Imports Microsoft.VisualBasic
+Imports FastReport
+Imports FastReport.Data
+Imports FastReport.Dialog
+Imports FastReport.Table
+Imports FastReport.Barcode
+Imports FastReport.Utils
+
+Namespace FastReport
+  Public Class ReportScript
+
+  End Class
+End Namespace
+</ScriptText>
+  <Dictionary>
+    <TableDataSource Name="DSDoccob" ReferenceName="Data.DSDoccob" DataType="System.Int32" Enabled="true">
+      <Column Name="ciarfc" DataType="System.String"/>
+      <Column Name="cianom" DataType="System.String"/>
+      <Column Name="ciadir" DataType="System.String"/>
+      <Column Name="ciacol" DataType="System.String"/>
+      <Column Name="ciacd" DataType="System.String"/>
+      <Column Name="ciacp" DataType="System.String"/>
+      <Column Name="ciapais" DataType="System.String"/>
+      <Column Name="ciaest" DataType="System.String"/>
+      <Column Name="cianum" DataType="System.String"/>
+      <Column Name="REGIMEN" DataType="System.String"/>
+      <Column Name="num_cert" DataType="System.String"/>
+      <Column Name="CLINUM" DataType="System.String"/>
+      <Column Name="leyenda1" DataType="System.String"/>
+      <Column Name="leyenda2" DataType="System.String"/>
+      <Column Name="leyenda3" DataType="System.String"/>
+      <Column Name="IMPRESORA" DataType="System.String"/>
+      <Column Name="COPIAS" DataType="System.String"/>
+      <Column Name="clinom" DataType="System.String"/>
+      <Column Name="clidir" DataType="System.String"/>
+      <Column Name="clicol" DataType="System.String"/>
+      <Column Name="clirfc" DataType="System.String"/>
+      <Column Name="clicp" DataType="System.String"/>
+      <Column Name="clitel" DataType="System.String"/>
+      <Column Name="cliciu" DataType="System.String"/>
+      <Column Name="cliest" DataType="System.String"/>
+      <Column Name="CLI_PAIS" DataType="System.String"/>
+      <Column Name="codigo_pro" DataType="System.Int32"/>
+      <Column Name="descripcion" DataType="System.String"/>
+      <Column Name="cantidad" DataType="System.Double"/>
+      <Column Name="precio_uni" DataType="System.Double"/>
+      <Column Name="porciento" DataType="System.Double"/>
+      <Column Name="importe_par" DataType="System.Double"/>
+      <Column Name="iva_par" DataType="System.Double"/>
+      <Column Name="foliofac" DataType="System.String"/>
+      <Column Name="NCR_DESCRIPCION" DataType="System.String"/>
+      <Column Name="FECHA_REAL" DataType="System.DateTime"/>
+      <Column Name="TOTAL_NO_COB" DataType="System.Double"/>
+      <Column Name="VALOR_MOV" DataType="System.Double"/>
+      <Column Name="clave" DataType="System.Int32"/>
+      <Column Name="EMPRESA" DataType="System.Int32"/>
+      <Column Name="tipo_doc" DataType="System.String"/>
+      <Column Name="cveser" DataType="System.String"/>
+      <Column Name="folio" DataType="System.String"/>
+      <Column Name="tipo_mov" DataType="System.String"/>
+      <Column Name="cliente" DataType="System.Int32"/>
+      <Column Name="fecha_alta" DataType="System.DateTime"/>
+      <Column Name="MONEDA" DataType="System.String"/>
+      <Column Name="TIPO_cAMBIO" DataType="System.Double"/>
+      <Column Name="sub_total" DataType="System.Double"/>
+      <Column Name="TOTAL_APLICADO" DataType="System.Double"/>
+      <Column Name="VALOR_MN" DataType="System.Double"/>
+      <Column Name="HECHO_POR" DataType="System.String"/>
+      <Column Name="AUTORIZO" DataType="System.String"/>
+      <Column Name="total_iva" DataType="System.Double"/>
+      <Column Name="retiva" DataType="System.Double"/>
+      <Column Name="retisr" DataType="System.Double"/>
+      <Column Name="total" DataType="System.Double"/>
+      <Column Name="cadenaoriginal" DataType="System.String"/>
+      <Column Name="sellodigital" DataType="System.String"/>
+      <Column Name="estatus" DataType="System.String"/>
+      <Column Name="estatussat" DataType="System.String"/>
+      <Column Name="fecha_baja" DataType="System.DateTime"/>
+      <Column Name="uuid" DataType="System.String"/>
+      <Column Name="certificadosat" DataType="System.String"/>
+      <Column Name="certificadofecha" DataType="System.String"/>
+      <Column Name="sellosat" DataType="System.String"/>
+      <Column Name="cadenasat" DataType="System.String"/>
+      <Column Name="afectado" DataType="System.Int32"/>
+      <Column Name="Formato" DataType="System.String"/>
+      <Column Name="Formatoem" DataType="System.String"/>
+      <Column Name="letras" DataType="System.String"/>
+      <Column Name="METODOPAGO" DataType="System.String"/>
+      <Column Name="NUMCTAPAGO" DataType="System.String"/>
+      <Column Name="totalfac" DataType="System.Double"/>
+      <Column Name="tiponc" DataType="System.String"/>
+    </TableDataSource>
+    <TableDataSource Name="DSDoccobAplicacion" ReferenceName="Data.DSDoccobAplicacion" DataType="System.Int32" Enabled="true">
+      <Column Name="CLAVE" DataType="System.Int32"/>
+      <Column Name="FOLIO_DVE" DataType="System.Int32"/>
+      <Column Name="FOLIO_DCB_ADMIN" DataType="System.String"/>
+      <Column Name="FACTURA" DataType="System.String"/>
+      <Column Name="PORCIENTO" DataType="System.Double"/>
+      <Column Name="GAN_TC" DataType="System.Double"/>
+      <Column Name="IMP_NO_COB" DataType="System.Double"/>
+      <Column Name="PAR" DataType="System.String"/>
+      <Column Name="PARTIDA" DataType="System.String"/>
+      <Column Name="ALMACEN" DataType="System.String"/>
+      <Column Name="CODIGO_PRO" DataType="System.Int32"/>
+      <Column Name="CANTIDAD" DataType="System.Double"/>
+      <Column Name="PRECIO_UNI" DataType="System.Double"/>
+      <Column Name="ST_PAR" DataType="System.Double"/>
+      <Column Name="IVA_PAR" DataType="System.Double"/>
+      <Column Name="RET_IVA_PAR" DataType="System.Double"/>
+      <Column Name="IMPORTE_PAR" DataType="System.Double"/>
+      <Column Name="TIPO_CAMBIO" DataType="System.Double"/>
+      <Column Name="DESCRIPCION" DataType="System.String"/>
+      <Column Name="SALDO" DataType="System.Double"/>
+      <Column Name="CANT_DIAS" DataType="System.Int32"/>
+      <Column Name="FOLIO_DVE_REF" DataType="System.Int32"/>
+      <Column Name="tiponc" DataType="System.String"/>
+      <Column Name="UNIDAD" DataType="System.String"/>
+      <Column Name="RET_ISR_PAR" DataType="System.Double"/>
+      <Column Name="tasa_ieps" DataType="System.Double"/>
+      <Column Name="Saldofac" DataType="System.Double"/>
+    </TableDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" LeftMargin="6" TopMargin="6" RightMargin="6" BottomMargin="6">
+    <ReportTitleBand Name="ReportTitle1" Width="748.44" Height="124.85" Fill.Color="White">
+      <TextObject Name="Text48" Left="628.9" Top="5.9" Width="121.35" Height="12" Text="NOTA DE CREDITO" HorzAlign="Center" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text32" Left="204.55" Top="75.6" Width="352.4" Height="18.9" Text="RFC: [DSDoccob.ciarfc]    TEL:  " HorzAlign="Center" Font="Arial, 9pt"/>
+      <TextObject Name="Text1" Left="638.15" Top="20.9" Width="101.95" Height="27.35" Text="[DSDoccob.folio]" HorzAlign="Center" Font="Arial, 12pt, style=Bold"/>
+      <TextObject Name="Text2" Left="171.93" Top="1.45" Width="417.65" Height="21.9" Text="[DSDoccob.cianom]" HorzAlign="Center" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text3" Left="163.4" Top="28.35" Width="434.7" Height="45.9" Text="[Trim([DSDoccob.ciadir])] #[Trim([DSDoccob.cianum])]&#13;&#10;[Trim([DSDoccob.ciacol])], CP: [Trim([DSDoccob.ciacp])]&#13;&#10;[Trim([DSDoccob.ciacd])], [Trim([DSDoccob.ciaest])]" HorzAlign="Center" Font="Arial, 9pt"/>
+      <TextObject Name="Text4" Left="160.65" Top="94.5" Width="439.5" Height="13.9" Text="[DSDoccob.REGIMEN]" HorzAlign="Center" Font="Arial, 9pt"/>
+      <TextObject Name="Text58" Left="407.5" Top="110.95" Width="336.5" Height="13.9" Text="EXPEDIDO EN: [DSDoccob.ciacd] [DSDoccob.ciaest]" HorzAlign="Right" Font="Arial, 9pt"/>
+      <ShapeObject Name="Shape32" Left="-9450" Top="-9450" Width="69.7" Height="18.9" Border.Width="0.25" Fill.Color="LightGray"/>
+      <ShapeObject Name="Shape33" Left="-9450" Top="-9450" Width="69.7" Height="18.9" Border.Width="0.25" Fill.Color="LightGray"/>
+      <TextObject Name="Text6" Left="621.6" Top="81.05" Width="161.5" Height="14.9" Text="[DSDoccob.fecha_alta]" Format="Date" Format.Format="d" Font="Arial, 8pt"/>
+      <TextObject Name="Text44" Left="624.6" Top="61.6" Width="98" Height="14" Text="FECHA EMISION" HorzAlign="Center" Font="Arial, 8pt"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="128.85" Width="748.44" Height="114.85" Fill.Color="White" Guides="75.6">
+      <TextObject Name="Text12" Left="2" Top="100.95" Width="59.7" Height="13.9" Text="FACTURA" HorzAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text14" Left="305.75" Top="100.95" Width="322.5" Height="13.9" Text="DESCRIPCON" HorzAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text28" Left="63.7" Top="100.95" Width="91.05" Height="13.9" Text="TOTAL FAC." HorzAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text30" Left="630.05" Top="100.95" Width="113.5" Height="13.9" Text="IMPORTE FAC." HorzAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text31" Left="1" Top="3.45" Width="159" Height="14" Text="DATOS DEL RECEPTOR" HorzAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text13" Left="3.9" Top="17.9" Width="474.65" Height="57.7" Text="[Trim([DSDoccob.clinom])] &#13;&#10;[Trim([DSDoccob.clidir])] #[Trim([DSDoccob.clinum])]&#13;&#10;[Trim([DSDoccob.clicol])], CP: [Trim([DSDoccob.clicp])]&#13;&#10;[Trim([DSDoccob.cliciu])], [Trim([DSDoccob.cliest])]" VertAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text16" Left="3.9" Top="72.15" Width="186.5" Height="12.9" Text="[DSDoccob.clirfc]" Font="Arial, 8pt"/>
+      <TextObject Name="Text17" Left="199.35" Top="73.15" Width="173.5" Height="11.9" Text="TEL: [DSDoccob.clitel]" Font="Arial, 8pt"/>
+      <TextObject Name="Text64" Left="156.65" Top="100.95" Width="104.5" Height="13.9" Text="TIPO DE NOTA" HorzAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text65" Left="262.6" Top="100.95" Width="41.5" Height="13.9" Text="%" HorzAlign="Center" Font="Arial, 8pt"/>
+      <LineObject Name="Line3" Left="737.1" Width="-737.1" Border.Width="2" Diagonal="true"/>
+      <TextObject Name="Text23" Left="612.8" Top="28.35" Width="172.5" Height="12.9" Text="[DSDoccob.numctapago]" Font="Arial, 8pt"/>
+      <TextObject Name="Text39" Left="501.4" Top="28.35" Width="102.95" Height="10.9" Text="NUMCTAPAGO" HorzAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text38" Left="494.17" Top="10.9" Width="117.4" Height="13.9" Text="METODO DE PAGO" HorzAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text22" Left="613.25" Top="11.45" Width="171.5" Height="12.9" Text="[DSDoccob.metodopago]" Font="Arial, 8pt"/>
+    </PageHeaderBand>
+    <GroupHeaderBand Name="GroupHeader1" Top="247.7" Width="748.44" Height="9.45" Condition="[DSDoccob.clave]">
+      <LineObject Name="Line4" Left="746.55" Width="-746.55" Border.Width="2" Diagonal="true"/>
+      <DataBand Name="Data1" Top="261.15" Width="748.44" Height="14.9" Fill.Color="White" DataSource="DSDoccob">
+        <TextObject Name="Text7" Left="2" Width="59.7" Height="14.9" Text="[DSDoccob.foliofac]" Font="Arial, 8pt"/>
+        <TextObject Name="Text24" Left="63.7" Width="91.05" Height="14.9" Text="[DSDoccob.totalfac]" Format="Number" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+        <TextObject Name="Text29" Left="156.65" Width="104.5" Height="14.9" Text="[DSDoccob.tiponc]" Font="Arial, 8pt"/>
+        <TextObject Name="Text40" Left="262.6" Width="41.5" Height="14.9" Text="[DSDoccob.porciento]" Format="Number" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+        <TextObject Name="Text41" Left="305.75" Width="322.5" Height="14.9" Text="[DSDoccob.NCR_DESCRIPCION]" Font="Arial, 8pt"/>
+        <TextObject Name="Text42" Left="630.05" Width="113.5" Height="14.9" Text="[DSDoccob.importe_par]" Format="Number" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+      </DataBand>
+      <GroupFooterBand Name="GroupFooter1" Top="280.05" Width="748.44" Height="61.15">
+        <TextObject Name="Text67" Top="18.9" Width="295.95" Height="13.9" Text="Aplicacion Saldo factura " HorzAlign="Center" Font="Arial, 9pt"/>
+        <TextObject Name="Text70" Top="47.25" Width="59.7" Height="13.9" Border.Lines="Bottom" Text="FACTURA" HorzAlign="Center" Font="Arial, 8pt"/>
+        <TextObject Name="Text71" Left="61.7" Top="37.8" Width="91.05" Height="23.35" Border.Lines="Bottom" Text="IMPORTE&#13;&#10; APLICADO" HorzAlign="Center" Font="Arial, 8pt"/>
+        <TextObject Name="Text72" Left="154.65" Top="47.25" Width="104.5" Height="13.9" Border.Lines="Bottom" Text="SALDO_FAC" HorzAlign="Center" Font="Arial, 8pt"/>
+      </GroupFooterBand>
+    </GroupHeaderBand>
+    <DataBand Name="Data2" Top="345.2" Width="748.44" Height="18.9" DataSource="DSDoccobAplicacion">
+      <TextObject Name="Text68" Width="59.7" Height="14.9" Text="[DSDoccobAplicacion.FACTURA]" VertAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text69" Left="56.7" Width="91.05" Height="14.9" Text="[DSDoccobAplicacion.IMPORTE_PAR]" Format="Number" Format.UseLocale="true" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text73" Left="160.65" Width="91.05" Height="14.9" Text="[DSDoccobAplicacion.Saldofac]" Format="Number" Format.UseLocale="true" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="368.1" Width="748.44" Height="341.75" Fill.Color="White">
+      <TextObject Name="Text25" Left="1" Top="104.8" Width="159" Height="14" Text="SELLO SAT" HorzAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text26" Left="3" Top="179.85" Width="156" Height="14" Text="CADENA SAT" HorzAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text27" Left="1" Top="253" Width="159" Height="14" Text="SELLO DIGITAL" HorzAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text33" Left="3" Top="1" Width="196.8" Height="14" Text="CANTIDAD CON LETRA" HorzAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text36" Left="521.75" Top="18.45" Width="98" Height="12" Text="IVA 16%" HorzAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text37" Left="522.3" Top="34.8" Width="97" Height="12" Text="TOTAL" HorzAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text34" Left="520.75" Top="1.45" Width="99" Height="13" Text="SUBTOTAL" HorzAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text55" Left="85.05" Top="326.85" Width="510.3" Height="14.9" Text="ESTE DOCUMENTO ES UNA REPRESENTACION IMPRESA DE UN CFDI." HorzAlign="Center" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text57" Left="85.05" Top="312.85" Width="510.3" Height="14.9" Text="PAGO EN UNA EXHIBICION." HorzAlign="Center" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text18" Left="623.7" Top="1" Width="119.5" Height="13.9" Text="[DSDoccob.sub_total]" Format="Number" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text19" Left="625.15" Top="17.9" Width="117.5" Height="13.9" Text="[DSDoccob.total_iva]" Format="Number" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text20" Left="625.15" Top="33.8" Width="117.5" Height="12.9" Text="[DSDoccob.total]" Format="Number" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text21" Left="3.45" Top="20.9" Width="511.5" Height="13.9" Text="[DSDoccob.letras]" Font="Arial, 8pt"/>
+      <TextObject Name="Text49" Left="1.45" Top="197.45" Width="595.35" Height="42.35" Text="[DSDoccob.cadenasat]" Font="Arial, 7pt"/>
+      <TextObject Name="Text50" Left="1.45" Top="119.85" Width="595.35" Height="47.35" Text="[DSDoccob.sellosat]" Font="Arial, 7pt"/>
+      <TextObject Name="Text51" Left="1.45" Top="271.05" Width="595.35" Height="37.9" Text="[DSDoccob.sellodigital]" Font="Arial, 7pt"/>
+      <BarcodeObject Name="Barcode1" Left="614.25" Top="122.85" Width="113.4" Height="113.4" AutoSize="false" Expression="&quot;?re=&quot;+[DSDoccob.ciarfc]+&quot;&amp;rr=&quot;+[DSDoccob.clirfc]+&quot;&amp;tt=&quot;+PadLeft(ToString(FormatNumber([DSDoccob.total],6)),17,&quot;0&quot;)+&quot;&amp;id=&quot;+[DSDoccob.uuid]" Text="?re=SCM131216RA9   &amp;rr=FEL850819MQ7 &amp;tt=0000000002.000000&amp;id=                                        " ShowText="false" Barcode="QR Code" Barcode.ErrorCorrection="L" Barcode.Encoding="UTF8" Barcode.QuietZone="true"/>
+      <LineObject Name="Line6" Left="595.35" Top="103.95" Width="-595.35" Border.Width="2" Diagonal="true"/>
+      <LineObject Name="Line7" Left="595.35" Top="170.1" Width="-595.35" Border.Width="2" Diagonal="true"/>
+      <LineObject Name="Line8" Left="595.35" Top="245.7" Width="-595.35" Border.Width="2" Diagonal="true"/>
+      <LineObject Name="Line9" Left="737.1" Width="-737.1" Border.Width="2" Diagonal="true"/>
+      <TextObject Name="Text5" Left="6.95" Top="37.35" Width="520.6" Height="49.8" Text="                             UUID  [DSDoccob.uuid]&#13;&#10;FECHA CERTIFICACION  [DSDoccob.certificadofecha]&#13;&#10;       NUM CERTIFICADO  [DSDoccob.num_cert]&#13;&#10;        CERTIFICADO SAT  [DSDoccob.certificadosat]" Font="Arial, 8pt"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

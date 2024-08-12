@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="Vb" ReferencedAssemblies="System.dll&#13;&#10;System.Drawing.dll&#13;&#10;System.Windows.Forms.dll&#13;&#10;System.Data.dll&#13;&#10;System.Xml.dll&#13;&#10;FastReport.RPTImportPlugin.dll" ReportInfo.Created="12/22/2013 21:51:44" ReportInfo.Modified="03/24/2017 13:08:15" ReportInfo.CreatorVersion="2014.1.5.0">
+  <ScriptText>Imports System
+Imports System.Collections
+Imports System.Collections.Generic
+Imports System.ComponentModel
+Imports System.Windows.Forms
+Imports System.Drawing
+Imports Microsoft.VisualBasic
+Imports FastReport
+Imports FastReport.Data
+Imports FastReport.Dialog
+Imports FastReport.Table
+Imports FastReport.Barcode
+Imports FastReport.Utils
+
+Namespace FastReport
+  Public Class ReportScript
+
+  End Class
+End Namespace
+</ScriptText>
+  <Styles>
+    <Style Name="Concepto1" Border.Lines="All" Fill.Color="LemonChiffon"/>
+    <Style Name="Concepto2" Border.Lines="All" Fill.Color="LightYellow"/>
+    <Style Name="Totales" Border.Lines="All" Fill.Color="235, 152, 251, 152" Font="Arial, 9pt, style=Bold"/>
+    <Style Name="Cabecera" Border.Lines="All" Fill.Color="AntiqueWhite"/>
+    <Style Name="puntero" Border.Lines="All" Fill.Color="DodgerBlue"/>
+    <Style Name="neto" Border.Lines="All" Fill.Color="211, 50, 205, 50" Font="Arial, 9.75pt, style=Bold"/>
+    <Style Name="totales1" Border.Lines="All" Fill.Color="111, 255, 140, 0" Font="Arial, 8.25pt, style=Bold"/>
+  </Styles>
+  <Dictionary>
+    <TableDataSource Name="dsprenomina" ReferenceName="Data.dsprenomina" DataType="System.Int32" Enabled="true">
+      <Column Name="nombre" DataType="System.String"/>
+      <Column Name="descripcion" DataType="System.String"/>
+      <Column Name="tipo_mov" DataType="System.String"/>
+      <Column Name="cantidad" DataType="System.Decimal"/>
+      <Column Name="importe" DataType="System.Decimal"/>
+      <Column Name="importe_total" DataType="System.Decimal"/>
+      <Column Name="trabajador" DataType="System.Int32"/>
+      <Column Name="perc_exento" DataType="System.Decimal"/>
+      <Column Name="perc_gravado" DataType="System.Decimal"/>
+      <Column Name="dedu_gravado" DataType="System.Decimal"/>
+      <Column Name="nombre_empresa" DataType="System.String"/>
+      <Column Name="rfc_empresa" DataType="System.String"/>
+      <Column Name="numempleado" DataType="System.Decimal"/>
+      <Column Name="depto" DataType="System.String"/>
+      <Column Name="periodoini" DataType="System.String"/>
+      <Column Name="periodofin" DataType="System.String"/>
+      <Column Name="perc_total" DataType="System.Decimal"/>
+      <Column Name="deu_total" DataType="System.Decimal"/>
+      <Column Name="total_apagar" DataType="System.Decimal"/>
+      <Column Name="clave_mov" DataType="System.Int32"/>
+    </TableDataSource>
+    <Total Name="Total Percepcion" Expression="[dsprenomina.perc_exento]+[dsprenomina.perc_gravado]" Evaluator="Data2" PrintOn="GroupFooter1"/>
+    <Total Name="Total deduccion" Expression="[dsprenomina.dedu_gravado]" Evaluator="Data2" PrintOn="GroupFooter1"/>
+    <Total Name="Totalpagar" Expression="[dsprenomina.perc_exento]+[dsprenomina.perc_gravado]-[dsprenomina.dedu_gravado]" Evaluator="Data2" PrintOn="GroupFooter1"/>
+    <Total Name="TotalNOMINA" Expression="([dsprenomina.perc_exento]+[dsprenomina.perc_gravado])-[dsprenomina.dedu_gravado]" Evaluator="Data2" PrintOn="ReportSummary1"/>
+    <Total Name="Totalpercerpcionreporte" Expression="[dsprenomina.perc_exento]+[dsprenomina.perc_gravado]" Evaluator="Data2" PrintOn="ReportSummary1"/>
+    <Total Name="TotalDeduccionreporte" Expression="[dsprenomina.dedu_gravado]" Evaluator="Data2" PrintOn="ReportSummary1"/>
+  </Dictionary>
+  <ReportPage Name="Page1" LeftMargin="6" TopMargin="6" RightMargin="6" BottomMargin="6" Guides="283.5,491.4,0,85.05,9.45,75.6,56.7,585.9,670.95,670.95,264.6,349.65,28.35,415.8,585.9,500.85,576.45,406.35,500.85,491.4,576.45,406.35,340.2,37.8,491.4,491.4,661.5,746.55,-9.45,746.55,283.5,283.5,264.6,585.9,491.4,415.8,491.4,491.4">
+    <ReportTitleBand Name="ReportTitle1" Width="748.44" Height="18.9" Guides="18.9"/>
+    <PageHeaderBand Name="PageHeader1" Top="22.9" Width="748.44" Height="103.95" Guides="0,0,85.05,28.35,47.25,66.15">
+      <TextObject Name="Text24" Left="283.5" Width="207.9" Height="28.35" Text="RECIBOS DE NOMINA FORMATO REPORTE" Duplicates="Clear" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text25" Top="28.35" Width="85.05" Height="18.9" Text="COMPAÑIA" Duplicates="Clear" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text26" Top="47.25" Width="85.05" Height="18.9" Text="RFC" Duplicates="Clear" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text27" Top="66.15" Width="85.05" Height="18.9" Text="PERIODO INI" Duplicates="Clear" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text3" Left="614.25" Width="132.3" Text="[PageN] de [TotalPages#]" HorzAlign="Right" Font="Arial, 8pt"/>
+      <TextObject Name="Text29" Left="576.45" Top="28.35" Width="170.1" Height="18.9" Text="[Date]" HorzAlign="Right" Font="Arial, 8pt"/>
+      <TextObject Name="Text10" Left="85.05" Top="66.15" Width="415.8" Height="18.9" Text="[dsprenomina.periodoini] " Font="Arial, 8pt"/>
+      <TextObject Name="Text18" Left="85.05" Top="28.35" Width="415.8" Height="18.9" Text="[dsprenomina.nombre_empresa]" Font="Arial, 8pt"/>
+      <TextObject Name="Text30" Left="85.05" Top="47.25" Width="198.45" Height="18.9" Text="[dsprenomina.rfc_empresa]" Font="Arial, 8pt"/>
+      <TextObject Name="Text37" Top="85.05" Width="85.05" Height="18.9" Text="PERIODO FIN" Duplicates="Clear" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text38" Left="85.05" Top="85.05" Width="415.8" Height="18.9" Text="[dsprenomina.periodofin] " Font="Arial, 8pt"/>
+      <TextObject Name="Text40" Left="576.45" Top="9.45" Width="170.1" Height="18.9" Text="[PageN] a [TotalPages#]" HorzAlign="Right" Font="Arial, 8pt"/>
+    </PageHeaderBand>
+    <ColumnHeaderBand Name="ColumnHeader1" Top="130.85" Width="748.44" Height="9.45"/>
+    <GroupHeaderBand Name="GroupHeader1" Top="144.3" Width="748.44" Height="37.8" Border.Lines="All" Guides="18.9,37.8,0" Condition="[dsprenomina.trabajador]">
+      <TextObject Name="Text49" Left="0.1" Top="18.9" Width="366.95" Height="18.9" Border.Lines="All" Text="DESCRIPCION" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text50" Left="366.75" Top="18.9" Width="65.15" Height="18.9" Border.Lines="All" Text="CANTIDAD" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text52" Left="657.8" Top="18.9" Width="89.4" Height="18.9" Border.Lines="All" Text="DEDUCCIONES" Duplicates="Clear" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text53" Left="510.5" Width="147.45" Height="18.9" Border.Lines="All" Text="PERCEPCION" Duplicates="Clear" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text54" Left="510.5" Top="18.9" Width="73.4" Height="18.9" Border.Lines="All" Text="EXENTO" Duplicates="Clear" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text55" Left="583.55" Top="18.9" Width="74.4" Height="18.9" Border.Lines="All" Text="GRAVADO" Duplicates="Clear" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text56" Left="431.9" Top="18.9" Width="78.4" Height="18.9" Border.Lines="All" Text="IMPÓRTE" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text1" Left="28" Width="378" Height="18.9" Text="[dsprenomina.numempleado] [dsprenomina.nombre]" Duplicates="Clear" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <DataBand Name="Data2" Top="186.1" Width="748.44" Height="18.9" Border.Lines="All" EvenStyle="Concepto2" HoverStyle="puntero" FirstRowStartsNewPage="true" Guides="0,18.9" DataSource="dsprenomina" CollectChildRows="true">
+        <TextObject Name="Text6" Left="366.75" Width="65.15" Height="18.9" Border.Lines="All" Text="[dsprenomina.cantidad]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="0" Format.DecimalSeparator="." Format.GroupSeparator="" Format.NegativePattern="1" HorzAlign="Right" VertAlign="Bottom" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+        <TextObject Name="Text15" Left="1.1" Width="365.95" Height="18.9" CanBreak="false" Text="[dsprenomina.descripcion]" AutoWidth="true" VertAlign="Bottom" WordWrap="false" Font="Arial, 8pt"/>
+        <TextObject Name="Text2" Left="510.5" Width="73.4" Height="18.9" Border.Lines="All" Text="[dsprenomina.perc_exento]" Format="Number" Format.UseLocale="true" HorzAlign="Right" VertAlign="Bottom" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+        <TextObject Name="Text4" Left="584" Width="74.4" Height="18.9" Border.Lines="All" Text="[dsprenomina.perc_gravado]" Format="Number" Format.UseLocale="true" HorzAlign="Right" VertAlign="Bottom" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+        <TextObject Name="Text16" Left="657.8" Width="89.4" Height="18.9" Border.Lines="All" Text="[dsprenomina.dedu_gravado]" Format="Number" Format.UseLocale="true" HorzAlign="Right" VertAlign="Bottom" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+        <TextObject Name="Text8" Left="431.9" Width="78.4" Height="18.9" Border.Lines="All" Text="[dsprenomina.importe_total]" Format="Number" Format.UseLocale="true" HorzAlign="Right" VertAlign="Bottom" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+        <LineObject Name="Line2" Top="18.9" Width="746.55"/>
+        <LineObject Name="Line3" Width="746.55"/>
+        <Sort>
+          <Sort Expression="[dsprenomina.numempleado]"/>
+          <Sort Expression="[dsprenomina.tipo_mov]" Descending="true"/>
+          <Sort Expression="[dsprenomina.descripcion]"/>
+        </Sort>
+      </DataBand>
+      <GroupFooterBand Name="GroupFooter1" Top="209" Width="748.44" Height="56.7" Guides="37.8,37.8,18.9,37.8">
+        <TextObject Name="Text32" Left="3.2" Width="378" Height="18.9" Text="([ToWordsEs([Totalpagar],&quot;MXN&quot;)])" VertAlign="Center" Font="Arial, 8pt"/>
+        <TextObject Name="Text28" Left="657.8" Top="37.8" Width="89.4" Height="18.9" Border.Lines="All" Fill.Color="235, 255, 255, 255" HoverStyle="puntero" Text="[dsprenomina.total_apagar]" Format="Number" Format.UseLocale="true" HorzAlign="Right" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+        <TextObject Name="Text45" Left="510.5" Top="37.8" Width="147.45" Height="18.9" Border.Lines="All" Fill.Color="111, 255, 255, 255" Text="TOTAL A PAGAR" HorzAlign="Right" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+        <TextObject Name="Text46" Left="657.8" Top="18.9" Width="89.4" Height="18.9" Border.Lines="All" Fill.Color="235, 255, 255, 255" HoverStyle="puntero" Text="[dsprenomina.deu_total]" Format="Number" Format.UseLocale="true" HorzAlign="Right" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+        <TextObject Name="Text47" Left="510.5" Top="18.9" Width="147.45" Height="18.9" Border.Lines="All" Fill.Color="111, 255, 255, 255" Text="TOTAL DEDUCCIONES" HorzAlign="Right" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+        <TextObject Name="Text48" Left="510.5" Width="147.45" Height="18.9" Border.Lines="All" Fill.Color="111, 255, 255, 255" Text="TOTAL PERCEPCIONES" HorzAlign="Right" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+        <TextObject Name="Text57" Left="657.8" Width="89.4" Height="18.9" Border.Lines="All" Fill.Color="235, 255, 255, 255" HoverStyle="puntero" Text="[dsprenomina.perc_total]" Format="Number" Format.UseLocale="true" HorzAlign="Right" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+      </GroupFooterBand>
+    </GroupHeaderBand>
+    <ReportSummaryBand Name="ReportSummary1" Top="330.4" Width="748.44" Height="56.7">
+      <TextObject Name="Text11" Left="629.45" Width="117.1" Height="18.9" Border.Lines="All" Fill.Color="211, 255, 255, 255" HoverStyle="puntero" Text="[Totalpercerpcionreporte]" Format="Number" Format.UseLocale="true" HorzAlign="Right" VertAlign="Center" Font="Arial, 9.75pt, style=Bold"/>
+      <TextObject Name="Text34" Left="482.15" Width="147.45" Height="18.9" Border.Lines="All" Fill.Color="111, 255, 255, 255" Text="TOTAL PERCEPCION" HorzAlign="Right" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+      <TextObject Name="Text12" Left="629.45" Top="18.9" Width="117.1" Height="18.9" Border.Lines="All" Fill.Color="211, 255, 255, 255" HoverStyle="puntero" Text="[TotalDeduccionreporte]" Format="Number" Format.UseLocale="true" HorzAlign="Right" VertAlign="Center" Font="Arial, 9.75pt, style=Bold"/>
+      <TextObject Name="Text35" Left="482.15" Top="18.9" Width="147.45" Height="18.9" Border.Lines="All" Fill.Color="111, 255, 255, 255" Text="TOTAL DEDUCCION" HorzAlign="Right" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+      <TextObject Name="Text13" Left="629.45" Top="37.8" Width="117.1" Height="18.9" Border.Lines="All" Fill.Color="211, 255, 255, 255" HoverStyle="puntero" Text="[TotalNOMINA]" Format="Number" Format.UseLocale="true" HorzAlign="Right" VertAlign="Center" Font="Arial, 9.75pt, style=Bold"/>
+      <TextObject Name="Text36" Left="482.15" Top="37.8" Width="147.45" Height="18.9" Border.Lines="All" Fill.Color="111, 255, 255, 255" Text="NETO A PAGAR" HorzAlign="Right" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+    </ReportSummaryBand>
+    <ColumnFooterBand Name="ColumnFooter1" Top="269.7" Width="748.44" Height="56.7"/>
+    <PageFooterBand Name="PageFooter1" Top="391.1" Width="748.44" Height="39.35"/>
+  </ReportPage>
+</Report>

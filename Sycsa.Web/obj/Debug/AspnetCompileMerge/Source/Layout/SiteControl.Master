@@ -1,0 +1,175 @@
+﻿<%@ Master Language="VB" AutoEventWireup="true" CodeBehind="SiteControl.master.vb" Inherits="sycsa.Web.SiteControl" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <title runat="server">RAED | Administración</title>
+
+    <!-- jQuery -->
+    <script src="/wpanel/js/jquery.js"></script>
+
+    <link href="/wpanel/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="/wpanel/js/bootstrap.min.js"></script>
+
+    <link href="/wpanel/css/sb-admin.css" rel="stylesheet">
+    <link href="/wpanel/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <script src="/wpanel/js/jquery.bootgrid.min.js"></script>
+    <link href="/wpanel/css/jquery.bootgrid.min.css" rel="stylesheet" />
+
+    <script src="/wPanel/js/booting.js"></script>
+    <link href="/wPanel/css/style.css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="Html_Head" runat="server" ClientIDMode="Static">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+    <form id="Formulario" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <script type="text/javascript">
+            Sys.WebForms.PageRequestManager.getInstance().add_beginRequest(BeginRequestHandler);
+            Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler);
+        </script>
+        <div id="wrapper">
+
+            <!-- Navigation -->
+            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="<% Response.Write(ResolveUrl("~/wpanel/Principal.aspx"))%>">RAED | Administración del sitio </a>
+                </div>
+
+                <!-- Top Menu Items -->
+                <ul class="nav navbar-right top-nav">
+
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i><%= Session("ss_UserName")%> <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="<%= ResolveUrl("~/wpanel/Options.aspx?") %>"><i class="fa fa-fw fa-gear"></i>Settings</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="<%=ResolveUrl("/wpanel/Logout.aspx?logout=true")%>"><i class="fa fa-fw fa-power-off"></i>Log Out</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- MenuTop -->
+                    <asp:ContentPlaceHolder ID="Html_MenuTop" runat="server" ClientIDMode="Static">
+                    </asp:ContentPlaceHolder>
+
+                </ul>
+
+
+
+                <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav side-nav">
+                        <li class="active">
+                            <a href="<%= ResolveUrl("~/wpanel/Principal.aspx?") %>"><i class="fa fa-fw fa-dashboard"></i>Escritorio</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" data-toggle="collapse" data-target="#shopinCart"><i class="fa fa-fw fa-shopping-cart"></i>Ventas  <i class="fa fa-fw fa-caret-down"></i></a>
+                            <ul id="shopinCart" class="collapse">
+                                <li>
+                                    <asp:HyperLink ID="LinkListSales" runat="server" NavigateUrl="~/wPanel/sales/ListSales.aspx">Lista de ventas</asp:HyperLink>
+                                </li>
+                                <li>
+                                    <asp:HyperLink ID="LinkPendingSales" runat="server" NavigateUrl="~/wPanel/sales/PendingSales.aspx">Ventas pendientes</asp:HyperLink>
+                                </li>
+                                <li>
+                                    <asp:HyperLink ID="LinkCanceledSales" runat="server" NavigateUrl="~/wPanel/sales/CanceledSales.aspx">Ventas canceladas</asp:HyperLink>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="<% Response.Write(ResolveUrl("~/wpanel/Customers.aspx?"))%>"><i class="fa fa-fw fa-table"></i>Clientes</a>
+                        </li>
+
+
+                        <li>
+                            <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-folder"></i>Catálogos 
+                           <i class="fa fa-fw fa-caret-down"></i></a>
+                            <ul id="demo" class="collapse">
+                                <li>
+                                    <asp:HyperLink ID="linkCategories" runat="server" NavigateUrl="~/wpanel/Categories.aspx">Categorias</asp:HyperLink>
+                                </li>
+                                <li>
+                                    <asp:HyperLink ID="LinkMarcar" runat="server" NavigateUrl="~/wpanel/Marks.aspx"> Marcas </asp:HyperLink>
+                                </li>
+                                <li>
+                                    <a href="<% Response.Write(ResolveUrl("~/wpanel/Products.aspx?"))%>"><i class="fa fa-fw fa-edit"></i>Productos</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="<% Response.Write(ResolveUrl("~/wpanel/Newsletters.aspx?"))%>"><i class="fa fa-fw fa-newspaper-o"></i>Boletines</a>
+                        </li>
+
+
+                        <li>
+                            <a href="javascript:;" data-toggle="collapse" data-target="#opciones"><i class="fa fa-fw fa-cog"></i>Opciones 
+                                <i class="fa fa-fw fa-caret-down"></i></a>
+                            <ul id="opciones" class="collapse">
+                                <li>
+                                    <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/wpanel/Options.aspx"><i class="fa fa-fw  fa-wrench"></i> Ajustes del sitio </asp:HyperLink>
+                                </li>
+                                <li>
+                                    <a href="<% Response.Write(ResolveUrl("~/wpanel/Users.aspx?"))%>"><i class="fa fa-fw fa-users"></i> Usuarios</a>
+                                </li>
+                                <li>
+                                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/wPanel/methodSend.aspx"><i class="fa fa-fw fa-plane"></i> Metodos de envío </asp:HyperLink>
+                                </li>
+
+                            </ul>
+                        </li>
+                    </ul>
+
+
+                    <asp:ContentPlaceHolder ID="Html_MenuLeft" runat="server" ClientIDMode="Static">
+                    </asp:ContentPlaceHolder>
+                </div>
+                <!-- /.navbar-collapse -->
+            </nav>
+
+            <!-- Contenido de la pagina -->
+            <div id="page-wrapper">
+                <div class="container-fluid">
+
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div id="box_process" class="process" style="display: none; margin-top: 5px;">Atendiendo ...</div>
+                            <div id="box_messenger" class="msgBox" style="margin-top: 5px;"></div>
+                        </div>
+                    </div>
+
+                    <asp:ContentPlaceHolder ID="Html_Content" runat="server" ClientIDMode="Static">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+
+
+
+        </div>
+    </form>
+
+
+</body>
+</html>

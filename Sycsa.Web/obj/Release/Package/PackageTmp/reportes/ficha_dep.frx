@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="Vb" ReferencedAssemblies="System.dll&#13;&#10;System.Drawing.dll&#13;&#10;System.Windows.Forms.dll&#13;&#10;System.Data.dll&#13;&#10;System.Xml.dll&#13;&#10;FastReport.RPTImportPlugin.dll" StartReportEvent="_StartReport" ReportInfo.Created="12/22/2013 21:51:44" ReportInfo.Modified="10/23/2015 10:54:34" ReportInfo.CreatorVersion="2014.1.5.0">
+  <ScriptText>Imports System
+Imports System.Collections
+Imports System.Collections.Generic
+Imports System.ComponentModel
+Imports System.Windows.Forms
+Imports System.Drawing
+Imports Microsoft.VisualBasic
+Imports FastReport
+Imports FastReport.Data
+Imports FastReport.Dialog
+Imports FastReport.Table
+Imports FastReport.Barcode
+Imports FastReport.Utils
+
+Namespace FastReport
+  Public Class ReportScript
+    Private Sub _StartReport(ByVal sender As object, ByVal e As EventArgs)
+      If (CType(Report.GetColumnValue(&quot;dsmov_banco.estatus&quot;), String) = &quot;PEN&quot;) Then
+        Page1.Watermark.Enabled = True
+        Page1.Watermark.Text = &quot;PENDIENTE&quot;
+      End If
+      If (CType(Report.GetColumnValue(&quot;dsmov_banco.estatus&quot;), String) = &quot;AFE&quot;) Then
+        Page1.Watermark.Enabled = True
+        Page1.Watermark.Text = &quot;AFECTADO&quot;
+      End If
+      If (CType(Report.GetColumnValue(&quot;dsmov_banco.estatus&quot;), String) = &quot;CAN&quot;) Then
+        Page1.Watermark.Enabled = True
+        Page1.Watermark.Text = &quot;CANCELADO&quot;
+      End If
+    End Sub
+  End Class
+End Namespace
+</ScriptText>
+  <Styles>
+    <Style Name="CONCEPTO 1" Border.Lines="All" Fill.Color="176, 255, 224, 192"/>
+    <Style Name="CONCEPTO 2" Border.Lines="All" Fill.Color="255, 242, 191"/>
+    <Style Name="CABECERA" Border.Lines="All" Fill="Hatch" Fill.ForeColor="236, 180, 104" Fill.BackColor="241, 200, 143" Fill.Style="BackwardDiagonal"/>
+    <Style Name="TOTALES" Border.Lines="All" Fill.Color="PaleGreen"/>
+    <Style Name="PUNTERO" Border.Lines="All" Fill.Color="DodgerBlue" Font="Arial, 9pt, style=Bold"/>
+    <Style Name="CARGOS1" Border.Lines="All" Fill.Color="131, 255, 140, 0"/>
+    <Style Name="CARGOS2" Border.Lines="All" Fill.Color="121, 255, 165, 0"/>
+    <Style Name="CREDITOS1" Border.Lines="All" Fill.Color="175, 255, 215, 0"/>
+    <Style Name="CREDITOS2" Border.Lines="All" Fill.Color="121, 255, 215, 0"/>
+  </Styles>
+  <Dictionary>
+    <TableDataSource Name="dsmov_banco" ReferenceName="Data.dsmov_banco" DataType="System.Int32" Enabled="true">
+      <Column Name="clave" DataType="System.Int32"/>
+      <Column Name="cia" DataType="System.String"/>
+      <Column Name="fecha_alta" DataType="System.DateTime"/>
+      <Column Name="nombre_banco" DataType="System.String"/>
+      <Column Name="banco" DataType="System.String"/>
+      <Column Name="concepto" DataType="System.String"/>
+      <Column Name="moneda" DataType="System.String"/>
+      <Column Name="cuenta" DataType="System.String"/>
+      <Column Name="cliente" DataType="System.Int32"/>
+      <Column Name="descripcion" DataType="System.String"/>
+      <Column Name="valor_mov" DataType="System.Double"/>
+      <Column Name="fecha_real" DataType="System.DateTime"/>
+      <Column Name="factura" DataType="System.String"/>
+      <Column Name="importe_par" DataType="System.Double"/>
+      <Column Name="nombre" DataType="System.String"/>
+      <Column Name="rfc" DataType="System.String"/>
+      <Column Name="folio_cobranza" DataType="System.Int32"/>
+      <Column Name="estatus" DataType="System.String"/>
+    </TableDataSource>
+    <Total Name="Totalmov" Expression="[dsmov_banco.importe_par]" Evaluator="Data1" PrintOn="ReportSummary1"/>
+  </Dictionary>
+  <ReportPage Name="Page1" PaperWidth="215.8" PaperHeight="279.4" RawPaperSize="1" LeftMargin="6" TopMargin="6" RightMargin="6" BottomMargin="6" Duplex="Horizontal" Guides="283.5,425.25,9.45,85.05,9.45,75.6,56.7,585.9,699.3,699.3,264.6,349.65,28.35,415.8,585.9,425.25,576.45,406.35,425.25,425.25,576.45,406.35,340.2,37.8,425.25,425.25,699.3,746.55,-9.45,746.55,283.5,283.5,264.6,585.9,425.25,415.8,425.25,415.8,415.8,396.9" Border.Lines="All" Watermark.Text="Sycsa" Watermark.Font="Verdana, 72pt" Watermark.TextFill.Color="40, 0, 128, 128" Watermark.ShowImageOnTop="true" ExtraDesignWidth="true">
+    <ReportTitleBand Name="ReportTitle1" Width="770.36" Height="35.53" Border.Lines="Left, Right, Top" Guides="18.9">
+      <ShapeObject Name="Shape1" Left="4" Top="12.18" Width="763" Height="23.35" Fill.Color="Gainsboro"/>
+      <TextObject Name="Text23" Left="286.5" Top="14.45" Width="198.45" Height="20.35" Text="Deposito" HorzAlign="Center" Font="Arial, 12pt, style=Bold"/>
+    </ReportTitleBand>
+    <ColumnHeaderBand Name="ColumnHeader1" Top="39.26" Width="770.36" Height="134.65">
+      <TextObject Name="Text2" Left="179.55" Top="27.25" Width="189" Height="18.9" Text="Fecha: [dsmov_banco.fecha_alta]" Format="Date" Format.Format="d"/>
+      <TextObject Name="Text5" Left="9.45" Top="83.95" Width="179.55" Height="18.9" Text="Cuenta: [dsmov_banco.cuenta]"/>
+      <TextObject Name="Text9" Left="9.45" Top="55.6" Width="255.15" Height="18.9" Text="Banco: [dsmov_banco.banco] [dsmov_banco.nombre_banco]"/>
+      <TextObject Name="Text10" Left="9.45" Top="27.25" Width="160.65" Height="18.9" Text="Deposito: [dsmov_banco.clave]"/>
+      <TextObject Name="Text4" Left="640.6" Width="122.85" Height="18.9" Text="Pagina [Page] de [TotalPages#]" HorzAlign="Right" Font="Arial, 7pt"/>
+      <ShapeObject Name="Shape3" Left="4" Top="105.3" Width="763" Height="29.35" Fill.Color="Gainsboro"/>
+      <TextObject Name="Text29" Left="620.9" Top="112.98" Width="90.5" Height="14" Text="Factura" HorzAlign="Center" Font="Arial, 8.5pt, style=Bold"/>
+      <TextObject Name="Text30" Left="661.5" Top="112.98" Width="94.5" Height="14" Text="Importe" HorzAlign="Right" Font="Arial, 8.5pt, style=Bold"/>
+      <TextObject Name="Text31" Left="444.35" Top="106.53" Width="105.85" Height="23.45" Text="Valor &#13;&#10;Movimiento" HorzAlign="Center" Font="Arial, 8.5pt, style=Bold"/>
+      <TextObject Name="Text32" Left="3.45" Top="112.98" Width="49.7" Height="14" Text="Cliente" Font="Arial, 8.5pt, style=Bold"/>
+      <TextObject Name="Text33" Left="45.7" Top="112.98" Width="252.15" Height="14" Text="Compañia" Font="Arial, 8.5pt, style=Bold"/>
+      <TextObject Name="Text34" Left="540.4" Top="106.53" Width="95.4" Height="23.45" Text="Fecha &#13;&#10;Deposito" HorzAlign="Center" Font="Arial, 8.5pt, style=Bold"/>
+      <TextObject Name="Text16" Left="198.45" Width="378" Height="18.9" Text="[dsmov_banco.nombre]" HorzAlign="Center" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text35" Left="333.5" Top="106.53" Width="124.75" Height="23.45" Text="Descripcion&#13;&#10;Movimiento" HorzAlign="Center" Font="Arial, 8.5pt, style=Bold"/>
+      <TextObject Name="Text36" Left="265.8" Top="105.95" Width="124.75" Height="27.45" Text="Folio&#13;&#10;Cobranza" HorzAlign="Center" Font="Arial, 8.5pt, style=Bold"/>
+    </ColumnHeaderBand>
+    <DataBand Name="Data1" Top="177.64" Width="770.36" Height="15.9" DataSource="dsmov_banco">
+      <TextObject Name="Text6" Left="-0.55" Top="-0.55" Width="43.25" Height="15.9" Text="[dsmov_banco.cliente]" Duplicates="Merge" HorzAlign="Right" Font="Arial, 8pt"/>
+      <TextObject Name="Text11" Left="432.9" Top="-0.55" Width="104.85" Height="15.9" Text="[dsmov_banco.valor_mov]" Duplicates="Merge" Format="Number" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text12" Left="524.95" Top="-0.55" Width="95.4" Height="15.9" Text="[dsmov_banco.fecha_real]" Format="Date" Format.Format="d" HorzAlign="Right" Font="Arial, 8pt"/>
+      <TextObject Name="Text13" Left="626.9" Top="-0.55" Width="90.5" Height="15.9" Text="[dsmov_banco.factura]" Font="Arial, 8pt"/>
+      <TextObject Name="Text14" Left="670.95" Top="-0.55" Width="94.5" Height="15.9" Text="[dsmov_banco.importe_par]" Format="Number" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text1" Left="45.7" Top="-0.55" Width="248.8" Height="15.9" CanBreak="false" Text="[dsmov_banco.cia]" Duplicates="Merge" WordWrap="false" Font="Arial, 8pt"/>
+      <TextObject Name="Text7" Left="364.85" Top="-0.55" Width="136.3" Height="15.9" Text="[dsmov_banco.descripcion]" Duplicates="Merge" Font="Arial, 8pt"/>
+      <TextObject Name="Text8" Left="274.15" Width="63.5" Height="15.9" Text="[dsmov_banco.folio_cobranza]" Duplicates="Merge" HorzAlign="Right" Font="Arial, 8pt"/>
+    </DataBand>
+    <ReportSummaryBand Name="ReportSummary1" Top="197.27" Width="770.36" Height="23.35" Border.Lines="Left, Right" KeepWithData="true">
+      <TextObject Name="Text15" Left="440.9" Top="-0.55" Width="98.85" Height="20.9" Border.Lines="Top" Text="[Totalmov]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.NegativePattern="1" HorzAlign="Right" VertAlign="Bottom"/>
+      <TextObject Name="Text3" Left="394.75" Top="0.45" Width="56.7" Height="18.9" Text="Total:" VertAlign="Bottom" Font="Arial, 10pt, style=Bold"/>
+    </ReportSummaryBand>
+    <PageFooterBand Name="PageFooter1" Top="224.35" Width="770.36" Border.Lines="Left, Right, Bottom"/>
+  </ReportPage>
+</Report>

@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="07/08/2014 17:38:02" ReportInfo.Modified="02/04/2016 21:58:38" ReportInfo.CreatorVersion="2014.1.5.0">
+  <ScriptText>using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Windows.Forms;
+using System.Drawing;
+using System.Data;
+using FastReport;
+using FastReport.Data;
+using FastReport.Dialog;
+using FastReport.Barcode;
+using FastReport.Table;
+using FastReport.Utils;
+
+namespace FastReport
+{
+  public class ReportScript
+  {
+    
+  }
+}
+</ScriptText>
+  <Dictionary>
+    <TableDataSource Name="DSTABLA" ReferenceName="Data.DSTABLA" DataType="System.Int32" Enabled="true">
+      <Column Name="ciarfc" DataType="System.String"/>
+      <Column Name="cianom" DataType="System.String"/>
+      <Column Name="ciadir" DataType="System.String"/>
+      <Column Name="ciacol" DataType="System.String"/>
+      <Column Name="ciacd" DataType="System.String"/>
+      <Column Name="ciacp" DataType="System.String"/>
+      <Column Name="ciapais" DataType="System.String"/>
+      <Column Name="ciaest" DataType="System.String"/>
+      <Column Name="cianum" DataType="System.String"/>
+      <Column Name="clavecfd" DataType="System.String"/>
+      <Column Name="ciacerti" DataType="System.Byte[]" BindableControl="Picture"/>
+      <Column Name="ciakey" DataType="System.Byte[]" BindableControl="Picture"/>
+      <Column Name="rutalogo" DataType="System.String"/>
+      <Column Name="ciatel" DataType="System.String"/>
+      <Column Name="ciafax" DataType="System.String"/>
+      <Column Name="ciapaginaweb" DataType="System.String"/>
+      <Column Name="ciaemail" DataType="System.String"/>
+      <Column Name="certificadoarch" DataType="System.Byte[]" BindableControl="Picture"/>
+      <Column Name="llave" DataType="System.Byte[]" BindableControl="Picture"/>
+      <Column Name="nocertificado" DataType="System.String"/>
+      <Column Name="series" DataType="System.String"/>
+      <Column Name="letras" DataType="System.String"/>
+      <Column Name="cvekey" DataType="System.String"/>
+      <Column Name="Formato" DataType="System.String"/>
+      <Column Name="FormatoEM" DataType="System.String"/>
+      <Column Name="IMPRESORA" DataType="System.String"/>
+      <Column Name="COPIAS" DataType="System.String"/>
+      <Column Name="REGIMEN" DataType="System.String"/>
+      <Column Name="leyenda1" DataType="System.String"/>
+      <Column Name="leyenda2" DataType="System.String"/>
+      <Column Name="leyenda3" DataType="System.String"/>
+      <Column Name="cvecondvta" DataType="System.String"/>
+      <Column Name="clinom" DataType="System.String"/>
+      <Column Name="clidir" DataType="System.String"/>
+      <Column Name="clicol" DataType="System.String"/>
+      <Column Name="cliRFC" DataType="System.String"/>
+      <Column Name="clicp" DataType="System.String"/>
+      <Column Name="cliciu" DataType="System.String"/>
+      <Column Name="cliest" DataType="System.String"/>
+      <Column Name="clinum" DataType="System.String"/>
+      <Column Name="clitel" DataType="System.String"/>
+      <Column Name="num_cert" DataType="System.String"/>
+      <Column Name="partida" DataType="System.Int32"/>
+      <Column Name="codigo_pro" DataType="System.Int32"/>
+      <Column Name="unidad" DataType="System.String"/>
+      <Column Name="codigo_pv" DataType="System.String"/>
+      <Column Name="codigo" DataType="System.String"/>
+      <Column Name="descripcion" DataType="System.String"/>
+      <Column Name="cantidad" DataType="System.Double"/>
+      <Column Name="precio_uni" DataType="System.Double"/>
+      <Column Name="importe" DataType="System.Double"/>
+      <Column Name="tasa_iva" DataType="System.Double"/>
+      <Column Name="tipo_cambio" DataType="System.Double"/>
+      <Column Name="moneda" DataType="System.String"/>
+      <Column Name="clave" DataType="System.Int32"/>
+      <Column Name="EMPRESA" DataType="System.Int32"/>
+      <Column Name="tipo_doc" DataType="System.String"/>
+      <Column Name="solicitante" DataType="System.String"/>
+      <Column Name="vendedor" DataType="System.String"/>
+      <Column Name="cveser" DataType="System.String"/>
+      <Column Name="folio" DataType="System.String"/>
+      <Column Name="cliente" DataType="System.Int32"/>
+      <Column Name="cli_mos" DataType="System.String"/>
+      <Column Name="fecha" DataType="System.DateTime"/>
+      <Column Name="fecha_baja" DataType="System.DateTime"/>
+      <Column Name="lista" DataType="System.Int32"/>
+      <Column Name="subs_total" DataType="System.Double"/>
+      <Column Name="CARGO_EX" DataType="System.Double"/>
+      <Column Name="sub_total" DataType="System.Double"/>
+      <Column Name="tasa_iva1" DataType="System.Double"/>
+      <Column Name="tot_iva" DataType="System.Double"/>
+      <Column Name="DESC_VOL" DataType="System.Double"/>
+      <Column Name="ret_iva" DataType="System.Double"/>
+      <Column Name="ret_isr" DataType="System.Double"/>
+      <Column Name="total" DataType="System.Double"/>
+      <Column Name="total_mn" DataType="System.Double"/>
+      <Column Name="saldo_mn" DataType="System.Double"/>
+      <Column Name="CAMBIO" DataType="System.Double"/>
+      <Column Name="cadenaoriginal" DataType="System.String"/>
+      <Column Name="sellodigital" DataType="System.String"/>
+      <Column Name="estatus" DataType="System.String"/>
+      <Column Name="estatussat" DataType="System.String"/>
+      <Column Name="valordeclarado" DataType="System.Double"/>
+      <Column Name="observaciones" DataType="System.String"/>
+      <Column Name="referencia" DataType="System.String"/>
+      <Column Name="orden_comp" DataType="System.String"/>
+      <Column Name="metodopago" DataType="System.String"/>
+      <Column Name="numctapago" DataType="System.String"/>
+      <Column Name="cond_venta" DataType="System.String"/>
+      <Column Name="factura" DataType="System.Int32"/>
+      <Column Name="adDenda" DataType="System.String"/>
+      <Column Name="enviada" DataType="System.Decimal"/>
+      <Column Name="pedido" DataType="System.String"/>
+      <Column Name="remision" DataType="System.String"/>
+      <Column Name="fechapedido" DataType="System.DateTime"/>
+      <Column Name="uuid" DataType="System.String"/>
+      <Column Name="certificadosat" DataType="System.String"/>
+      <Column Name="certificadofecha" DataType="System.String"/>
+      <Column Name="sellosat" DataType="System.String"/>
+      <Column Name="cadenasat" DataType="System.String"/>
+      <Column Name="afectado" DataType="System.Int32"/>
+      <Column Name="fecha_alta" DataType="System.DateTime"/>
+      <Column Name="USUARIO_ALTA" DataType="System.String"/>
+      <Column Name="USUARIO_BAJA" DataType="System.String"/>
+      <Column Name="descrip_am" DataType="System.String"/>
+      <Column Name="cvecliori" DataType="System.Int32"/>
+      <Column Name="cveclides" DataType="System.Int32"/>
+      <Column Name="camion" DataType="System.Int32"/>
+      <Column Name="chofer" DataType="System.Int32"/>
+      <Column Name="archivoxml" DataType="System.String"/>
+      <Column Name="FORMATO_ARCHIVO" DataType="System.Byte[]" BindableControl="Picture"/>
+      <Column Name="FORMATOem_ARCHIVO" DataType="System.Byte[]" BindableControl="Picture"/>
+      <Column Name="entre_calles" DataType="System.String"/>
+      <Column Name="clipais" DataType="System.String"/>
+      <Column Name="remisiones" DataType="System.String"/>
+      <Column Name="clides_nombre" DataType="System.String"/>
+      <Column Name="clides_calle" DataType="System.String"/>
+      <Column Name="CliDes_numero" DataType="System.String"/>
+      <Column Name="CliDes_cp" DataType="System.String"/>
+      <Column Name="Clides_colonia" DataType="System.String"/>
+      <Column Name="CliDes_rfc" DataType="System.String"/>
+      <Column Name="CliDes_entre" DataType="System.String"/>
+      <Column Name="CliDes_ciudad" DataType="System.String"/>
+      <Column Name="CliDes_estado" DataType="System.String"/>
+      <Column Name="CliDes_tel" DataType="System.String"/>
+      <Column Name="CliDes_contacto" DataType="System.String"/>
+      <Column Name="CliOri_nombre" DataType="System.String"/>
+      <Column Name="CliOri_calle" DataType="System.String"/>
+      <Column Name="CliOri_numero" DataType="System.String"/>
+      <Column Name="CliOri_cp" DataType="System.String"/>
+      <Column Name="CliOri_colonia" DataType="System.String"/>
+      <Column Name="Cliori_rfc" DataType="System.String"/>
+      <Column Name="CliOri_entre" DataType="System.String"/>
+      <Column Name="CliOri_tel" DataType="System.String"/>
+      <Column Name="contacto" DataType="System.String"/>
+      <Column Name="Cliori_ciudad" DataType="System.String"/>
+      <Column Name="Cliori_estado" DataType="System.String"/>
+      <Column Name="chof_descrip" DataType="System.String"/>
+      <Column Name="cam_nom_corto" DataType="System.String"/>
+      <Column Name="cam_placas" DataType="System.String"/>
+      <Column Name="cam_numeroserie" DataType="System.String"/>
+      <Column Name="cam_numeroeco" DataType="System.String"/>
+      <Column Name="cam_marca" DataType="System.String"/>
+      <Column Name="cam_modelo" DataType="System.String"/>
+      <Column Name="cam_dueno" DataType="System.String"/>
+      <Column Name="cam_asegurador" DataType="System.String"/>
+      <Column Name="cam_poliza" DataType="System.String"/>
+      <Column Name="cam_fecha_ven" DataType="System.DateTime"/>
+      <Column Name="chof_operador" DataType="System.String"/>
+      <Column Name="chof_calle" DataType="System.String"/>
+      <Column Name="chof_numero" DataType="System.String"/>
+      <Column Name="chof_cp" DataType="System.String"/>
+      <Column Name="chof_tel" DataType="System.String"/>
+      <Column Name="chof_regimss" DataType="System.String"/>
+      <Column Name="chof_numlicencia" DataType="System.String"/>
+      <Column Name="chof_vencimiento" DataType="System.DateTime"/>
+    </TableDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" PaperWidth="63.5" PaperHeight="296.9" RawPaperSize="119" LeftMargin="0" TopMargin="0" RightMargin="0" BottomMargin="0" FirstPageSource="15" OtherPagesSource="15" StartPageEvent="_StartPage">
+    <ReportTitleBand Name="ReportTitle1" Top="20" Width="240.03" Height="199.35" CanGrow="true" CanShrink="true" CanBreak="true">
+      <TextObject Name="Text32" Left="2.45" Top="3" Width="235.25" Height="28.35" Text="[DSTABLA.cianom]" HorzAlign="Center" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text60" Left="2.45" Top="38.25" Width="235.25" Height="28.35" Text="Calle: [DSTABLA.ciadir] #[DSTABLA.cianum]&#13;&#10;Col: [DSTABLA.ciacol]" HorzAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text61" Left="2.45" Top="68.15" Width="235.25" Height="28.35" Text="RFC:  [DSTABLA.ciarfc]&#13;&#10;Tel: [DSTABLA.ciatel] &#13;&#10;" HorzAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text62" Left="113.85" Top="97.05" Width="122.85" Height="12.9" Text="Nota: [DSTABLA.folio]" HorzAlign="Right" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text71" Left="1.45" Top="97.05" Width="141.75" Height="18.9" Text="Te atendio: [DSTABLA.vendedor]" Font="Arial, 8pt"/>
+      <LineObject Name="Line2" Left="-6" Top="130.4" Width="330.75"/>
+      <TextObject Name="Text10" Left="-1.28" Top="113.4" Width="235.25" Height="18.9" Text="FECHA DE EMISION: [DSTABLA.fecha]" HorzAlign="Center" VertAlign="Center" Font="Arial, 7pt, style=Bold"/>
+      <TextObject Name="Text6" Top="132.3" Width="237.25" Height="18.9" Text="Cliente: [DSTABLA.clinom]" Font="Arial, 7pt, style=Bold"/>
+      <TextObject Name="Text75" Top="144.2" Width="237.25" Height="38.8" Text="Dir: [DSTABLA.clidir] #[DSTABLA.clinum]&#13;&#10;Col: [DSTABLA.clicol]&#13;&#10;Ciudad: [DSTABLA.clicp]" Font="Arial, 7pt, style=Bold"/>
+      <TextObject Name="Text76" Top="176.55" Width="237.25" Height="22.8" Text="RFC: [DSTABLA.clirfc]&#13;&#10;TEL: [DSTABLA.clitel]" Font="Arial, 7pt, style=Bold"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="239.35" Width="240.03" Height="31.35" CanGrow="true" CanShrink="true" PrintOn="FirstPage" CanBreak="true">
+      <TextObject Name="Text64" Left="2.45" Top="4" Width="235.25" Height="13.9" Text="Producto" HorzAlign="Center" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text65" Left="180.45" Top="15.45" Width="56.7" Height="15.9" Text="Importe" HorzAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text66" Left="1.45" Top="15.45" Width="56.7" Height="15.9" Text="Cantidad" HorzAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text68" Left="91.95" Top="15.45" Width="56.7" Height="15.9" Text="Precio" HorzAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <LineObject Name="Line7" Left="-22.35" Top="3" Width="330.75"/>
+      <LineObject Name="Line4" Left="3.45" Top="28.9" Width="330.75"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="290.7" Width="240.03" Height="26.35" CanGrow="true" CanShrink="true" CanBreak="true" DataSource="DSTABLA">
+      <TextObject Name="Text2" Left="2.45" Top="-1.45" Width="235.25" Height="18.9" CanGrow="true" Text="[DSTABLA.descripcion]&#13;&#10;" AutoWidth="true" HorzAlign="Center" WordWrap="false" Font="Arial, 8pt"/>
+      <TextObject Name="Text1" Left="1.45" Top="9.45" Width="56.7" Height="13.9" CanGrow="true" CanShrink="true" GrowToBottom="true" Text="[DSTABLA.cantidad]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="" Format.NegativePattern="1" HorzAlign="Center" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text3" Left="77.77" Top="9.45" Width="85.05" Height="13.9" CanGrow="true" CanShrink="true" GrowToBottom="true" Text="[DSTABLA.precio_uni]" Format="Currency" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.CurrencySymbol="$" Format.PositivePattern="2" Format.NegativePattern="12" HorzAlign="Center" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text4" Left="152.1" Top="9.45" Width="85.05" Height="16.9" CanGrow="true" CanShrink="true" GrowToBottom="true" Text="[DSTABLA.importe]" Format="Currency" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.CurrencySymbol="$" Format.PositivePattern="2" Format.NegativePattern="12" HorzAlign="Right" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+    </DataBand>
+    <ReportSummaryBand Name="ReportSummary1" Top="337.05" Width="240.03" Height="107.95" CanGrow="true" CanShrink="true" CanBreak="true" KeepWithData="true">
+      <TextObject Name="Text5" Left="2.45" Top="4.55" Width="235.25" Height="18.9" CanGrow="true" CanShrink="true" GrowToBottom="true" Text="Cantidad en Letras ( [DSTABLA.letras] )" HorzAlign="Center" Font="Arial, 8pt"/>
+      <LineObject Name="Line5" Left="3.45" Top="3" Width="330.75"/>
+      <LineObject Name="Line6" Left="3.45" Top="90.05" Width="275.95"/>
+      <TextObject Name="Text74" Left="-11.73" Top="92.05" Width="257.05" Height="15.9" Text="* * * * GRACIAS POR SU COMPRA * * * * " HorzAlign="Center" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text7" Left="61.35" Top="28.8" Width="64.15" Height="15.45" Text="Subtotal:" HorzAlign="Right" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text8" Left="130.95" Top="28.8" Width="103.95" Height="15.45" Text="[DSTABLA.subs_total]" Format="Currency" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.CurrencySymbol="$" Format.PositivePattern="2" Format.NegativePattern="12" HorzAlign="Right" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text77" Left="61.7" Top="47.7" Width="64.15" Height="15.45" Text="IVA:" HorzAlign="Right" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text78" Left="131.3" Top="47.7" Width="103.95" Height="15.45" Text="[DSTABLA.tot_iva]" Format="Currency" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.CurrencySymbol="$" Format.PositivePattern="2" Format.NegativePattern="12" HorzAlign="Right" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text79" Left="61.7" Top="66.6" Width="64.15" Height="15.45" Text="Total:" HorzAlign="Right" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text80" Left="131.3" Top="66.6" Width="103.95" Height="15.45" Text="[DSTABLA.total]" Format="Currency" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.CurrencySymbol="$" Format.PositivePattern="2" Format.NegativePattern="12" HorzAlign="Right" Font="Arial, 9pt, style=Bold"/>
+    </ReportSummaryBand>
+    <PageFooterBand Name="PageFooter1" Top="465" Width="240.03" Height="9.45" CanGrow="true" CanShrink="true" CanBreak="true"/>
+  </ReportPage>
+</Report>

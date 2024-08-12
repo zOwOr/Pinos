@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="Vb" ReferencedAssemblies="System.dll&#13;&#10;System.Drawing.dll&#13;&#10;System.Windows.Forms.dll&#13;&#10;System.Data.dll&#13;&#10;System.Xml.dll&#13;&#10;FastReport.RPTImportPlugin.dll" ReportInfo.Created="12/22/2013 21:51:44" ReportInfo.Modified="02/05/2016 09:16:47" ReportInfo.CreatorVersion="2014.1.5.0">
+  <ScriptText>Imports System
+Imports System.Collections
+Imports System.Collections.Generic
+Imports System.ComponentModel
+Imports System.Windows.Forms
+Imports System.Drawing
+Imports Microsoft.VisualBasic
+Imports FastReport
+Imports FastReport.Data
+Imports FastReport.Dialog
+Imports FastReport.Table
+Imports FastReport.Barcode
+Imports FastReport.Utils
+
+Namespace FastReport
+  Public Class ReportScript
+    Private Sub _StartPage(ByVal sender As object, ByVal e As EventArgs)
+      If (CType(Report.GetColumnValue(&quot;DSTABLA.estatussat&quot;), String) = &quot;GEN&quot;) Then
+        Page1.Watermark.Enabled = True
+        Page1.Watermark.Text = &quot;P E N D I E N T E&quot;
+      End If
+      If (CType(Report.GetColumnValue(&quot;DSTABLA.estatussat&quot;), String) = &quot; &quot;) Then
+        Page1.Watermark.Enabled = True
+        Page1.Watermark.Text = &quot;P E N D I E N T E&quot;
+      End If
+      If (Trim(CType(Report.GetColumnValue(&quot;DSTABLA.estatussat&quot;), String)) = &quot;CAN&quot;) Then
+        Page1.Watermark.Enabled = True
+        Page1.Watermark.Text = &quot;C A N C E L A D O&quot;
+      End If
+      If (CType(Report.GetColumnValue(&quot;DSTABLA.estatussat&quot;), String) = &quot;PEN&quot;) Then
+        Page1.Watermark.Enabled = True
+        Page1.Watermark.Text = &quot;P E N D I E N T E&quot;
+      End If
+    End Sub
+  End Class
+End Namespace
+</ScriptText>
+  <Dictionary>
+    <TableDataSource Name="DSTABLA" ReferenceName="Data.DSTABLA" DataType="System.Int32" Enabled="true">
+      <Column Name="ciarfc" DataType="System.String"/>
+      <Column Name="cianom" DataType="System.String"/>
+      <Column Name="ciadir" DataType="System.String"/>
+      <Column Name="ciacol" DataType="System.String"/>
+      <Column Name="ciacd" DataType="System.String"/>
+      <Column Name="ciacp" DataType="System.String"/>
+      <Column Name="ciapais" DataType="System.String"/>
+      <Column Name="ciaest" DataType="System.String"/>
+      <Column Name="cianum" DataType="System.String"/>
+      <Column Name="clavecfd" DataType="System.String"/>
+      <Column Name="ciacerti" DataType="System.Byte[]" BindableControl="Picture"/>
+      <Column Name="ciakey" DataType="System.Byte[]" BindableControl="Picture"/>
+      <Column Name="rutalogo" DataType="System.String"/>
+      <Column Name="ciatel" DataType="System.String"/>
+      <Column Name="ciafax" DataType="System.String"/>
+      <Column Name="ciapaginaweb" DataType="System.String"/>
+      <Column Name="ciaemail" DataType="System.String"/>
+      <Column Name="certificadoarch" DataType="System.Byte[]" BindableControl="Picture"/>
+      <Column Name="llave" DataType="System.Byte[]" BindableControl="Picture"/>
+      <Column Name="nocertificado" DataType="System.String"/>
+      <Column Name="series" DataType="System.String"/>
+      <Column Name="letras" DataType="System.String"/>
+      <Column Name="cvekey" DataType="System.String"/>
+      <Column Name="Formato" DataType="System.String"/>
+      <Column Name="FormatoEM" DataType="System.String"/>
+      <Column Name="IMPRESORA" DataType="System.String"/>
+      <Column Name="COPIAS" DataType="System.String"/>
+      <Column Name="REGIMEN" DataType="System.String"/>
+      <Column Name="leyenda1" DataType="System.String"/>
+      <Column Name="leyenda2" DataType="System.String"/>
+      <Column Name="leyenda3" DataType="System.String"/>
+      <Column Name="cvecondvta" DataType="System.String"/>
+      <Column Name="clinom" DataType="System.String"/>
+      <Column Name="clidir" DataType="System.String"/>
+      <Column Name="clicol" DataType="System.String"/>
+      <Column Name="cliRFC" DataType="System.String"/>
+      <Column Name="clicp" DataType="System.String"/>
+      <Column Name="cliciu" DataType="System.String"/>
+      <Column Name="cliest" DataType="System.String"/>
+      <Column Name="clinum" DataType="System.String"/>
+      <Column Name="clitel" DataType="System.String"/>
+      <Column Name="num_cert" DataType="System.String"/>
+      <Column Name="partida" DataType="System.Int32"/>
+      <Column Name="codigo_pro" DataType="System.Int32"/>
+      <Column Name="unidad" DataType="System.String"/>
+      <Column Name="codigo_pv" DataType="System.String"/>
+      <Column Name="codigo" DataType="System.String"/>
+      <Column Name="descripcion" DataType="System.String"/>
+      <Column Name="cantidad" DataType="System.Double"/>
+      <Column Name="precio_uni" DataType="System.Double"/>
+      <Column Name="importe" DataType="System.Double"/>
+      <Column Name="tasa_iva" DataType="System.Double"/>
+      <Column Name="tipo_cambio" DataType="System.Double"/>
+      <Column Name="moneda" DataType="System.String"/>
+      <Column Name="clave" DataType="System.Int32"/>
+      <Column Name="EMPRESA" DataType="System.Int32"/>
+      <Column Name="tipo_doc" DataType="System.String"/>
+      <Column Name="solicitante" DataType="System.String"/>
+      <Column Name="vendedor" DataType="System.String"/>
+      <Column Name="cveser" DataType="System.String"/>
+      <Column Name="folio" DataType="System.String"/>
+      <Column Name="cliente" DataType="System.String"/>
+      <Column Name="cli_mos" DataType="System.String"/>
+      <Column Name="fecha" DataType="System.DateTime"/>
+      <Column Name="fecha_baja" DataType="System.DateTime"/>
+      <Column Name="lista" DataType="System.Int32"/>
+      <Column Name="subs_total" DataType="System.Double"/>
+      <Column Name="CARGO_EX" DataType="System.Double"/>
+      <Column Name="sub_total" DataType="System.Double"/>
+      <Column Name="tasa_iva1" DataType="System.Double"/>
+      <Column Name="tot_iva" DataType="System.Double"/>
+      <Column Name="DESC_VOL" DataType="System.Double"/>
+      <Column Name="ret_iva" DataType="System.Double"/>
+      <Column Name="ret_isr" DataType="System.Double"/>
+      <Column Name="total" DataType="System.Double"/>
+      <Column Name="total_mn" DataType="System.Double"/>
+      <Column Name="saldo_mn" DataType="System.Double"/>
+      <Column Name="CAMBIO" DataType="System.Double"/>
+      <Column Name="cadenaoriginal" DataType="System.String"/>
+      <Column Name="sellodigital" DataType="System.String"/>
+      <Column Name="estatus" DataType="System.String"/>
+      <Column Name="estatussat" DataType="System.String"/>
+      <Column Name="valordeclarado" DataType="System.Double"/>
+      <Column Name="observaciones" DataType="System.String"/>
+      <Column Name="referencia" DataType="System.String"/>
+      <Column Name="orden_comp" DataType="System.String"/>
+      <Column Name="metodopago" DataType="System.String"/>
+      <Column Name="numctapago" DataType="System.String"/>
+      <Column Name="cond_venta" DataType="System.String"/>
+      <Column Name="factura" DataType="System.Int32"/>
+      <Column Name="adDenda" DataType="System.String"/>
+      <Column Name="enviada" DataType="System.Decimal"/>
+      <Column Name="pedido" DataType="System.String"/>
+      <Column Name="remision" DataType="System.String"/>
+      <Column Name="fechapedido" DataType="System.DateTime"/>
+      <Column Name="uuid" DataType="System.String"/>
+      <Column Name="certificadosat" DataType="System.String"/>
+      <Column Name="certificadofecha" DataType="System.String"/>
+      <Column Name="sellosat" DataType="System.String"/>
+      <Column Name="cadenasat" DataType="System.String"/>
+      <Column Name="afectado" DataType="System.Int32"/>
+      <Column Name="fecha_alta" DataType="System.DateTime"/>
+      <Column Name="USUARIO_ALTA" DataType="System.String"/>
+      <Column Name="USUARIO_BAJA" DataType="System.String"/>
+      <Column Name="descrip_am" DataType="System.String"/>
+      <Column Name="cvecliori" DataType="System.String"/>
+      <Column Name="cveclides" DataType="System.String"/>
+      <Column Name="camion" DataType="System.Int32"/>
+      <Column Name="chofer" DataType="System.Int32"/>
+      <Column Name="archivoxml" DataType="System.String"/>
+      <Column Name="FORMATO_ARCHIVO" DataType="System.Byte[]" BindableControl="Picture"/>
+      <Column Name="FORMATOem_ARCHIVO" DataType="System.Byte[]" BindableControl="Picture"/>
+      <Column Name="clides_nombre" DataType="System.String"/>
+      <Column Name="clides_calle" DataType="System.String"/>
+      <Column Name="CliDes_numero" DataType="System.String"/>
+      <Column Name="CliDes_cp" DataType="System.String"/>
+      <Column Name="CliDes_entre" DataType="System.String"/>
+      <Column Name="CliDes_tel" DataType="System.String"/>
+      <Column Name="CliDes_contacto" DataType="System.String"/>
+      <Column Name="CliOri_nombre" DataType="System.String"/>
+      <Column Name="CliOri_calle" DataType="System.String"/>
+      <Column Name="CliOri_numero" DataType="System.String"/>
+      <Column Name="CliOri_cp" DataType="System.String"/>
+      <Column Name="CliOri_entre" DataType="System.String"/>
+      <Column Name="CliOri_tel" DataType="System.String"/>
+      <Column Name="contacto" DataType="System.String"/>
+      <Column Name="chof_descrip" DataType="System.String"/>
+      <Column Name="cam_nom_corto" DataType="System.String"/>
+      <Column Name="cam_placas" DataType="System.String"/>
+      <Column Name="cam_numeroserie" DataType="System.String"/>
+      <Column Name="cam_numeroeco" DataType="System.String"/>
+      <Column Name="cam_marca" DataType="System.String"/>
+      <Column Name="cam_modelo" DataType="System.String"/>
+      <Column Name="cam_dueno" DataType="System.String"/>
+      <Column Name="cam_asegurador" DataType="System.String"/>
+      <Column Name="cam_poliza" DataType="System.String"/>
+      <Column Name="cam_fecha_ven" DataType="System.DateTime"/>
+      <Column Name="chof_operador" DataType="System.String"/>
+      <Column Name="chof_calle" DataType="System.String"/>
+      <Column Name="chof_numero" DataType="System.String"/>
+      <Column Name="chof_cp" DataType="System.String"/>
+      <Column Name="chof_tel" DataType="System.String"/>
+      <Column Name="chof_regimss" DataType="System.String"/>
+      <Column Name="chof_numlicencia" DataType="System.String"/>
+      <Column Name="chof_vencimiento" DataType="System.DateTime"/>
+      <Column Name="CliDes_ciudad" DataType="System.String"/>
+      <Column Name="CliDes_estado" DataType="System.String"/>
+      <Column Name="Cliori_ciudad" DataType="System.String"/>
+      <Column Name="Cliori_estado" DataType="System.String"/>
+      <Column Name="entre_calles" DataType="System.String"/>
+      <Column Name="Clides_colonia" DataType="System.String"/>
+      <Column Name="CliDes_rfc" DataType="System.String"/>
+      <Column Name="CliOri_colonia" DataType="System.String"/>
+      <Column Name="Cliori_rfc" DataType="System.String"/>
+    </TableDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" PaperWidth="215.9" PaperHeight="279.4" RawPaperSize="1" LeftMargin="6" TopMargin="6" RightMargin="6" BottomMargin="6" Guides="645.8,744.2,169.35,607.85,647.8,740.8,646.35,744.15,479.95,744.55,174.3,602.9,9.45,162.05,0,500.35,3,494.9,493.9,226.8,236.25,406.35,58.7,184.75,533.5,57.7,129.75,533.4,639.8,640.1,746.5,1,160,501.85,605.8,746.8,503.85,601.85,504.35,601.35,605.55,743.6,130.3,185,298.3,595.35,596.35,159,-0.45,594.9,482.95,481.95,199.8,120.85,519.75,623.7,520.2,746.95,521.75,619.75,522.3,619.3,742.2,622.7,10,112.95,2.77,120.17,122.85,289.35,288.35,121.85,520.75,85.05,604.8,718.2" Watermark.Enabled="true" StartPageEvent="_StartPage">
+    <ReportTitleBand Name="ReportTitle1" Width="770.74" Height="127.85" Fill.Color="White" Guides="19.9,42.8,77.15,94.5,0,28.35,24.35,43.25,41.25,60.15,23.35,36.25,2.45,21.35,5.9,17.9,56.7,75.6,100.95,119.85,122.85,139.75,12.45,125.05">
+      <TextObject Name="Text3" Left="246.15" Top="32.9" Width="421.3" Height="55.8" Text="[DSTABLA.ciadir] #[DSTABLA.cianum], [DSTABLA.ciacol]&#13;&#10;CP: [DSTABLA.ciacp], [DSTABLA.ciacd], [DSTABLA.ciaest]&#13;&#10;RFC: [DSTABLA.ciarfc]   C.U.R.P: MOAB490908HSLNCL09&#13;&#10;TELS: [DSTABLA.ciatel]" HorzAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text56" Left="484.95" Top="108.95" Width="264.6" Height="18.9" Text="EXPEDIDO EN: [DSTABLA.ciaest]" HorzAlign="Right" Font="Arial, 9pt"/>
+      <PictureObject Name="LOGO" Left="-3.55" Top="-1.45" Width="277.2" Height="126.05" SizeMode="StretchImage"/>
+      <TextObject Name="Text2" Left="246.15" Top="3" Width="421.3" Height="18.9" Text="[DSTABLA.cianom]" HorzAlign="Center" Font="Arial, 12pt, style=Bold"/>
+      <BarcodeObject Name="Barcode1" Left="637.15" Top="-7.35" Width="113.4" Height="113.4" AutoSize="false" Expression="&quot;?re=&quot;+[DSTABLA.ciarfc]+&quot;&amp;rr=&quot;+[DSTABLA.clirfc]+&quot;&amp;tt=&quot;+PadLeft(ToString(FormatNumber([DSTABLA.total_mn],6)),17,&quot;0&quot;)+&quot;&amp;id=&quot;+[DSTABLA.uuid]" Text="?re=SCM131216RA9   &amp;rr=AMT070220167 &amp;tt=000001,749.000000&amp;id=                                        " ShowText="false" Barcode="QR Code" Barcode.ErrorCorrection="L" Barcode.Encoding="UTF8" Barcode.QuietZone="true"/>
+      <TextObject Name="Text11" Left="246.15" Top="18.9" Width="421.3" Height="18.9" Text="SERVICIO DE FLETES" HorzAlign="Center" Font="Arial, 9pt, style=Bold"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="131.85" Width="770.74" Height="249.15" Fill.Color="White" Guides="17.9,92.5,18.9,37.8,75.6,94.5,96.95,111.85,0,3.45,17.45,-0.1,92.4,-0.65,29.25,27.25,45.15,43.15,61.05,7.35,19.35,28.8,42.8,47.7,61.7,58.7,76.6,75.15,93.05,61.25,75.25,90.6,-1,25.9,29.35,45.25,59.15,76.8,93.7">
+      <TextObject Name="Text14" Left="77.35" Top="234.35" Width="466" Height="13.9" Border.Lines="Top, Bottom" Fill.Color="LightGray" Text="DESCRIPCON" HorzAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text28" Left="7" Top="234.35" Width="72.05" Height="13.9" Border.Lines="Left, Top, Bottom" Fill.Color="LightGray" Text="CANTIDAD" HorzAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text29" Left="543.4" Top="234.35" Width="115.85" Height="13.9" Border.Lines="Top, Bottom" Fill.Color="LightGray" Text="PRECIO UNI." HorzAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text30" Left="651.1" Top="234.35" Width="106.4" Height="13.9" Border.Lines="Right, Top, Bottom" Fill.Color="LightGray" Text="IMPORTE" HorzAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <RichObject Name="Rich1" Left="7" Top="13.9" Width="444.6" Height="97.15" Border.Lines="All" Text="{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1034{\fonttbl{\f0\fnil\fcharset0 Arial;}{\f1\fnil\fcharset0 Tahoma;}}&#13;&#10;{\*\generator Riched20 10.0.10240}\viewkind4\uc1 &#13;&#10;\pard\fs20 [DSTABLA.clinom]\par&#13;&#10;[Trim([DSTABLA.clidir])] [Trim([DSTABLA.clinum])]\par&#13;&#10;[Trim([DSTABLA.clicol])]\par&#13;&#10;[Trim([DSTABLA.cliciu])], [Trim([DSTABLA.cliest])]\par&#13;&#10;RFC: [DSTABLA.clirfc]\tab\tab\tab CP: [Trim([DSTABLA.clicp])]\f1\par&#13;&#10;}&#13;&#10;"/>
+      <RichObject Name="Rich2" Left="7" Top="123.5" Width="372" Height="110.7" Border.Lines="All" Text="{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1034{\fonttbl{\f0\fnil\fcharset0 Arial;}{\f1\fnil\fcharset0 Tahoma;}}&#13;&#10;{\*\generator Riched20 10.0.10240}\viewkind4\uc1 &#13;&#10;\pard\fs20 [DSTABLA.CliOri_nombre]\b\par&#13;&#10;\b0 [Trim([DSTABLA.CliOri_calle])] No. [Trim([DSTABLA.CliOri_numero])] \par&#13;&#10;[Trim([DSTABLA.CliOri_colonia])]\par&#13;&#10;[Trim([DSTABLA.Cliori_ciudad])], [Trim([DSTABLA.Cliori_estado])]\par&#13;&#10;R.F.C: [DSTABLA.Cliori_rfc]\tab\tab\tab C.P: [Trim([DSTABLA.CliOri_cp])]\par&#13;&#10;\par&#13;&#10;\f1\fs17\par&#13;&#10;}&#13;&#10;"/>
+      <RichObject Name="Rich3" Left="379" Top="124.5" Width="378.45" Height="109.7" Border.Lines="All" Text="{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1034{\fonttbl{\f0\fnil\fcharset0 Arial;}}&#13;&#10;{\*\generator Riched20 10.0.10240}\viewkind4\uc1 &#13;&#10;\pard\fs20 [DSTABLA.clides_nombre]\par&#13;&#10;[Trim([DSTABLA.clides_calle])] No. [Trim([DSTABLA.CliDes_numero])]\par&#13;&#10;[Trim([DSTABLA.Clides_colonia])]\par&#13;&#10;[Trim([DSTABLA.CliDes_ciudad])], [Trim([DSTABLA.CliDes_estado])], \par&#13;&#10;TEL: [DSTABLA.CliDes_tel]\tab\tab CP: [Trim([DSTABLA.CliDes_cp])]\par&#13;&#10;}&#13;&#10;"/>
+      <TextObject Name="Text6" Left="7" Width="444.6" Height="13.9" Border.Lines="All" Fill.Color="LightGray" Text="FACTURAR A:" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text70" Left="452.05" Width="304.95" Height="13.9" Border.Lines="All" Fill.Color="LightGray" Text="FACTURA: [DSTABLA.folio]" Font="Arial, 9pt, style=Bold"/>
+      <RichObject Name="Rich4" Left="452.05" Top="13.9" Width="304.95" Height="97.15" Border.Lines="All" CanBreak="false" Text="{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1034{\fonttbl{\f0\fnil\fcharset0 Tahoma;}{\f1\fnil Tahoma;}}&#13;&#10;{\*\generator Riched20 10.0.10240}\viewkind4\uc1 &#13;&#10;\pard\f0\fs18\lang2058 Folio Fiscal: [DSTABLA.uuid]\par&#13;&#10;No. Certificado: [DSTABLA.num_cert]\par&#13;&#10;No. Certificado Sat: [DSTABLA.certificadosat]\par&#13;&#10;Fecha Emision: [DSTABLA.fecha_alta]\par&#13;&#10;Fecha Certificacion: [DSTABLA.certificadofecha]\f1\par&#13;&#10;}&#13;&#10;"/>
+      <TextObject Name="Text71" Left="7" Top="111.05" Width="371.55" Height="12.9" Border.Lines="All" Fill.Color="LightGray" Text="ORIGEN:" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text72" Left="379" Top="111.5" Width="378" Height="12.9" Border.Lines="All" Fill.Color="LightGray" Text="DESTINO:" Font="Arial, 9pt, style=Bold"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="385" Width="770.74" Height="13.9" Fill.Color="White" CanGrow="true" Guides="0,18.9" DataSource="DSTABLA" KeepTogether="true">
+      <TextObject Name="Text13" Left="77.35" Width="462" Height="13.9" CanGrow="true" GrowToBottom="true" Text="[DSTABLA.descripcion]&#13;&#10;[DSTABLA.descrip_am]" Font="Arial, 9pt"/>
+      <TextObject Name="Text15" Left="6" Width="72.05" Height="13.9" Text="[DSTABLA.cantidad]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="0" Format.DecimalSeparator="." Format.GroupSeparator="" Format.NegativePattern="1" HorzAlign="Center" WordWrap="false" Font="Arial, 9pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text16" Left="538.4" Width="106.4" Height="13.9" Text="[DSTABLA.precio_uni]" Format="Currency" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Font="Arial, 9pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text17" Left="645.1" Width="106.4" Height="13.9" Text="[DSTABLA.importe]" Format="Currency" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Font="Arial, 9pt" Trimming="EllipsisCharacter"/>
+    </DataBand>
+    <ReportSummaryBand Name="ReportSummary1" Top="402.9" Width="770.74" Fill.Color="White"/>
+    <PageFooterBand Name="PageFooter1" Top="406.9" Width="770.74" Height="314.85" Fill.Color="White" Guides="75.05,93.95,96.95,115.85,100.35,114.35,157.1,176,158.5,172.5,204.35,223.25,205.75,219.75,153.65,174.55,202.9,221.8,259.6,0,37.8,18.9,1,15,41.25,50.7,40.7,59.6,58.15,77.05,1.45,19.35,16.9,35.8,33.8,52.7,20.45,33.45,36.8,50.8,20.9,3.45,18.35,51.7,44.8,58.7,61.15,78.6,89.5,60.15,75.6,77.6,92.5,44.25,17.45,279.6,294.5,265.6,280.5,141.75,255.15">
+      <TextObject Name="Text19" Left="6" Top="165.2" Width="751.45" Height="24.8" Border.Lines="All" Text="[DSTABLA.sellosat]" Font="Arial, 7pt"/>
+      <TextObject Name="Text20" Left="6" Top="201.45" Width="751.45" Height="39.35" Border.Lines="All" Text="[DSTABLA.cadenasat]" Font="Arial, 7pt"/>
+      <TextObject Name="Text21" Left="6" Top="253.15" Width="751.45" Height="38.8" Border.Lines="All" Text="[DSTABLA.sellodigital]" Font="Arial, 7pt"/>
+      <TextObject Name="Text8" Left="6" Top="12.9" Width="547.1" Height="12.9" Border.Lines="All" CanBreak="false" Text="** [DSTABLA.letras] **" WordWrap="false" Font="Arial, 8pt"/>
+      <TextObject Name="Text36" Left="554.75" Top="13.9" Width="76" Height="14" Border.Lines="Left, Right" Text="IVA 16%" HorzAlign="Right" Font="Arial, 8pt"/>
+      <TextObject Name="Text37" Left="554.75" Top="56.4" Width="76" Height="14" Border.Lines="Left, Right, Bottom" Text="TOTAL" HorzAlign="Right" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text9" Left="630.7" Top="13.9" Width="120.5" Height="14" Border.Lines="Right" Text="[DSTABLA.tot_iva]" Format="Currency" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text23" Left="630.7" Top="0.45" Width="120.5" Height="14" Border.Lines="Right, Top" Text="[DSTABLA.sub_total]" Format="Currency" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text24" Left="630.7" Top="56.4" Width="120.5" Height="14" Border.Lines="Right, Bottom" Text="[DSTABLA.total]" Format="Currency" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Font="Arial, 10pt, style=Bold" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text34" Left="554.75" Top="0.45" Width="76" Height="14" Border.Lines="Left, Right, Top" Text="SUBTOTAL" HorzAlign="Right" Font="Arial, 8pt"/>
+      <TextObject Name="Text55" Left="6" Top="291.95" Width="745.45" Height="13.25" Text="ESTE DOCUMENTO ES UNA REPRESENTACION IMPRESA DE UN CFDI." HorzAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text57" Left="5" Top="30.25" Width="201.9" Height="24.35" Text="PAGO EN UNA EXHIBICION.&#13;&#10;EFECTOS FISCALES AL PAGO." Font="Arial, 7pt, style=Bold"/>
+      <TextObject Name="Text66" Left="554.55" Top="42.15" Width="76" Height="14" Border.Lines="Left, Right" Text="RET. IVA" HorzAlign="Right" Font="Arial, 8pt"/>
+      <TextObject Name="Text67" Left="630.7" Top="42.15" Width="120.5" Height="14" Border.Lines="Right" Text="[DSTABLA.ret_iva]" Format="Currency" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text38" Left="293.6" Top="27.25" Width="110.3" Height="10.9" Text="METODO DE PAGO" HorzAlign="Right" Font="Arial, 8pt"/>
+      <TextObject Name="Text40" Left="406.45" Top="27.25" Width="146.6" Height="10.9" Text="[DSTABLA.metodopago]" Font="Arial, 8pt"/>
+      <TextObject Name="Text39" Left="293.6" Top="37.7" Width="110.3" Height="10.9" Text="NUMCTAPAGO" HorzAlign="Right" Font="Arial, 8pt"/>
+      <TextObject Name="Text41" Left="406.45" Top="37.7" Width="146.6" Height="10.9" Text="[DSTABLA.numctapago]" Font="Arial, 8pt"/>
+      <TextObject Name="Text75" Left="6" Top="153.4" Width="751.45" Height="11.9" Border.Lines="All" Fill.Color="LightGray" Text="SELLO SAT" HorzAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text76" Left="6" Top="189.65" Width="751.45" Height="11.9" Border.Lines="All" Fill.Color="LightGray" Text="CADENA SAT" HorzAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text77" Left="5.9" Top="241.35" Width="751.45" Height="11.9" Border.Lines="All" Fill.Color="LightGray" Text="CADENA SAT" HorzAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text78" Left="6" Width="546.65" Height="12.9" Border.Lines="All" Fill.Color="LightGray" Text="Origen:" Font="Arial, 9pt, style=Bold"/>
+      <RichObject Name="Rich5" Left="7.45" Top="78.6" Width="748.55" Height="56.15" CanBreak="false" Text="{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1034{\fonttbl{\f0\fnil\fcharset0 Arial;}}&#13;&#10;{\*\generator Riched20 10.0.10240}\viewkind4\uc1 &#13;&#10;\pard\fs12\lang2058 POR ESTE PAGARE ME OBLIGO A PAGAR INCONDICIONALMENTE EN [DSTABLA.ciacd], [DSTABLA.ciaest] EL DIA: 'FECHA' A LA ORDEN DE [DSTABLA.cianom] LA CANTIDAD [DSTABLA.total] VALOR EN SERVICIOS QUE HEMOS RECIBIDO A NUESTRA ENTERA SATISFACCION.\par&#13;&#10;SI NO FUESE PAGADO A SU VENCIMIENTO ESTE PAGARE. NOS OBLIGAMOS ADEMAS DE PAGAR DURANTE TODO EL TIEMPO LOS INTERESES MORATORIOS A RAZON DEL 6% MENSUAL SIN QUE POR ESTO SE QUEDE CLARAMENTE ENTENDIDO PARA EL SUSCRIPTOR Y SUS AVALISTAS DEL PRESENTE PAGARE QUE PARA CUALQUIER CONTROVERSIA O COBRO POR LA VIA JUDICIAL SE SOMETERA A LA JURISDICCION Y COMPETENCIA DE LOS TRIBUNALES DE CD. SAM MOCP\'d1AS DE LOS GARZA, N.L, RENUNCIANDO TERMINAMENTE AL FUERO QUE LA LEY LES CONCEDE DE CONFORMIDAD CON LO ESTABLECIDO EN LOS ARTICULOS 1092 Y 1093 DEL CODIGO DE COMERCIO.\par&#13;&#10;}&#13;&#10;"/>
+      <TextObject Name="Text4" Left="7.45" Top="57.7" Width="283.5" Height="13.9" Text="REMISIONES: [DSTABLA.remision]" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text5" Left="6" Top="135.75" Width="751.45" Height="15.45" Text="* LA MERCANCIA VIAJA POR CUENTA Y RIESGO DEL REMITENTE Y EL DESTINATARIO EN CASO DE NO SER ASEGURADA *" HorzAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text18" Left="6" Top="301.95" Width="745.45" Height="12.9" Text="[DSTABLA.regimen]" HorzAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text80" Left="554.55" Top="28.35" Width="76" Height="14" Border.Lines="Left, Right" Text="SUBTOTAL" HorzAlign="Right" Font="Arial, 8pt"/>
+      <TextObject Name="Text81" Left="630.5" Top="28.35" Width="120.5" Height="14" Border.Lines="Right" Text="[Abs([DSTABLA.sub_total]+[DSTABLA.tot_iva])]" Format="Currency" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>
