@@ -24,21 +24,20 @@
             </div>
             <div class="carousel-inner rounded-5 shadow-lg p-3 mb-5 bg-light bg-gradient">
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src="GetImage.aspx?file=slide1" alt="First slide" width="870px" height="397px" />
-                    <div class="carousel-caption d-none d-md-block">
-                        <h2 class="text-light font-weight-bold"><%Response.Write(Html._Layout_img1_titulo) %></h2>
-                        <h4 class="text-light"><%Response.Write(Html._Layout_img1_descripcion) %></h4>
-                    </div>
+                    <img class="d-block w-100" src='/local/imagenes/slide1.jpg' alt="First slide" width="870px" height="397px">
+                    <h2 class="text-light font-weight-bold"><%Response.Write(Html._Layout_img1_titulo) %></h2>
+                    <h4 class="text-light"><%Response.Write(Html._Layout_img1_descripcion) %></h4>
                 </div>
+
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="GetImage.aspx?file=slide2" alt="Second slide" width="870px" height="397px" />
+                    <img class="d-block w-100" src='/local/imagenes/slide2.jpg' alt="Second slide" width="870px" height="397px" />
                     <div class="carousel-caption d-none d-md-block">
                         <h2 class="text-light font-weight-bold"><%Response.Write(Html._Layout_img2_titulo) %></h2>
                         <h4 class="text-light"><%Response.Write(Html._Layout_img2_descripcion) %></h4>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="GetImage.aspx?file=slide3" alt="Third slide" width="870px" height="397px" />
+                    <img class="d-block w-100" src='/local/imagenes/slide3.png' alt="Third slide" width="870px" height="397px" />
                     <div class="carousel-caption d-none d-md-block">
                         <h2 class="text-light font-weight-bold"><%Response.Write(Html._Layout_img3_titulo) %></h2>
                         <h4 class="text-light"><%Response.Write(Html._Layout_img3_descripcion) %></h4>
@@ -63,7 +62,7 @@
 
 
 
-        <%--<section class="carousel slide">
+    <%--<section class="carousel slide">
                 <div class="tp-banner-container">
                     <div class="tp-banner">
                         <ul>
@@ -189,71 +188,71 @@
 
 
 
-        <div class="card">
-            <div class="card-header">
-                <h2>Ultimos productos comprados</h2>
+    <div class="card">
+        <div class="card-header">
+            <h2>Ultimos productos comprados</h2>
+        </div>
+        <div class="card-body">
+            <div class="d-flex justify-content-center">
+                <button type="button" class="btn btn-warning text-center" onclick="addAllToCart()">
+                    <i class="bi bi-cart-plus-fill"></i>Agregar seleccionados al carrito
+                </button>
             </div>
-            <div class="card-body">
-                <div class="d-flex justify-content-center">
-                    <button type="button" class="btn btn-warning text-center" onclick="addAllToCart()">
-                        <i class="bi bi-cart-plus-fill"></i>Agregar seleccionados al carrito
-                    </button>
-                </div>
 
-                <div class="table-responsive" style="height: 400px; overflow-y: auto;">
+            <div class="table-responsive" style="height: 400px; overflow-y: auto;">
 
-                    <asp:GridView ID="gvListProductos" runat="server" CssClass="table table-bordered table-striped table-condensed cf" AutoGenerateColumns="False"
-                        DataKeyNames="IdProduct" Width="100%" EmptyDataText="Inicia sesión para ver tus últimos productos comprados" GridLines="None">
-                        <Columns>
-                            <asp:BoundField DataField="IdProduct" Visible="false"></asp:BoundField>
-                            <asp:TemplateField HeaderText="Imagen">
-                                <HeaderStyle CssClass="text-center fw-bold" />
-                                <ItemStyle CssClass="text-center align-middle" />
-                                <ItemTemplate>
-                                    <img src='<%# Eval("ProductImagen") %>' alt="Producto sin imagen" class="img-thumbnail" style="width: 100px; height: auto;" />
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Producto">
-                                <HeaderStyle CssClass="text-center fw-bold" />
-                                <ItemStyle CssClass="text-center align-middle" />
-                                <ItemTemplate>
-                                    <%# Eval("Producto")%>
-                                </ItemTemplate>
-                            </asp:TemplateField>
+                <asp:GridView ID="gvListProductos" runat="server" CssClass="table table-bordered table-striped table-condensed cf" AutoGenerateColumns="False"
+                    DataKeyNames="IdProduct" Width="100%" EmptyDataText="Inicia sesión para ver tus últimos productos comprados" GridLines="None">
+                    <Columns>
+                        <asp:BoundField DataField="IdProduct" Visible="false"></asp:BoundField>
+                        <asp:TemplateField HeaderText="Imagen">
+                            <HeaderStyle CssClass="text-center fw-bold" />
+                            <ItemStyle CssClass="text-center align-middle" />
+                            <ItemTemplate>
+                                <img src='<%# Eval("ProductImagen") %>' alt="Producto sin imagen" class="img-thumbnail" style="width: 100px; height: auto;" />
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Producto">
+                            <HeaderStyle CssClass="text-center fw-bold" />
+                            <ItemStyle CssClass="text-center align-middle" />
+                            <ItemTemplate>
+                                <%# Eval("Producto")%>
+                            </ItemTemplate>
+                        </asp:TemplateField>
 
-                            <asp:TemplateField HeaderText="Unidad">
-                                <HeaderStyle CssClass="text-center fw-bold" />
-                                <ItemStyle CssClass="text-center align-middle" />
-                                <ItemTemplate>
-                                    <%# Eval("unidad")%>
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Cantidad">
-                                <HeaderStyle CssClass="text-center fw-bold" />
-                                <ItemStyle CssClass="text-center align-middle" />
-                                <ItemTemplate>
-                                    <div class="row justify-content-center">
-                                        <div class="col-12">
-                                            <input type="number" id="cantidad_<%#Trim(Eval("IdProduct"))%>_<%#Trim(Eval("Unidad"))%>"
-                                                placeholder="0.00" class="col-6" min="0" style="text-align: center; width: 65px;" oninput="saveQuantities()" />
-                                        </div>
-                                        <%--                                    <div class="col-6">
+                        <asp:TemplateField HeaderText="Unidad">
+                            <HeaderStyle CssClass="text-center fw-bold" />
+                            <ItemStyle CssClass="text-center align-middle" />
+                            <ItemTemplate>
+                                <%# Eval("unidad")%>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Cantidad">
+                            <HeaderStyle CssClass="text-center fw-bold" />
+                            <ItemStyle CssClass="text-center align-middle" />
+                            <ItemTemplate>
+                                <div class="row justify-content-center">
+                                    <div class="col-12">
+                                        <input type="number" id="cantidad_<%#Trim(Eval("IdProduct"))%>_<%#Trim(Eval("Unidad"))%>"
+                                            placeholder="0.00" class="col-6" min="0" style="text-align: center; width: 65px;" oninput="saveQuantities()" />
+                                    </div>
+                                    <%--                                    <div class="col-6">
 
 
                                          <button type="button" class="btn btn-sm btn-orange btn-warning rounded-circle col-6" onclick="return AddCart(' <%#Trim(Eval("IdProduct"))%>,<%#Trim(Eval("Unidad"))%>');" style="--size: 42px; width: var(--size); height: var(--size)">
                                             <i class="bi bi-cart4"></i>
                                         </button> 
                                     </div>--%>
-                                    </div>
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                        </Columns>
-                    </asp:GridView>
+                                </div>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                    </Columns>
+                </asp:GridView>
 
 
-                </div>
             </div>
         </div>
+    </div>
 
 
 

@@ -1,0 +1,15 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Conexion>
+    <servidor>rPFciGEr76GLdm9yt1SE/ti1UDo3ScBF4YnvXmMnTmaznPcQuDwq4KpQj4UbSG5RSiW9Oi1Eaao=</servidor>
+    <bd>XsUILMjA8V70UtGYYsTHoQ==</bd>
+    <seguridad>true</seguridad>
+    <usuario>icSm9nRdaRE=</usuario>
+    <Contrasena>PkY9+5AmhW3RTGwTKnYiOQ==</Contrasena>
+    <Idioma>false</Idioma>
+    <tipobase>True</tipobase>
+    <encriptado>True</encriptado>
+    <webmail>https://webmail.imcomsa.com.mx/Mondo/lang/sys/login.aspx</webmail>
+    <Descuento>0.04</Descuento>
+  </Conexion>
+</NewDataSet>

@@ -1,0 +1,15 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Conexion>
+    <servidor>nNdYQhOmlrkCKdI1VdQ1WQRM9rm5FjoWPY7eBq03ffDcRSMXgrDAvJ9iAZ1mehKBBErdKHog6rY=</servidor>
+    <bd>ZbEpzTHWeDzSnJNVH2ooRA==</bd>
+    <seguridad>true</seguridad>
+    <usuario>Byh105gw2No=</usuario>
+    <Contrasena>cVS3zGTmnHPGfzgRhzu/Hg==</Contrasena>
+    <Idioma>false</Idioma>
+    <tipobase>True</tipobase>
+    <encriptado>True</encriptado>
+    <webmail>https://webmail.ferreteriapinos.mx/Mondo/lang/sys/login.aspx</webmail>
+    <Descuento>0.04</Descuento>
+  </Conexion>
+</NewDataSet>

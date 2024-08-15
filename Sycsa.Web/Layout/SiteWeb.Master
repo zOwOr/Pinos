@@ -87,9 +87,9 @@
                                     <!-- Navbar brand -->
                                     <div class="col-4 d-flex align-items-center justify-content-between">
 
-                                        <a href="../Ferrepinos/index.html" class="d-flex align-items-center me-auto me-lg-0 link-underline link-dark link-underline-opacity-0">
+                                        <a href="../index.html" class="d-flex align-items-center me-auto me-lg-0 link-underline link-dark link-underline-opacity-0">
                                             <% If (Html._Layout_logoimg = True) Then %>
-                                            <asp:Image ID="Image2" runat="server" DescriptionUrl="~/imagen/logo2.png" ImageUrl="~/imagen/logo2.png" Width="120px" />
+                                            <asp:Image ID="Image2" runat="server" DescriptionUrl="/local/imagenes/logo.png" ImageUrl="/local/imagenes/logo.png" Width="120px" />
                                             <%Else%>
                                             <span class="logo"><%Response.Write(Html._Layout_Empresa) %></span>
                                             <% End If  %>
