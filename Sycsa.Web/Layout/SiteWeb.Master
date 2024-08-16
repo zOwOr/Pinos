@@ -89,11 +89,10 @@
                                 <!-- Navbar brand -->
                                 <a href="../index.html" class="d-flex align-items-center me-auto me-lg-0 link-underline link-dark link-underline-opacity-0">
                                     <% If (Html._Layout_logoimg = True) Then %>
-                                    <asp:Image ID="Image2" runat="server" DescriptionUrl="/local/imagenes/logo.png" ImageUrl="/local/imagenes/logo.png" Width="120px" CssClass="img-fluid"  />
+                                    <asp:Image ID="Image2" runat="server" DescriptionUrl="/local/imagenes/logo.png" ImageUrl="/local/imagenes/logo.png" Width="100px" CssClass="img-fluid"  />
                                     <%Else%>
                                     <span class="logo"><%Response.Write(Html._Layout_Empresa) %></span>
                                     <% End If  %>
-                                    <h4><strong><em>Ferreteria Pinos</em></strong></h4>
 
 
                                 </a>

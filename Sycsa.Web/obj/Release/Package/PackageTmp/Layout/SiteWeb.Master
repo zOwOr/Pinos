@@ -77,19 +77,38 @@
 
                 <div class="col-lg-12 col-md-12 col-sm-12">
                     <!-- Top Header -->
-                    <div id="top-header">
-                        <div class="row">
-                            <nav class="navbar navbar-expand-lg  navbar-light bg-light ">
 
 
-                                <!-- Container wrapper -->
-                                <div class="container-fluid">
-                                    <!-- Navbar brand -->
-                                    <div class="col-4 d-flex align-items-center justify-content-between">
 
+
+
+                    <div class="container-fluid">
+                        <!-- Top Header -->
+                        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                            <div class="container-fluid">
+                                <!-- Navbar brand -->
+                                <a href="../index.html" class="d-flex align-items-center me-auto me-lg-0 link-underline link-dark link-underline-opacity-0">
+                                    <% If (Html._Layout_logoimg = True) Then %>
+                                    <asp:Image ID="Image2" runat="server" DescriptionUrl="/local/imagenes/logo.png" ImageUrl="/local/imagenes/logo.png" Width="100px" CssClass="img-fluid"  />
+                                    <%Else%>
+                                    <span class="logo"><%Response.Write(Html._Layout_Empresa) %></span>
+                                    <% End If  %>
+                                    <h4><strong><em>Ferreteria Pinos</em></strong></h4>
+
+
+                                </a>
+
+                                <!-- Toggle button -->
+                                <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+
+                                <!-- Sidebar -->
+                                <div class="offcanvas offcanvas-start w-100" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+                                    <div class="offcanvas-header">
                                         <a href="../index.html" class="d-flex align-items-center me-auto me-lg-0 link-underline link-dark link-underline-opacity-0">
                                             <% If (Html._Layout_logoimg = True) Then %>
-                                            <asp:Image ID="Image2" runat="server" DescriptionUrl="~/imagen/logo2.png" ImageUrl="~/imagen/logo2.png" Width="120px" />
+                                            <asp:Image ID="Image1" runat="server" DescriptionUrl="/local/imagenes/logo.png" ImageUrl="/local/imagenes/logo.png" Width="120px" />
                                             <%Else%>
                                             <span class="logo"><%Response.Write(Html._Layout_Empresa) %></span>
                                             <% End If  %>
@@ -97,164 +116,133 @@
 
 
                                         </a>
+                                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                     </div>
-
-                                    <!-- Toggle button -->
-                                    <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent"
-                                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                                        <i class="fas fa-bars"></i>
-                                    </button>
-
-                                    <!-- Collapsible wrapper -->
-                                    <div class="collapse navbar-collapse col-5" id="navbarSupportedContent">
-                                        <!-- Left links -->
-                                        <ul class="navbar-nav mx-auto ">
-                                            <li class="nav-item  ">
-                                                <a class="nav-link active" aria-current="page" href="<% Response.Write(ResolveUrl("~/home.aspx"))%>">
-                                                    <button type="button" class="btn btn-outline-primary">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                                    <div class="offcanvas-body">
+                                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                                            <li class="nav-item">
+                                                <a class="nav-link " href="<% Response.Write(ResolveUrl("~/home.aspx")) %>">
+                                                    <button type="button" class="btn btn-outline-primary d-flex align-items-center justify-content-center w-100">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill me-2" viewBox="0 0 16 16">
                                                             <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5" />
                                                         </svg>
-                                                        Inicio</button></a>
+                                                        Inicio
+                                                    </button>
+                                                </a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="<% Response.Write(ResolveUrl("~/Productos.aspx"))%>">
-                                                    <button type="button" class="btn btn-outline-primary">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-fill" viewBox="0 0 16 16">
+                                                <a class="nav-link " href="<% Response.Write(ResolveUrl("~/Productos.aspx")) %>">
+                                                    <button type="button" class="btn btn-outline-primary d-flex align-items-center justify-content-center w-100">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-fill me-2" viewBox="0 0 16 16">
                                                             <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4z" />
                                                         </svg>
-                                                        Productos</button></a>
+                                                        Productos
+                                                    </button>
+                                                </a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="<% Response.Write(ResolveUrl("~/Login.aspx"))%>">
-                                                    <button type="button" class="btn btn-outline-primary">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-square" viewBox="0 0 16 16">
+                                                <a class="nav-link " href="<% Response.Write(ResolveUrl("~/Login.aspx")) %>">
+                                                    <button type="button" class="btn btn-outline-primary d-flex align-items-center justify-content-center w-100">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-square me-2" viewBox="0 0 16 16">
                                                             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
-                                                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z" />
+                                                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z" />
                                                         </svg>
-                                                        Mi cuenta</button></a>
+                                                        Mi cuenta
+                                                    </button>
+                                                </a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="<% Response.Write(ResolveUrl("~/facturacion.aspx"))%>">
-                                                    <button type="button" class="btn btn-outline-primary">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-pdf" viewBox="0 0 16 16">
+                                                <a class="nav-link " href="<% Response.Write(ResolveUrl("~/facturacion.aspx")) %>">
+                                                    <button type="button" class="btn btn-outline-primary d-flex align-items-center justify-content-center w-100">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-pdf me-2" viewBox="0 0 16 16">
                                                             <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2M9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z" />
-                                                            <path d="M4.603 14.087a.8.8 0 0 1-.438-.42c-.195-.388-.13-.776.08-1.102.198-.307.526-.568.897-.787a7.7 7.7 0 0 1 1.482-.645 20 20 0 0 0 1.062-2.227 7.3 7.3 0 0 1-.43-1.295c-.086-.4-.119-.796-.046-1.136.075-.354.274-.672.65-.823.192-.077.4-.12.602-.077a.7.7 0 0 1 .477.365c.088.164.12.356.127.538.007.188-.012.396-.047.614-.084.51-.27 1.134-.52 1.794a11 11 0 0 0 .98 1.686 5.8 5.8 0 0 1 1.334.05c.364.066.734.195.96.465.12.144.193.32.2.518.007.192-.047.382-.138.563a1.04 1.04 0 0 1-.354.416.86.86 0 0 1-.51.138c-.331-.014-.654-.196-.933-.417a5.7 5.7 0 0 1-.911-.95 11.7 11.7 0 0 0-1.997.406 11.3 11.3 0 0 1-1.02 1.51c-.292.35-.609.656-.927.787a.8.8 0 0 1-.58.029m1.379-1.901q-.25.115-.459.238c-.328.194-.541.383-.647.547-.094.145-.096.25-.04.361q.016.032.026.044l.035-.012c.137-.056.355-.235.635-.572a8 8 0 0 0 .45-.606m1.64-1.33a13 13 0 0 1 1.01-.193 12 12 0 0 1-.51-.858 21 21 0 0 1-.5 1.05zm2.446.45q.226.245.435.41c.24.19.407.253.498.256a.1.1 0 0 0 .07-.015.3.3 0 0 0 .094-.125.44.44 0 0 0 .059-.2.1.1 0 0 0-.026-.063c-.052-.062-.2-.152-.518-.209a4 4 0 0 0-.612-.053zM8.078 7.8a7 7 0 0 0 .2-.828q.046-.282.038-.465a.6.6 0 0 0-.032-.198.5.5 0 0 0-.145.04c-.087.035-.158.106-.196.283-.04.192-.03.469.046.822q.036.167.09.346z" />
+                                                            <path d="M4.603 14.087a.8.8 0 0 1-.438-.42c-.195-.388-.13-.776.08-1.102.198-.307.526-.568.897-.787a7.7 7.7 0 0 1 1.482-.645 20 20 0 0 0 1.062-2.227 7.3 7.3 0 0 1-.43-1.295c-.086-.4-.119-.796-.046-1.136.075-.354.274-.672.65-.823.192-.077.4-.12.602-.077a.7.7 0 0 1 .477.365c.088.164.12.356.127.538.007.188-.012.396-.047.614-.084.51-.27 1.134-.52 1.794a11 11 0 0 0 .98 1.686 5.8 5.8 0 0 1 1.334.05c.364.066.734.195.96.465.12.144.193.32.2.518.007.192-.047.382-.138.563a1.04 1.04 0 0 1-.354.416.86.86 0 0 1-.51.138c-.331-.014-.654-.196-.933-.417a5.7 5.7 0 0 1-.911-.95 11.7 11.7 0 0 0-1.997.406 11.3 11.3 0 0 1-1.02 1.51c-.292.35-.609.656-.927.787a.8.8 0 0 1-.58.029m1.379-1.901q-.25.115-.459.238c-.328.194-.541.383-.647.547-.094.145-.096.25-.04.381.036.108.116.185.245.229.124.042.27.03.397-.057a.5.5 0 0 0 .212-.227c.078-.184.067-.39-.03-.549a.515.515 0 0 0-.243-.245m2.735-4.606a.3.3 0 0 1-.245.22c-.081.012-.188.01-.252-.034-.06-.038-.085-.12-.11-.174-.077-.144-.156-.269-.229-.412-.085-.162-.198-.328-.361-.488a2.1 2.1 0 0 0-.95-.644.6.6 0 0 1-.256-.013.473.473 0 0 1-.174-.09c-.163-.077-.254-.177-.295-.263-.065-.15-.01-.315.077-.455.065-.122.137-.248.213-.375.065-.117.117-.22.172-.332.044-.097.092-.194.133-.293a1.74 1.74 0 0 1 .208-.413c.064-.137.151-.264.246-.391a.697.697 0 0 1 .263-.22c.097-.057.227-.058.317-.003.068.038.131.093.177.162.07.112.152.233.195.36.082.25.135.485.227.735.074.205.175.402.354.574.171.155.357.298.58.387a.624.624 0 0 1 .52-.142.62.62 0 0 1 .48.63.628.628 0 0 1-.238.491" />
                                                         </svg>
-                                                        Facturación</button></a>
+                                                        Facturación
+                                                    </button>
+                                                </a>
                                             </li>
                                         </ul>
-                                        <!-- Left links -->
 
-                                        <!-- Search form -->
+                                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                                            <li id="dvLogin" runat="server" visible="true" class="nav-item">
+                                                <a class="nav-link" href="#" id="loginLink" data-bs-toggle="modal" data-bs-target="#loginModal">
+                                                    <button type="button" class="btn btn-primary d-flex align-items-center justify-content-center w-100">
+                                                        <i class="icons icon-user-3"></i>
+                                                        Login
+                                                    </button>
+                                                </a>
 
+                                            </li>
+                                            <li id="dvLogin1" runat="server" visible="true" class="nav-item">
+                                                <a href="<% Response.Write(ResolveUrl("~/newAccount.aspx"))%>" class="nav-link">
+                                                    <button type="button" class="btn btn-primary d-flex align-items-center justify-content-center w-100">
+                                                        <i class="icons icon-lock"></i>Crear una cuenta
+                                                    </button>
 
+                                                </a>
+                                            </li>
 
+                                            <li id="dvLogin2" runat="server" visible="true" class="login-create purple">
+                                                <i class="icons icon-user"></i>
+                                                <asp:Label ID="txtLabelQuantity" runat="server" Text="Quantity" meta:resourcekey="txtLabelQuantity"></asp:Label>
+                                                <br />
+                                                <a href="/?cs=1"><strong>Cerrar sesión</strong> </a>
+                                            </li>
+                                        </ul>
                                     </div>
-                                    <ul class="text-right navbar-nav col-3 mx-auto">
-                                        <li id="dvLogin" runat="server" visible="true" class="mx-auto">
-                                            <a href="#" class="btn btn-primary fs-6" id="loginLink" data-bs-toggle="modal" data-bs-target="#loginModal"><i class="icons icon-user-3"></i>Login</a>
-                                            <div id="loginModal" class="modal fade" tabindex="-1" role="dialog">
-                                                <div class="modal-dialog" role="document">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h4 class="modal-title">Iniciar Sesión</h4>
-                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <div class="mb-3 row">
-                                                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                                                <div class="col-sm-12">
-                                                                    <input id="txtUserName" runat="server" placeholder="Usuario" class="form-control" autocomplete="off" />
-                                                                </div>
-                                                            </div>
-                                                            <div class="mb-3 row">
-                                                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                                                <div class="col-sm-12">
-                                                                    <input id="txtPassword" type="password" runat="server" placeholder="Contraseña" class="form-control" autocomplete="off" />
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btn btn-success" />
-                                                            <a href="<% Response.Write(ResolveUrl("~/iforgot/iforgot.aspx"))%>" class="btn btn-link">¿Olvidaste tu contraseña?</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li id="dvLogin1" runat="server" visible="true" class="mx-auto">
-                                            <a href="<% Response.Write(ResolveUrl("~/newAccount.aspx"))%>" class="btn btn-primary fs-6">
-                                                <i class="icons icon-lock"></i>Crear una cuenta
-                                            </a>
-                                        </li>
-
-                                        <li id="dvLogin2" runat="server" visible="true" class="login-create purple">
-                                            <i class="icons icon-user"></i>
-                                            <asp:Label ID="txtLabelQuantity" runat="server" Text="Quantity" meta:resourcekey="txtLabelQuantity"></asp:Label>
-                                            <br />
-                                            <a href="/?cs=1"><strong>Cerrar sesión</strong> </a>
-                                        </li>
-                                    </ul>
-
-
-                                    <!-- Collapsible wrapper -->
                                 </div>
-                                <!-- Container wrapper -->
-
-
-                            </nav>
-
-                        </div>
-
-                    </div>
-                    <!-- /Top Header -->
-
-
-
-
-
-
-                    <!-- Main Navigation -->
-
-                    <%--                    <nav id="main-navigation" class="my-5">
-                        <div class="card">
-                            <div class="card-body">
-
-                                <div id="search-bar">
-                                    <div class="col-lg-12 col-md-12 col-sm-12">
-                                        <table id=" search-bar-table">
-                                            <tr>
-                                                <td class="search-column-1">
-                                                    <p id="txtNameProductSearch" runat="server" meta:resourcekey="txtNameProductSearch">Nombre del producto a buscar:</p>
-                                                    <asp:TextBox ID="txtShears" runat="server" CssClass="form-control" placeholder="Producto" meta:resourcekey="txtShears" MaxLength="250"></asp:TextBox>
-                                                </td>
-                                                <td class="search-column-2">
-                                                    <p id="P1" runat="server" meta:resourcekey="txtNameProductSearch">Seleccionar categoria:</p>
-                                                    <asp:DropDownList runat="server" ID="dlCategories" CssClass="form-select" DataTextField="CategoryName" DataValueField="idCategories" class="chosen-select-search ">
-                                                    </asp:DropDownList>
-                                                </td>
-                                                <td class="search-column-3">
-                                                    <button type="button" class="btn btn-outline-warning  mt-4" id="search-button" onclick="__doPostBack('shearch', '');">Buscar <i class="icons icon-search-1"></i></button>
-
-                                                </td>
-                                            </tr>
-                                        </table>
-
-
-                                    </div>
-
-                                </div>
-
                             </div>
-                        </div>
+                        </nav>
+                    </div>
 
-                    </nav>--%>
+
+
+
+
+
+
                     <p>
                         &nbsp;
                     </p>
 
                 </div>
+
+
+
+                <div id="loginModal" class="modal fade" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Iniciar Sesión</h4>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="mb-3 row">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                    <div class="col-sm-12">
+                                        <input id="txtUserName" runat="server" placeholder="Usuario" class="form-control" autocomplete="off" />
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                    <div class="col-sm-12">
+                                        <input id="txtPassword" type="password" runat="server" placeholder="Contraseña" class="form-control" autocomplete="off" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btn btn-success" />
+                                <a href="<% Response.Write(ResolveUrl("~/iforgot/iforgot.aspx"))%>" class="btn btn-link">¿Olvidaste tu contraseña?</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
                 <div class="d-flex justify-content-end">
                     <div class="orange">
                         <div id="cart-dropdown" class="box-dropdown parent-arrow">
@@ -376,89 +364,95 @@
 
 
 
-            <footer id="footer" class="bg-light  text-white">
+            <footer id="footer" class="bg-light text-white">
                 <!-- Grid container -->
                 <div class="container p-4">
-                    <!-- Section: Social media -->
-                    <section class="mb-4 text-center">
-                        <!-- Facebook -->
-                        <a class="btn btn-light btn-outline-dark btn-floating m-1" href="https://es-la.facebook.com/ferrepinos" target="_blank" role="button"><i class="bi bi-facebook"></i></a>
+                    <!-- Button trigger for offcanvas -->
+                    <div class="d-flex justify-content-center">
+                        <button class="btn btn-primary d-lg-none rounded-circle" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasFooter" aria-controls="offcanvasFooter">
+                            <i class="bi bi-arrow-up"></i>
+                        </button>
+                    </div>
 
-                        <!-- TikTok -->
+                    <!-- Offcanvas menu -->
+                    <div class="offcanvas offcanvas-bottom h-75" tabindex="-1" id="offcanvasFooter" aria-labelledby="offcanvasFooterLabel">
+                        <div class="offcanvas-header">
+                            <h5 id="offcanvasFooterLabel" class="text-center">Información</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <!-- Section: Social media -->
+                            <section class="mb-4 text-center">
+                                <!-- Facebook -->
+                                <a class="btn btn-light btn-outline-dark btn-floating m-1" href="https://es-la.facebook.com/ferrepinos" target="_blank" role="button"><i class="bi bi-facebook"></i></a>
 
+                            </section>
 
-                    </section>
+                            <!-- Section: Links -->
+                            <section class="text-left">
+                                <h5 class="text-uppercase text-dark">Servicios</h5>
+                                <ul class="list-unstyled">
+                                    <li class="my-2 link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><a href="<% Response.Write(ResolveUrl("~/myAccount.aspx?"))%>">Mi Cuenta</a></li>
+                                    <li class="my-2 link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><a href="<% Response.Write(ResolveUrl("~/AccountHistory.aspx?"))%>">Historial de pedidos</a></li>
+                                </ul>
 
-                    <!-- Section: Text -->
+                                <h5 class="text-uppercase text-dark">Información</h5>
+                                <ul class="list-unstyled">
+                                    <li class="my-2 link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><a href="<% Response.Write(ResolveUrl("~/AboutUs.aspx?"))%>">Acerca de nosotros</a></li>
+                                </ul>
 
+                                <h5 class="text-uppercase text-dark">Contacto</h5>
+                                <ul class="list-unstyled">
+                                    <li class="my-2 link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><a><i class="icon fa fa-map-pin"></i><% Response.Write(Html._Layout_address)%></a></li>
+                                    <li class="my-2 link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><i class="icon-location"></i><a href="<% Response.Write(ResolveUrl("~/contact.aspx"))%>">Ubicación</a></li>
+                                    <li class="my-2 link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><i class="icon-phone"></i><% Response.Write(Html._Layout_phone)%></li>
+                                    <li class="my-2 link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><i class="icon-mail-alt"></i><a href="mailto:info@ferreteriapinos.com">info@ferreteriapinos.com</a></li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
 
-                    <%--                    <div class="row">
-                        <!-- section: text -->
-                        <section class="col-12 ">
-                            <p class="m-5">
-                                lorem ipsum dolor sit amet consectetur adipisicing elit. sunt distinctio earum
-        repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
-        eum harum corrupti dicta, aliquam sequi voluptate quas.
-                            </p>
+                    <!-- Section: Links for larger screens -->
+                    <section class="d-none d-lg-block text-left">
+                        <section class="mb-4 text-center">
+                            <!-- Facebook -->
+
+                            <a class="btn btn-light btn-outline-dark btn-floating m-1" href="https://es-la.facebook.com/ferrepinos" target="_blank" role="button"><i class="bi bi-facebook"></i></a>
                         </section>
-                    </div>--%>
-
-                    <!-- Section: Links -->
-                    <section class="text-left ">
-                        <!--Grid row-->
                         <div class="row m-5">
-                            <!--Grid column-->
                             <div class="col-3">
                                 <h5 class="text-uppercase text-dark">Servicios</h5>
-
-                                <ul class="align-left ">
+                                <ul class="list-unstyled">
                                     <li class="my-2 link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><a href="<% Response.Write(ResolveUrl("~/myAccount.aspx?"))%>">Mi Cuenta</a></li>
                                     <li class="my-2 link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><a href="<% Response.Write(ResolveUrl("~/AccountHistory.aspx?"))%>">Historial de pedidos</a></li>
                                 </ul>
                             </div>
-                            <!--Grid column-->
-
-                            <!--Grid column-->
                             <div class="col-4">
-                                <h5 class="text-uppercase  text-dark">Información</h5>
-
-                                <ul class="align-left">
+                                <h5 class="text-uppercase text-dark">Información</h5>
+                                <ul class="list-unstyled">
                                     <li class="my-2 link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><a href="<% Response.Write(ResolveUrl("~/AboutUs.aspx?"))%>">Acerca de nosotros</a></li>
-                                    <%--                                    <li class="my-2 link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><a href="<% Response.Write(ResolveUrl("~/PrivacyPolicy.aspx"))%>">Politica de privacidad</a></li>
-                                    <li class="my-2 link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><a href="<% Response.Write(ResolveUrl("~/TermsConditions.aspx"))%>">Terminos &amp; Condiciones</a></li>--%>
                                 </ul>
                             </div>
-                            <!--Grid column-->
-
-                            <!--Grid column-->
                             <div class="col-5">
-                                <h5 class="text-uppercase  text-dark">Contacto</h5>
-
-                                <ul class="align-left">
+                                <h5 class="text-uppercase text-dark">Contacto</h5>
+                                <ul class="list-unstyled">
                                     <li class="my-2 link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><a><i class="icon fa fa-map-pin"></i><% Response.Write(Html._Layout_address)%></a></li>
-
-                                    <li class="my-2 link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><i class="icon-location"></i><a href="<% Response.Write(ResolveUrl("~/contact.aspx"))%>">Ubicacion </a></li>
-                                    <li class="my-2 link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><i class="icon-phone"></i><% Response.Write(Html._Layout_phone)%> </li>
-                                    <li class="my-2 link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><i class="icon-mail-alt"></i><a href="<%--<% Response.Write(Html._Layout_emailContact)%>--%> mailto: info@ferreteriapinos.com"><%--<% Response.Write(Html._Layout_emailContact)%> --%> info@ferreteriapinos.com</a></li>
+                                    <li class="my-2 link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><i class="icon-location"></i><a href="<% Response.Write(ResolveUrl("~/contact.aspx"))%>">Ubicación</a></li>
+                                    <li class="my-2 link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><i class="icon-phone"></i><% Response.Write(Html._Layout_phone)%></li>
+                                    <li class="my-2 link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><i class="icon-mail-alt"></i><a href="mailto:info@ferreteriapinos.com">info@ferreteriapinos.com</a></li>
                                 </ul>
                             </div>
-
-                            <!--Grid column-->
                         </div>
-                        <!--Grid row-->
                     </section>
-                    <!-- Section: Links -->
                 </div>
-                <!-- Grid container -->
 
                 <!-- Copyright -->
-                <div class="text-center p-3  text-dark" style="background-color: rgba(0, 0, 0, 0.2);">
+                <div class="text-center p-3 text-dark" style="background-color: rgba(0, 0, 0, 0.2);">
                     <strong>© Copyright:
-    <% Response.Write(Now.Date.Year())%> <a href="<%  Response.Write(ResolveUrl("~/home.aspx"))%>">Ferreteria Pinos</a>. All Rights Reserved. </strong>
+           
+                        <% Response.Write(Now.Date.Year())%> <a href="<% Response.Write(ResolveUrl("~/home.aspx"))%>">SYCSA</a>. All Rights Reserved.</strong>
                 </div>
-                <!-- Copyright -->
             </footer>
-
             <!-- Footer -->
 
             <div id="back-to-top">

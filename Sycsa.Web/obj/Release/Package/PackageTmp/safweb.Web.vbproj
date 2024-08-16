@@ -567,6 +567,7 @@
     <Content Include="Layout\in\js\tinynav.min.js" />
     <Content Include="Layout\in\js\zoomsl-3.0.min.js" />
     <Content Include="ListProducts.aspx" />
+    <Content Include="local\imagenes\logo.png" />
     <Content Include="local\imagenes\slide1.jpg" />
     <Content Include="local\imagenes\slide11.jpg" />
     <Content Include="local\imagenes\slide2.jpg" />
