@@ -11,5 +11,6 @@
     <encriptado>True</encriptado>
     <webmail>https://webmail.imcomsa.com.mx/Mondo/lang/sys/login.aspx</webmail>
     <Descuento>0.04</Descuento>
+    <Preciologuin>false</Preciologuin>
   </Conexion>
 </NewDataSet>

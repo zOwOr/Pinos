@@ -290,10 +290,18 @@ Public Class Productos
         Dim _Query As String
         Dim precio As String
 
-        If Session("MM_Lista") Is Nothing Then
-            precio = "producto_unidad.precio_V1 as UnitPrice,"
+        Dim showPrice As Boolean = GetShowPriceSetting()
+
+
+        If showPrice OrElse Session("MM_Lista") IsNot Nothing Then
+            If Session("MM_Lista") Is Nothing Then
+                precio = "producto_unidad.precio_V1 as UnitPrice,"
+            Else
+                precio = "producto_unidad.precio_V" & Session("MM_Lista") & " as UnitPrice,"
+            End If
         Else
-            precio = "producto_unidad.precio_V" & Session("MM_Lista") & " as UnitPrice,"
+            ' Si no se debe mostrar el precio
+            precio = "'Iniciar sesión para mostrar precio' as UnitPrice,"
         End If
 
         Dim offset As Integer = (pageNumber - 1) * pageSize
@@ -405,5 +413,18 @@ Public Class Productos
         Dim _Query As String = "SELECT COUNT(*) FROM producto WHERE PRODUCTO.EMPRESA = 1 AND PRODUCTO.VENTA = 1 AND PRODUCTO.en_linea = 1"
         Dim totalRecords As Integer = Convert.ToInt32(common.sqlconsulta(_Query, "totalRecords").Tables(0).Rows(0)(0))
         Return totalRecords
+    End Function
+
+
+    Private Function GetShowPriceSetting() As Boolean
+        Dim xmlDoc As New XmlDocument()
+        xmlDoc.Load(Server.MapPath("~/local/sql.data.dll.xml")) ' Ruta al archivo XML
+
+        Dim node As XmlNode = xmlDoc.SelectSingleNode("/NewDataSet/Conexion/Preciologuin")
+        If node IsNot Nothing Then
+            Return Boolean.Parse(node.InnerText)
+        End If
+
+        Return False ' Valor por defecto
     End Function
 End Class

@@ -1025,36 +1025,18 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
+<member name="F:sycsa.Web.SiteWeb._Image1">
+<summary>
+Control Image1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
 <member name="F:sycsa.Web.SiteWeb._dvLogin">
 <summary>
 Control dvLogin.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
-<member name="F:sycsa.Web.SiteWeb._txtUserName">
-<summary>
-Control txtUserName.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
-<member name="F:sycsa.Web.SiteWeb._txtPassword">
-<summary>
-Control txtPassword.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
-<member name="F:sycsa.Web.SiteWeb._btnLogin">
-<summary>
-Control btnLogin.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -1082,6 +1064,33 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 <member name="F:sycsa.Web.SiteWeb._txtLabelQuantity">
 <summary>
 Control txtLabelQuantity.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWeb._txtUserName">
+<summary>
+Control txtUserName.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWeb._txtPassword">
+<summary>
+Control txtPassword.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:sycsa.Web.SiteWeb._btnLogin">
+<summary>
+Control btnLogin.
 </summary>
 <remarks>
 Campo generado automáticamente.
